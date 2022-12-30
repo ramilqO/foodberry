@@ -1,3 +1,3 @@
 export const Andrey = () => {
-    return <p>Робин Гуд</p>;
+    return <p>Пришел, Увидел, Победил</p>;
 };
