@@ -1,3 +1,3 @@
 export const Ramil = () => {
-    return <p>вставь свое имя здесь</p>;
+    return <p>Рамиль узрел!!!</p>;
 };
