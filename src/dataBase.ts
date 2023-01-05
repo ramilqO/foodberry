@@ -1,4 +1,13 @@
-export const food: {menuTitle: string, foods: {img: string, name: string, weight: string, about: string, price: number}[]} [] = [
+export const food: {
+	menuTitle: string;
+	foods: {
+		img: string;
+		name: string;
+		weight: string;
+		about: string;
+		price: number;
+	}[];
+}[] = [
 	{
 		menuTitle: 'Холодные закуски',
 		foods: [
@@ -426,5 +435,4 @@ export const food: {menuTitle: string, foods: {img: string, name: string, weight
 			},
 		],
 	},
-
 ];
