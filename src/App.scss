@@ -1,1 +1,6 @@
-@import url('./layout/Header/Header.scss');
+@import './layout/Header/Header.scss';
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}

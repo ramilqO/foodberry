@@ -1,12 +1,10 @@
-import { Andrey } from "./components/Andrey";
-import { Ramil } from "./components/Ramil";
-import  './layout/Header/Header.scss'
+import './App.scss';
+import Header from "./layout/Header/Header";
 
 function App() {
     return (
         <div>
-                <Andrey />
-                <Ramil />
+            <Header />
         </div>
     );
 }
