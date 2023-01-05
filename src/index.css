@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Ubuntu-Light";
+    src: local("Ubuntu-Light"),
+     url("./fonts/Ubuntu-Light.ttf") format("truetype");
+    font-weight: light;
+    font-display: swap;
+}
