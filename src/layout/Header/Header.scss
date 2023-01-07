@@ -1,14 +1,154 @@
-@import '../../globalStyles/variables.scss';
+@import "../../globalStyles/variables.scss";
 
 .header {
-    background: $hello;
-    box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
-    font-family: 'Ubuntu-Light';
-}
+  background: #403c3b;
+  box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
+  font-family: "Ubuntu-Light";
 
-.header__container {
+  &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+  }
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.input-block {
+  display: flex;
+
+  background: #504b4a;
+  border-radius: 10px;
+  width: 50%;
+  height: 50px;
+
+  padding: 18px;
+
+  &__form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.input-search {
+  width: 100%;
+  background: #504b4a;
+  border: 0;
+  outline: none;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #cfcfcf;
+
+  padding-left: 2%;
+
+  &::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #cfcfcf;
+  }
+}
+
+.search-image {
+  border: 0;
+  background: #504b4a;
+
+  cursor: pointer;
+}
+
+.contacts-block {
+  display: flex;
+  align-items: center;
+
+  &__info {
+    display: block;
+  }
+
+  &__info-item {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #cfcfcf;
+
+    &_bold {
+      font-weight: 800;
+
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &__call-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+    position: relative;
+
+    margin-right: 10px;
+  }
+}
+
+.cart {
+  background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+
+  width: 15%;
+  height: 52px;
+
+  align-items: center;
+  justify-content: space-between;
+
+  &__divider {
+    height: 70%;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    rotate: 180deg;
+  }
+
+  &__counter-block {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &__counter {
+    margin: auto;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #403c3b;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+
+    color: #ffffff;
+
+    padding: 20px;
+  }
 }

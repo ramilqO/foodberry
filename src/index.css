@@ -1,7 +1,55 @@
 @font-face {
+    font-family: "Ubuntu-Italic";
+    src: local("Ubuntu-Italic"),
+     url("./fonts/Ubuntu-Italic.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+} /*Italic*/
+
+@font-face {
     font-family: "Ubuntu-Light";
     src: local("Ubuntu-Light"),
      url("./fonts/Ubuntu-Light.ttf") format("truetype");
     font-weight: light;
     font-display: swap;
-}
+} /*Light*/
+
+@font-face {
+    font-family: "Ubuntu-LightItalic";
+    src: local("Ubuntu-LightItalic"),
+     url("./fonts/Ubuntu-LightItalic.ttf") format("truetype");
+    font-weight: light;
+    font-display: swap;
+} /*Light-Italic*/
+
+@font-face {
+    font-family: "Ubuntu-Medium";
+    src: local("Ubuntu-Medium"),
+     url("./fonts/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: medium;
+    font-display: swap;
+} /*Medium*/
+
+@font-face {
+    font-family: "Ubuntu-MediumItalic";
+    src: local("Ubuntu-Medium"),
+     url("./fonts/Ubuntu-MediumItalic.ttf") format("truetype");
+    font-weight: medium;
+    font-display: swap;
+} /*Medium-Italic*/
+
+@font-face {
+    font-family: "Ubuntu-Bold";
+    src: local("Ubuntu-Bold"),
+     url("./fonts/Ubuntu-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-display: swap;
+} /*Bold*/
+
+@font-face {
+    font-family: "Ubuntu-BoldItalic";
+    src: local("Ubuntu-BoldItalic"),
+     url("./fonts/Ubuntu-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-display: swap;
+} /*Bold-Italic*/
