@@ -1,9 +1,8 @@
 import "./Header.scss";
 
-import { LocationIcon } from '../../icons/LocationIcon';
-import { CallingIcon } from '../../icons/CallingIcon';
-import { SearchIcon } from '../../icons/SearchIcon';
-
+import { LocationIcon } from "../../icons/LocationIcon";
+import { CallingIcon } from "../../icons/CallingIcon";
+import { SearchIcon } from "../../icons/SearchIcon";
 
 const Header = () => {
   return (
@@ -19,7 +18,7 @@ const Header = () => {
         <div className="input-block header__input-block">
           <form className="input-block__form">
             <div className="input-block__decoration-image header__decoration-image">
-             <LocationIcon />
+              <LocationIcon />
             </div>
 
             <input
@@ -38,10 +37,18 @@ const Header = () => {
         </div>
 
         <div className="contacts-block header__contacts-block">
-          <div className="contacts-block__call-img"><CallingIcon /></div>
+          <div className="contacts-block__call-img">
+            <CallingIcon />
+          </div>
           <div className="contacts-block__info header__contacts-block-info">
-            <span className="contacts-block__info-item">Контакты:</span> <br />
-            <a href="tel:+79175105759" className="contacts-block__info-item_bold">+7 (917) 510-57-59</a>
+            <span className="contacts-block__info-item">Контакты:</span>
+            <br />
+            <a
+              href="tel:+79175105759"
+              className="contacts-block__info-item_bold"
+            >
+              +7 (917) 510-57-59
+            </a>
           </div>
         </div>
 
@@ -51,7 +58,6 @@ const Header = () => {
           <div className="cart__counter-block header__cart-counter-block">
             <span className="cart__counter header__cart-counter">4</span>
           </div>
-
         </button>
       </div>
     </div>

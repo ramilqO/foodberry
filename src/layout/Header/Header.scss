@@ -96,8 +96,8 @@
   }
 
   &__call-img {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
     position: relative;
@@ -112,7 +112,8 @@
   border-radius: 10px;
   display: flex;
 
-  width: 15%;
+  min-width: 150px;
+  max-width: 300px;
   height: 52px;
 
   align-items: center;
@@ -147,8 +148,15 @@
     font-size: 16px;
     line-height: 17px;
 
-    color: #ffffff;
+    color: #fff;
 
     padding: 20px;
+  }
+}
+
+
+@media screen and (max-width: 321px) {    //mobile S
+  .contacts-block {
+    display: none;
   }
 }
