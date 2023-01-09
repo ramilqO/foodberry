@@ -1,4 +1,4 @@
-export const BuyIconAdaptive = () => {
+export const BuyIcon = () => {
   return (
     <svg
       width="24"
