@@ -8,35 +8,27 @@ import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
 import React, { useState } from "react";
 
 const Header = () => {
-	const [isOpen, setIsOpened] = useState("closed");
-
-	const toggle = () => {
-		if (isOpen === "opened") {
-			setIsOpened("closed");
-		} else {
-			setIsOpened("opened");
-		}
-	};
+	const [isOpen, setIsOpen] = useState(false);
 
 	return (
 		<div className="header">
 			<div className="header__container">
-				<div className={`overlay overlay--${isOpen}`}></div>
+				<div className={`overlay overlay--${isOpen ? 'opened' : 'closed'}`}></div>
 				<button
-					className={`burger-wrapper burger-wrapper--${isOpen}`}
+					className={`burger-wrapper burger-wrapper--${isOpen ? 'opened' : 'closed'}`}
 					type="button"
 					onClick={() => {
-						toggle();
+						setIsOpen(!isOpen)
 					}}
 				>
-					<div className={`burger  js-burger--${isOpen}`}>
+					<div className={`burger  js-burger--${isOpen ? 'opened' : 'closed'}`}>
 						<span className="js-burger__span"></span>
 						<span className="js-burger__span"></span>
 						<span className="js-burger__span"></span>
 					</div>
 					<span className="burger__text">меню</span>
 				</button>
-				<nav className={`nav nav--${isOpen}`}>
+				<nav className={`nav nav--${isOpen ? 'opened' : 'closed'}`}>
 					<h2>Меню</h2>
 					<ul className="nav__list">
 						<li className="nav__item">
@@ -101,21 +93,21 @@ const Header = () => {
 					</form>
 				</div>
 
-				<div className="contacts-block header__contacts-block">
+				<div className="contacts header__contacts">
 					<a
 						href="tel:+79175105759"
-						className="contacts-block__call-img"
+						className="contacts__link"
 					>
 						<CallingIcon />
 					</a>
-					<div className="contacts-block__info header__contacts-block-info">
-						<span className="contacts-block__info-item">
+					<div className="contacts__info header__contacts-info">
+						<span className="contacts__text">
 							Контакты:
 						</span>
 						<br />
 						<a
 							href="tel:+79175105759"
-							className="contacts-block__info-item_bold"
+							className="contacts__link link"
 						>
 							+7 (917) 510-57-59
 						</a>
