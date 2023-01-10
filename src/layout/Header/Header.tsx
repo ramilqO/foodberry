@@ -1,9 +1,12 @@
 import "./Header.scss";
+
 import { LocationIcon } from "../../icons/LocationIcon";
 import { CallingIcon } from "../../icons/CallingIcon";
 import { SearchIcon } from "../../icons/SearchIcon";
 import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
-import React, { useState } from "react";
+
+import { useState } from "react";
+
 import Cart from "../../components/Cart/Cart";
 
 const Header = () => {
