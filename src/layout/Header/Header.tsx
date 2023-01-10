@@ -1,11 +1,10 @@
 import "./Header.scss";
-
 import { LocationIcon } from "../../icons/LocationIcon";
 import { CallingIcon } from "../../icons/CallingIcon";
 import { SearchIcon } from "../../icons/SearchIcon";
-import { BuyIcon } from "../../icons/BuyIcon";
 import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
 import React, { useState } from "react";
+import Cart from "../../components/Cart/Cart";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -13,22 +12,35 @@ const Header = () => {
 	return (
 		<div className="header">
 			<div className="header__container">
-				<div className={`overlay overlay--${isOpen ? 'opened' : 'closed'}`}></div>
+				<div
+					className={`overlay overlay--${
+						isOpen ? "opened" : "closed"
+					}`}
+					onClick={() => {
+						setIsOpen(!isOpen);
+					}}
+				></div>
 				<button
-					className={`burger-wrapper burger-wrapper--${isOpen ? 'opened' : 'closed'}`}
+					className={`burger-wrapper burger-wrapper--${
+						isOpen ? "opened" : "closed"
+					}`}
 					type="button"
 					onClick={() => {
-						setIsOpen(!isOpen)
+						setIsOpen(!isOpen);
 					}}
 				>
-					<div className={`burger  js-burger--${isOpen ? 'opened' : 'closed'}`}>
+					<div
+						className={`burger  js-burger--${
+							isOpen ? "opened" : "closed"
+						}`}
+					>
 						<span className="js-burger__span"></span>
 						<span className="js-burger__span"></span>
 						<span className="js-burger__span"></span>
 					</div>
 					<span className="burger__text">меню</span>
 				</button>
-				<nav className={`nav nav--${isOpen ? 'opened' : 'closed'}`}>
+				<nav className={`nav nav--${isOpen ? "opened" : "closed"}`}>
 					<h2>Меню</h2>
 					<ul className="nav__list">
 						<li className="nav__item">
@@ -86,7 +98,7 @@ const Header = () => {
 
 						<button
 							type="submit"
-							className='search-image header__search-image"'
+							className="search-image header__search-image"
 						>
 							<SearchIcon />
 						</button>
@@ -94,16 +106,11 @@ const Header = () => {
 				</div>
 
 				<div className="contacts header__contacts">
-					<a
-						href="tel:+79175105759"
-						className="contacts__link"
-					>
+					<a href="tel:+79175105759" className="contacts__link">
 						<CallingIcon />
 					</a>
 					<div className="contacts__info header__contacts-info">
-						<span className="contacts__text">
-							Контакты:
-						</span>
+						<span className="contacts__text">Контакты:</span>
 						<br />
 						<a
 							href="tel:+79175105759"
@@ -113,20 +120,8 @@ const Header = () => {
 						</a>
 					</div>
 				</div>
+				<Cart isHeader/>
 
-				<button className="cart header__cart">
-					<div className="buyIcon">
-						<BuyIcon />
-					</div>
-					<span className="cart__text header__cart-text">
-						Корзина
-					</span>
-					<div className="cart__counter-block header__cart-counter-block">
-						<span className="cart__counter header__cart-counter">
-							4
-						</span>
-					</div>
-				</button>
 			</div>
 		</div>
 	);
