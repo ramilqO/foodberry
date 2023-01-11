@@ -1,7 +1,7 @@
 @import "../../globalStyles/variables.scss";
 
 .header {
-	background: #403c3b;
+	background: $blackBackground;
 	box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
 	font-family: "Ubuntu-Light";
 
@@ -22,12 +22,12 @@
 		left: 0;
 		height: 100vh;
 		padding-top: 20px;
-		background: linear-gradient(#211F20, #44403F);
+		background: $blackBackgroundGradient;
 		transform: translate(-100%, 0);
 		transition: all 0.7s ease-in-out;
 
 		h2 {
-			color: white;
+			color: $white;
 			margin-left: 40px;
 			margin-bottom: 20px;
 		}
@@ -42,7 +42,7 @@
 			margin-bottom: 5px;
 
 			a {
-			color: white;
+			color: $white;
 			text-decoration: none;
 			cursor: pointer;
 			font-size: 14px;
@@ -107,7 +107,7 @@
 		right: 0;
 
 		span {
-			background-color: white;
+			background-color: $white;
 			position: absolute;
 			width: 25px;
 
@@ -147,14 +147,14 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 12px;
-		color: white;
+		color: $white;
 	}
 
 	span {
 		width: 25px;
 		height: 3px;
 		border-radius: 3px;
-		background-color: #65906C;
+		background-color: $lightGreen;
 		transition: 0.3s ease-in-out;
 
 
@@ -184,7 +184,7 @@
 }
 
 .logo {
-	color: #fff;
+	color: $white;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 25px;
@@ -194,7 +194,7 @@
 
 .input-block {
 	display: flex;
-	background: #504b4a;
+	background: $darkGrey;
 	border-radius: 10px;
 	width: 50%;
 	height: 50px;
@@ -210,14 +210,14 @@
 
 .input-search {
 	width: 100%;
-	background: #504b4a;
+	background: $darkGrey;
 	border: 0;
 	outline: none;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 21px;
-	color: #cfcfcf;
+	color: $grey;
 	padding-left: 2%;
 
 	&::placeholder {
@@ -225,13 +225,13 @@
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 21px;
-		color: #cfcfcf;
+		color: $grey;
 	}
 }
 
 .search-image {
 	border: 0;
-	background: #504b4a;
+	background: $darkGrey;
 
 	cursor: pointer;
 }
@@ -250,14 +250,14 @@
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 20px;
-		color: #cfcfcf;
+		color: $grey;
 	}
 
 	&__link {
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
-		background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+		background: $green;
 		position: relative;
 
 		margin-right: 10px;
@@ -267,7 +267,7 @@
 		background: transparent;
 		font-weight: 800;
 		text-decoration: none;
-		color: #fff;
+		color: $white;
 	}
 }
 
@@ -394,7 +394,7 @@
 
 		.input-search {
 			width: 100%;
-			background: #504b4a;
+			background: $darkGrey;
 			border: 0;
 			outline: none;
 			font-style: normal;
@@ -423,7 +423,7 @@
 	&--opened {
 		position: absolute;
 		display: block;
-		background-color: #504b4a;
+		background-color: $darkGrey;
 		opacity: 0.8;
 		top: 0;
 		left: 0;

@@ -1,2 +1,38 @@
 // breakpoints
+
+$phone-sm: 320px;
+$phone-md: 375px;
+$phone: 480px;
+$phone-lg: 576px;
+$tablet: 768px;
+$tablet-lg: 992px;
 $desktop: 1024px;
+$widescreen: 1200px;
+$widescreen-md: 1360px;
+$widescreen-lg: 1440px;
+$widescreen-full: 1600px;
+$full-hd: 1920px;
+
+//colors
+
+$white: #fff;   //main text
+$grey: #CFCFCF; //small text
+$green: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%); //buttons
+$lightGreen: #65906C; //contact link
+
+$blackBackground: #403C3B;
+$blackBackgroundGradient: linear-gradient(#211F20, #44403F);
+
+$darkGrey: #504b4a;
+$blackGradient: linear-gradient(90deg, #211F20 0%, rgba(68, 64, 63, 0) 100%);   //preview
+
+$blackBackgroundLight: linear-gradient(90deg, #494544 0%, #504B4A 100%); //cards
+
+
+// mixins
+
+@mixin container {
+	max-width: 1440px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
