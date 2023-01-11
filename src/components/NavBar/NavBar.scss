@@ -1,11 +1,14 @@
-@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/variables/scss";
 
 .navbar {
 	padding-top: 20px;
-	background: $blackBackgroundGradient;
+	background: $blackGradient;
+	border-bottom: 1px solid darkGrey;
 
 	&__container {
-		@include container;
+		max-width: 1440px;
+		padding: 0 20px;
+		margin: 0 auto;
 	}
 
 	&__list {
@@ -14,6 +17,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-left: 0;
+		overflow-x: scroll;
 	}
 
 	&__item {
@@ -34,7 +38,9 @@
 	}
 
 	&__item.active {
-		border-bottom: 1px solid $green;
+		border-bottom: 1px solid $lightGreen;
+		padding-bottom: 26px;
+
 	}
 }
 
