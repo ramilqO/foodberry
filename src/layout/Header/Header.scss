@@ -1,7 +1,7 @@
 @import "../../globalStyles/variables.scss";
 
 .header {
-	background: $blackBackground;
+	background: $lightDark;
 	box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
 	font-family: "Ubuntu-Light";
 
@@ -373,7 +373,7 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
 	//desktop
 	.header {
 		&__logo {

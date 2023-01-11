@@ -1,0 +1,137 @@
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
+
+.navbar {
+	padding-top: 20px;
+	background: $blackBackgroundGradient;
+
+	&__wrapper {
+		border-bottom: 10px solid $darkGrey;
+		padding-bottom: 20px;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 0;
+		overflow-x: scroll;
+
+		scrollbar-color: $transparent $transparent;
+		scrollbar-width: auto;
+
+		&::-webkit-scrollbar {
+			width: 0;
+		}
+
+		&::-webkit-scrollbar {
+			// width: 24px; /* ширина для вертикального скролла */
+			height: 8px; /* высота для горизонтального скролла */
+			background-color: $transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $transparent;
+			border-radius: 9em;
+			box-shadow: inset 0px 0px 0px #f3faf7;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+		/* ползунок скроллбара */
+		background-color: $transparent;
+	}
+
+	}
+
+	&__item {
+		align-items: center;
+		display: flex;
+		margin-bottom: 5px;
+
+		a {
+		color: $white;
+		text-decoration: none;
+		cursor: pointer;
+		font-size: 14px;
+		white-space: nowrap;
+		padding: 25px 25px;
+
+			&:focus {
+				border: 1px solid white;
+			}
+		}
+	}
+
+	&__item.active {
+		border-bottom: 3px solid $scrollNavBar;
+		padding-bottom: 26px;
+
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.navbar {
+	padding-top: 20px;
+	background: $blackBackgroundGradient;
+
+	&__list {
+
+	}
+
+	&__item {
+
+		a {
+		font-size: 18px;
+		}
+	}
+}
+}
+@media screen and (min-width: 1024px) {
+	.navbar {
+	padding: 20px 0;
+	background: $blackBackgroundGradient;
+
+		&__list {
+			overflow-x: auto;
+
+			scrollbar-color: $grey $darkGrey;
+			scrollbar-width: auto;
+
+			&::-webkit-scrollbar {
+				width: 0;
+			}
+
+			&::-webkit-scrollbar {
+				// width: 24px; /* ширина для вертикального скролла */
+				height: 6px; /* высота для горизонтального скролла */
+				background-color: $grey;
+				border-radius: 9em;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: $scrollNavBar;
+				border-radius: 9em;
+				box-shadow: inset 0px 0px 0px #f3faf7;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+			/* ползунок скроллбара */
+				background-color: $grey;
+				cursor: pointer;
+				background-color: $white;
+			}
+		}
+
+		&__item {
+
+			a {
+			font-size: 18px;
+			}
+		}
+	}
+}
