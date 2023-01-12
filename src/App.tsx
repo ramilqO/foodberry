@@ -2,9 +2,7 @@ import "./App.scss";
 import Header from "./layout/Header/Header";
 import Main from "./components/Main/Main";
 import { Routes, Route } from "react-router-dom";
-import NotFoundPage from "./pages/NotFoundPage";
-
-
+import NotFoundPage from "./pages/Notfoundpage";
 
 function App() {
 	return (
@@ -13,9 +11,11 @@ function App() {
 			<Main />
 			<Routes>
 				<Route path="*" element={<NotFoundPage />} />
-			</Routes>;
+			</Routes>
+			;
 		</div>
 	);
 }
 
 export default App;
+
