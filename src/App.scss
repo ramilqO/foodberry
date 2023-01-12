@@ -3,6 +3,14 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Ubuntu-Light", "Arial", sans-serif;
+}
+
 a {
 	&:hover {
 		opacity: 0.8;

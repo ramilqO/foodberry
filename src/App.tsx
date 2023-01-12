@@ -1,14 +1,19 @@
-import './App.scss';
+import "./App.scss";
 import Header from "./layout/Header/Header";
-import Main from "./components/Main/Main"
+import Main from "./components/Main/Main";
+// import { Routes, Route, Link } from "react-router-dom";
+// <Routes>
+// 	<Route path="/" element={<App />} />
+// 	<Route path="*" element={<Notfoundpage />} />
+// </Routes>;
 
 function App() {
-    return (
-        <div>
+	return (
+		<div>
 			<Header />
 			<Main />
-        </div>
-    );
+		</div>
+	);
 }
 
 export default App;
