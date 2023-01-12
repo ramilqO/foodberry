@@ -9,12 +9,11 @@ const Content = () => {
 		<section className="main-content">
 			<div className="main-content__container">
 				{navMenu.map((item, index) => {
+					console.log(item);
+
 					return (
 						<div key={item.menuTitle + index}>
-							<div
-								id={item.id}
-								className="main-content__content"
-							>
+							<div id={item.id} className="main-content__content">
 								{item.menuTitle}
 							</div>
 						</div>

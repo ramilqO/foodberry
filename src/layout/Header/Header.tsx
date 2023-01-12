@@ -6,6 +6,7 @@ import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
 import React, { useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import { food } from "../../dataBase";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +53,14 @@ const Header = () => {
 									key={index + item.menuTitle}
 								>
 									<FoodDeliciousIcon />
-									<a href="#coldSnackes">{item.menuTitle}</a>
+									<HashLink
+										to={"#" + item.id}
+										onClick={() => {
+											setIsOpen(!isOpen);
+										}}
+									>
+										{item.menuTitle}
+									</HashLink>
 								</li>
 							);
 						})}
