@@ -1,12 +1,14 @@
-const Notfoundpage = () => {
+import { Link } from "react-router-dom";
+
+const NotFoundPage = () => {
 	return (
 		<div className="container">
 			<div className="title">
 				Страница не найдена, пожалуйста вернитесь на
-				<a href='/'>главную страницу</a>
+				<Link to="/">главную страницу</Link>
 			</div>
 		</div>
 	);
 };
 
-export default Notfoundpage;
+export default NotFoundPage;

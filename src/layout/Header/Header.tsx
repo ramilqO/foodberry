@@ -10,7 +10,6 @@ import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [navMenu, setNavMenu] = useState(food);
 
 	return (
 		<div className="header">
@@ -46,7 +45,7 @@ const Header = () => {
 				<nav className={`nav nav--${isOpen ? "opened" : "closed"}`}>
 					<h2>Меню</h2>
 					<ul className="nav__list">
-						{navMenu.map((item, index) => {
+						{food.map((item, index) => {
 							return (
 								<li
 									className={"nav__item"}

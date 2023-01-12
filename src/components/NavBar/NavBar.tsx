@@ -5,23 +5,20 @@ import { HashLink } from "react-router-hash-link";
 
 const NavBar = () => {
 	const [isActive, setisActive] = useState(true);
-	const [navMenu, setNavMenu] = useState(food);
 
 	return (
 		<nav className="navbar">
 			<div className="navbar__container">
 				<ul className="navbar__list">
-					{navMenu.map((item, index) => {
+					{food.map((item) => {
 						return (
 							<li
 								className={`navbar__item ${
 									isActive && "active"
 								}`}
-								key={item.menuTitle + index}
+								key={item.menuTitle}
 							>
-								<HashLink
-									to={"#" + item.id}
-								>
+								<HashLink to={"#" + item.id}>
 									{item.menuTitle}
 								</HashLink>
 							</li>
