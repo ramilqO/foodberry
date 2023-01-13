@@ -1,7 +1,6 @@
 import "./App.scss";
 import Header from "./layout/Header/Header";
-import Main from "./components/Main/Main";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/Main/HomePage";
 import { Routes, Route } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage";
 

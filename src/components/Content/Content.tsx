@@ -7,11 +7,11 @@ const Content = () => {
 		<>
 			<section className="main-content">
 				<div className="main-content__container">
-					{food.map((item, index) => {
+					{food.map((item) => {
 						console.log(item);
 
 						return (
-							<div key={item.menuTitle + index}>
+							<div key={item.id}>
 								<div
 									id={item.id}
 									className="main-content__content"
