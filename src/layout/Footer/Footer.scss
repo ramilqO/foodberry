@@ -1,0 +1,65 @@
+@import "../../globalStyles/variables.scss";
+
+.footer {
+	height: 300px;
+	background: $footerBackground;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-item {
+	color: $primaryText;
+	text-decoration: none;
+}
+
+.text {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 14px;
+	color: $secondaryText;
+
+	&__policy a {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		margin-top: 10px;
+		line-height: 1.8;
+		text-decoration: underline;
+		color: $primaryText;
+	}
+}
+
+@media screen and (min-width: $phone-sm) {
+	.footer {
+		&__nav {
+			display: none;
+		}
+
+		&__main-text {
+			text-align: center;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			padding: 0;
+		}
+	}
+}
+
+@media screen and (min-width: $tablet-lg) {
+	.footer {
+		&__nav {
+			display: flex;
+			width: 50vw;
+			justify-content: space-around;
+		}
+
+		&__main-text {
+			text-align: left;
+			padding-right: 80px;
+		}
+	}
+}
