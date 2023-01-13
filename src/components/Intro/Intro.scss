@@ -1,0 +1,78 @@
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
+
+.intro {
+	min-height: 296px;
+	background-image: url('./../../../public/images/yagnonek.jpg');
+	min-width: 100%;
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	color: $primaryText;
+
+	&::after {
+		@include pseudo;
+		min-width: 100%;
+		min-height: inherit;
+		background: linear-gradient(90deg, rgba(33,31,32,1) 10%, rgba(255, 255, 255, 0) 60%);
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	&::before {
+		@include pseudo;
+		min-width: 100%;
+		min-height: inherit;
+		background: radial-gradient(circle, rgba(33,31,32,1) 30%, rgba(0,0,0,0) 100%);
+		top: 0;
+		left: -50%;
+		z-index: 0;
+	}
+
+	&__wrapper {
+		@include container;
+	}
+
+	&__inner {
+		text-transform: uppercase;
+		position: absolute;
+		z-index: 1;
+		text-align: center;
+		margin-top: 10%;
+		transform: rotate(-14deg);
+		font-weight: bold;
+	}
+
+	&__title {
+		font-size: 36px;
+	}
+
+	&__subtitle {
+		font-size: 25px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.intro {
+		min-height: 350px;
+		.inner {
+			&__title {
+				font-size: 48px;
+			}
+		}
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+	.intro {
+		min-height: 484px;
+
+		.inner {
+			&__title {
+				font-size: 56px;
+			}
+		}
+	}
+}
