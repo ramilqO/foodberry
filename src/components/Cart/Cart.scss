@@ -1,18 +1,15 @@
-@import '../../globalStyles//variables.scss';
-
 .cart {
-	background: $green;
+	background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
 	border: 0;
 	border-radius: 10px;
 	cursor: pointer;
-
 
 	&__counter-block {
 		display: flex;
 		width: 24px;
 		height: 24px;
 		border-radius: 50%;
-		background: $white;
+		background: #fff;
 	}
 
 	&__counter {
@@ -20,15 +17,14 @@
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 14px;
-		color: $blackBackground;
+		color: #403c3b;
 	}
 
 	&__text {
 		font-weight: 600;
 		font-size: 16px;
 		line-height: 17px;
-		color: $white;
-
+		color: #fff;
 	}
 }
 
@@ -42,7 +38,7 @@
 		}
 
 		&__text {
-			border-top: 1px solid $grey;
+			border-top: 1px solid rgba(255, 255, 255, 0.3);
 			padding: 0;
 			font-size: 12px;
 			text-transform: lowercase;
@@ -56,7 +52,7 @@
 			width: 24px;
 			height: 24px;
 			border-radius: 50%;
-			background: $white;
+			background: #fff;
 		}
 
 		&__counter {
@@ -64,7 +60,7 @@
 			font-weight: 600;
 			font-size: 14px;
 			line-height: 14px;
-			color: $blackBackground;
+			color: #403c3b;
 		}
 	}
 }
@@ -72,13 +68,12 @@
 @media screen and (min-width: 768px) {
 	//tablet
 	.cart {
-
 		.buyIcon {
 			display: none;
 		}
 
 		&__text {
-			border-right: 1px solid $grey;
+			border-right: 1px solid rgba(255, 255, 255, 0.3);
 			padding: 10px 20px 10px 17px;
 			text-transform: none;
 			border-top: none;
@@ -91,7 +86,7 @@
 			width: 24px;
 			height: 24px;
 			border-radius: 50%;
-			background: $white;
+			background: #fff;
 			margin-left: 12px;
 		}
 
@@ -101,14 +96,7 @@
 			font-weight: 600;
 			font-size: 14px;
 			line-height: 14px;
-			color: $blackBackground;
+			color: #403c3b;
 		}
 	}
 }
-
-// @media screen and (min-width: 1024px) {
-// 	//desktop
-// 	.cart {
-
-// 	}
-// }

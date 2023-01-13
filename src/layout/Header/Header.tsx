@@ -8,6 +8,8 @@ import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
 import { useState } from "react";
 
 import Cart from "../../components/Cart/Cart";
+import { food } from "../../dataBase";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -46,59 +48,41 @@ const Header = () => {
 				<nav className={`nav nav--${isOpen ? "opened" : "closed"}`}>
 					<h2>Меню</h2>
 					<ul className="nav__list">
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#coldSnackes">Холодные закуски</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#hotShackes">Горячие закуски</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#meatDelicious">Мясные блюда</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#soups">Супы</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#fishDilicious">Рыбные блюда</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#grillMenu">Гриль меню</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#exsclusiveDelicious">Фирменные блюда</a>
-						</li>
-						<li className="nav__item">
-							<FoodDeliciousIcon />
-							<a href="#drinks">Напитки</a>
-						</li>
+						{food.map((item, index) => {
+							return (
+								<li
+									className={"nav__item"}
+									key={index + item.menuTitle}
+								>
+									<FoodDeliciousIcon />
+									<HashLink
+										to={"#" + item.id}
+										onClick={() => {
+											setIsOpen(!isOpen);
+										}}
+									>
+										{item.menuTitle}
+									</HashLink>
+								</li>
+							);
+						})}
 					</ul>
 				</nav>
-
 				<div className="header__logo">
 					<a href="#no_scroll" className="logo">
 						L O G O S
 					</a>
 				</div>
-
 				<div className="input-block header__input-block">
 					<form className="input-block__form">
 						<div className="input-block__decoration-image header__decoration-image">
 							<LocationIcon />
 						</div>
-
 						<input
 							type="search"
 							className="input-search header__input"
 							placeholder="Введите адрес доставки"
 						/>
-
 						<button
 							type="submit"
 							className="search-image header__search-image"
@@ -123,8 +107,7 @@ const Header = () => {
 						</a>
 					</div>
 				</div>
-				<Cart isHeader/>
-
+				<Cart isHeader />
 			</div>
 		</div>
 	);

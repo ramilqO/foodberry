@@ -15,18 +15,34 @@ $full-hd: 1920px;
 
 //colors
 
-$white: #fff;   //main text
-$grey: #CFCFCF; //small text
-$green: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%); //buttons
-$lightGreen: #65906C; //contact link
+$primaryText: #fff;
+$secondaryText: #cfcfcf;
+$buttonColor: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+$cardBackground: linear-gradient(90deg, #494544 0%, #504B4A 100%);
 
-$lightDark: #403C3B;
-$blackBackgroundGradient: linear-gradient(#211F20, #44403F);
 
-$darkGrey: #504b4a;
-$blackGradient: linear-gradient(90deg, #211F20 0%, rgba(68, 64, 63, 0) 100%);   //preview
+//header
+$contactLinkColor: #65906c;
+$headerBackground: #403c3b;
+$navBackground: linear-gradient(#211f20, #44403f);
+$inputSearchColor: #504b4a;
 
-$blackBackgroundLight: linear-gradient(90deg, #494544 0%, #504B4A 100%); //cards
+//intro
+$introAboutBackground: linear-gradient(90deg, #211F20 0%, rgba(68, 64, 63, 0) 100%); //intro and about background
+$introButtonColor: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%);
 
+//navbar
+$menuNavBarBackground: linear-gradient(360deg, #211F20 0%, #44403F 100%); //menu and navbar has the same background
 $scrollNavBar: #618967;
-$transparent: transparent;
+
+//about
+$tileBackground: rgba(80, 75, 74, 0.9);
+$tileTextColor: #79B282;
+
+//contacts-block
+$contactsBlockBackground: #2E2B2C;
+
+//footer
+$footerBackground: linear-gradient(270.7deg, #44403F 0.4%, #211F20 100%);
+
+

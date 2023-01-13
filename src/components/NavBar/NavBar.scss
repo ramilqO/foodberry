@@ -2,12 +2,17 @@
 @import "../../globalStyles/mixins.scss";
 
 .navbar {
-	padding-top: 20px;
-	background: $blackBackgroundGradient;
+	background: $menuNavBarBackground;
+	padding-bottom: 10px;
+	position: relative;
 
-	&__wrapper {
-		border-bottom: 10px solid $darkGrey;
-		padding-bottom: 20px;
+	&:before {
+		@include pseudo;
+		width: 100%;
+		height: 1px;
+		background-color: $secondaryText;
+		bottom: 11px;
+		z-index: 0;
 	}
 
 	&__container {
@@ -21,8 +26,11 @@
 		align-items: center;
 		padding-left: 0;
 		overflow-x: scroll;
+		padding-top: 16px;
+		position: relative;
+		z-index: 2;
 
-		scrollbar-color: $transparent $transparent;
+		scrollbar-color: transparent transparent;
 		scrollbar-width: auto;
 
 		&::-webkit-scrollbar {
@@ -31,35 +39,38 @@
 
 		&::-webkit-scrollbar {
 			// width: 24px; /* ширина для вертикального скролла */
-			height: 8px; /* высота для горизонтального скролла */
-			background-color: $transparent;
+			height: 0; /* высота для горизонтального скролла */
+			background-color: transparent;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: $transparent;
+			background-color: transparent;
 			border-radius: 9em;
 			box-shadow: inset 0px 0px 0px #f3faf7;
 		}
 
 		&::-webkit-scrollbar-thumb:hover {
-		/* ползунок скроллбара */
-		background-color: $transparent;
-	}
-
+			/* ползунок скроллбара */
+			background-color: transparent;
+		}
 	}
 
 	&__item {
 		align-items: center;
 		display: flex;
-		margin-bottom: 5px;
+		padding-top: 7px;
+		padding: 7px 25px 0 25px;
+
+		&:first-of-type {
+			padding-left: 0;
+		}
 
 		a {
-		color: $white;
-		text-decoration: none;
-		cursor: pointer;
-		font-size: 14px;
-		white-space: nowrap;
-		padding: 25px 25px;
+			color: $primaryText;
+			text-decoration: none;
+			cursor: pointer;
+			font-size: 14px;
+			white-space: nowrap;
 
 			&:focus {
 				border: 1px solid white;
@@ -67,39 +78,35 @@
 		}
 	}
 
-	&__item.active {
+	&__item.active a {
 		border-bottom: 3px solid $scrollNavBar;
-		padding-bottom: 26px;
-
+		padding-bottom: 21px;
+		position: relative;
 	}
 }
 
 @media screen and (min-width: 768px) {
 	.navbar {
-	padding-top: 20px;
-	background: $blackBackgroundGradient;
+		background: $menuNavBarBackground;
 
-	&__list {
+		&__list {
+		}
 
-	}
-
-	&__item {
-
-		a {
-		font-size: 18px;
+		&__item {
+			a {
+				font-size: 18px;
+			}
 		}
 	}
 }
-}
 @media screen and (min-width: 1024px) {
 	.navbar {
-	padding: 20px 0;
-	background: $blackBackgroundGradient;
+		background: $menuNavBarBackground;
 
 		&__list {
 			overflow-x: auto;
 
-			scrollbar-color: $grey $darkGrey;
+			scrollbar-color: $secondaryText $inputSearchColor;
 			scrollbar-width: auto;
 
 			&::-webkit-scrollbar {
@@ -109,7 +116,7 @@
 			&::-webkit-scrollbar {
 				// width: 24px; /* ширина для вертикального скролла */
 				height: 6px; /* высота для горизонтального скролла */
-				background-color: $grey;
+				background-color: $secondaryText;
 				border-radius: 9em;
 			}
 
@@ -120,18 +127,20 @@
 			}
 
 			&::-webkit-scrollbar-thumb:hover {
-			/* ползунок скроллбара */
-				background-color: $grey;
+				/* ползунок скроллбара */
+				background-color: $secondaryText;
 				cursor: pointer;
-				background-color: $white;
+				background-color: $primaryText;
 			}
 		}
 
 		&__item {
+			padding: 7px 25px 5px 25px;
 
 			a {
-			font-size: 18px;
+				font-size: 18px;
 			}
 		}
 	}
 }
+
