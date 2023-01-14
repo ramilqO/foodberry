@@ -2,21 +2,43 @@ import "./NavBar.scss";
 import { useState } from "react";
 import { food } from "../../dataBase";
 import { HashLink } from "react-router-hash-link";
+// import { useHorizontalScroll } from "./../../functions/horisontalScroll";
+import { useRef, useEffect } from "react";
 
 const NavBar = () => {
-	const [isActive, setisActive] = useState(true);
+	const [isActive, setisActive] = useState('coldSnackes');
+	// const scrollRef = useHorizontalScroll();
+	const NavBarRef = useRef<HTMLUListElement>(null);
+
+	useEffect(() => {
+		const el = NavBarRef.current;
+
+		if (el) {
+			const onWheel = (e: WheelEvent) => {
+				if (e.deltaY === 0) return;
+				e.preventDefault();
+				el.scrollTo({
+					left: el.scrollLeft + e.deltaY,
+					behavior: "smooth",
+				});
+			};
+			el.addEventListener("wheel", onWheel);
+			return () => el.removeEventListener("wheel", onWheel);
+		}
+	}, []);
 
 	return (
 		<nav className="navbar">
 			<div className="navbar__container">
-				<ul className="navbar__list">
+				<ul className="navbar__list" ref={NavBarRef}>
 					{food.map((item) => {
 						return (
 							<li
 								className={`navbar__item ${
-									isActive && "active"
+									(isActive === item.id) && "active"
 								}`}
-								key={item.menuTitle}
+								key={item.id}
+								onClick={() => setisActive(item.id)}
 							>
 								<HashLink to={"#" + item.id}>
 									{item.menuTitle}
