@@ -2,6 +2,7 @@ import "./HomePage.scss";
 import NavBar from "../../components/NavBar/NavBar";
 import Intro from "../../components/Intro/Intro";
 import Content from "../../components/Content/Content";
+import Benefits from "../../components/Benefits/Benefits";
 
 const HomePage = () => {
 	return (
@@ -9,6 +10,7 @@ const HomePage = () => {
 			<Intro />
 			<NavBar />
 			<Content />
+			<Benefits />
 		</main>
 	);
 };
