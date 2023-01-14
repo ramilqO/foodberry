@@ -4,7 +4,9 @@
 .navbar {
 	background: $menuNavBarBackground;
 	padding-bottom: 10px;
-	position: relative;
+	position: sticky;
+	top: 96px;
+	z-index: 2;
 
 	&:before {
 		@include pseudo;
@@ -30,30 +32,6 @@
 		padding-top: 16px;
 		position: relative;
 		z-index: 2;
-
-		scrollbar-color: transparent transparent;
-		scrollbar-width: auto;
-
-		&::-webkit-scrollbar {
-			width: 0;
-		}
-
-		&::-webkit-scrollbar {
-			// width: 24px; /* ширина для вертикального скролла */
-			height: 0; /* высота для горизонтального скролла */
-			background-color: transparent;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background-color: transparent;
-			border-radius: 9em;
-			box-shadow: inset 0px 0px 0px #f3faf7;
-		}
-
-		&::-webkit-scrollbar-thumb:hover {
-			/* ползунок скроллбара */
-			background-color: transparent;
-		}
 	}
 
 	&__item {
@@ -104,37 +82,6 @@
 		&:before {
 			bottom: 16px;
 		}
-
-		// &__list {
-		// 	overflow-x: auto;
-
-		// 	scrollbar-color: $secondaryText $inputSearchColor;
-		// 	scrollbar-width: auto;
-
-		// 	&::-webkit-scrollbar {
-		// 		width: 0;
-		// 	}
-
-		// 	&::-webkit-scrollbar {
-		// 		// width: 24px; /* ширина для вертикального скролла */
-		// 		height: 6px; /* высота для горизонтального скролла */
-		// 		background-color: $secondaryText;
-		// 		border-radius: 9em;
-		// 	}
-
-		// 	&::-webkit-scrollbar-thumb {
-		// 		background-color: $scrollNavBar;
-		// 		border-radius: 9em;
-		// 		box-shadow: inset 0px 0px 0px #f3faf7;
-		// 	}
-
-		// 	&::-webkit-scrollbar-thumb:hover {
-		// 		/* ползунок скроллбара */
-		// 		background-color: $secondaryText;
-		// 		cursor: pointer;
-		// 		background-color: $primaryText;
-		// 	}
-		// }
 
 		&__item {
 			padding: 7px 25px 5px 25px;

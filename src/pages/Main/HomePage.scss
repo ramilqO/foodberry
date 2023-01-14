@@ -1,0 +1,7 @@
+.main {
+	position: relative;
+	&__content {
+		position: sticky;
+		top: 96px;
+	}
+}

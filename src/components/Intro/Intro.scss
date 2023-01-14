@@ -10,6 +10,7 @@
 	background-size: cover;
 	position: relative;
 	color: $primaryText;
+	margin-top: 96px;
 
 	&::after {
 		@include pseudo;

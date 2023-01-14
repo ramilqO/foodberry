@@ -7,16 +7,14 @@ const Content = () => {
 		<section className="main-content">
 			<div className="main-content__container">
 				{food.map((item) => {
-					console.log(item);
 
 					return (
-						<div key={item.id}>
-							<div
-								id={item.id}
-								className="main-content__content"
-							>
-								{item.menuTitle}
-							</div>
+						<div
+							key={item.id}
+							id={item.id}
+							className="main-content__content"
+						>
+							{item.menuTitle}
 						</div>
 					);
 				})}

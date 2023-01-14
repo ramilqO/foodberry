@@ -1,6 +1,7 @@
 import "./Intro.scss";
 
 const Intro = () => {
+
 	return (
 		<section className="intro">
 			<div className="intro__wrapper">

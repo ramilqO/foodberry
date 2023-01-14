@@ -2,12 +2,10 @@ import "./NavBar.scss";
 import { useState } from "react";
 import { food } from "../../dataBase";
 import { HashLink } from "react-router-hash-link";
-// import { useHorizontalScroll } from "./../../functions/horisontalScroll";
 import { useRef, useEffect } from "react";
 
 const NavBar = () => {
 	const [isActive, setisActive] = useState('coldSnackes');
-	// const scrollRef = useHorizontalScroll();
 	const NavBarRef = useRef<HTMLUListElement>(null);
 
 	useEffect(() => {
@@ -35,7 +33,7 @@ const NavBar = () => {
 						return (
 							<li
 								className={`navbar__item ${
-									(isActive === item.id) && "active"
+									(isActive === item.id) ?"active" : ''
 								}`}
 								key={item.id}
 								onClick={() => setisActive(item.id)}
