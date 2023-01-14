@@ -4,6 +4,7 @@ import Intro from "../../components/Intro/Intro";
 import Content from "../../components/Content/Content";
 
 const HomePage = () => {
+
 	return (
 		<main className="main">
 			<Intro />
