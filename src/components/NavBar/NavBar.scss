@@ -32,6 +32,10 @@
 		padding-top: 16px;
 		position: relative;
 		z-index: 2;
+
+		&::-webkit-scrollbar { width: 0; }
+		-ms-overflow-style: none;
+		overflow: -moz-scrollbars-none;
 	}
 
 	&__item {
@@ -45,22 +49,30 @@
 			padding-left: 0;
 		}
 
-		a {
+		button {
 			color: $primaryText;
 			text-decoration: none;
 			cursor: pointer;
 			font-size: 14px;
 			white-space: nowrap;
+			border: transparent;
+			border-bottom: 3px solid transparent;
+			outline: none;
+			background: transparent;
 
 			&:focus {
-				border: 1px solid white;
+				border-bottom: 3px solid $scrollNavBar;
+				position: relative;
+			}
+
+			&:hover {
+
 			}
 		}
 	}
 
-	&__item.active a {
+	&__item.active button {
 		border-bottom: 3px solid $scrollNavBar;
-		padding-bottom: 21px;
 		position: relative;
 	}
 }
@@ -69,7 +81,7 @@
 	.navbar {
 		background: $menuNavBarBackground;
 		&__item {
-			a {
+			button {
 				font-size: 18px;
 			}
 		}
@@ -86,7 +98,7 @@
 		&__item {
 			padding: 7px 25px 5px 25px;
 
-			a {
+			button {
 				font-size: 18px;
 			}
 		}

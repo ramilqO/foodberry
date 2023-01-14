@@ -25,6 +25,13 @@ const NavBar = () => {
 		}
 	}, []);
 
+	const goScroll = (id: string) => {
+		document?.getElementById(id)?.scrollIntoView({
+			behavior: "smooth",
+			block: "center",
+			inline: "start",
+		});
+	};
 	return (
 		<nav className="navbar">
 			<div className="navbar__container">
@@ -33,14 +40,14 @@ const NavBar = () => {
 						return (
 							<li
 								className={`navbar__item ${
-									(isActive === item.id) ?"active" : ''
+									(isActive === item.id) ? "active" : ''
 								}`}
 								key={item.id}
 								onClick={() => setisActive(item.id)}
 							>
-								<HashLink to={"#" + item.id}>
+								<button onClick={() => goScroll(item.id)}>
 									{item.menuTitle}
-								</HashLink>
+								</button>
 							</li>
 						);
 					})}
