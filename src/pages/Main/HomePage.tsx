@@ -6,6 +6,7 @@ import Benefits from "../../components/Benefits/Benefits";
 import Map from "../../components/Map/Map";
 
 const HomePage = () => {
+
 	return (
 		<main className="main">
 			<Intro />

@@ -6,11 +6,15 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Footer from "./layout/Footer/Footer";
 
 function App() {
+
 	return (
 		<div>
 			<Header />
 			<Routes>
-				<Route path="/" element={<HomePage />} />
+				<Route
+					path="/"
+					element={<HomePage />}
+				/>
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
