@@ -10,6 +10,7 @@
 	background-size: cover;
 	position: relative;
 	color: $primaryText;
+	margin-top: 96px;
 
 	&::after {
 		@include pseudo;
@@ -46,10 +47,22 @@
 
 	&__title {
 		font-size: 36px;
+		display: grid;
+		margin-bottom: 20px;
 	}
 
 	&__subtitle {
 		font-size: 25px;
+		position: relative;
+		z-index: 5;
+
+		&::before {
+			@include pseudo;
+			width: 100%;
+			z-index: 0;
+			height: 50px;
+			background: $introButtonColor;
+		}
 	}
 }
 
