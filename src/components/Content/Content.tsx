@@ -3,12 +3,12 @@ import "./Content.scss";
 
 import { Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper';
-
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+import Card from '../Card/Card';
 
 
 const Content = () => {
@@ -33,13 +33,12 @@ const Content = () => {
 							onSlideChange={() => console.log('slide change')}
 							onSwiper={(swiper) => console.log(swiper)}
 							className="12345"
-							style={{maxWidth: "100%", background: "pink", display: "flex"}}
+							style={{maxWidth: "100%", display: "flex"}}
 							autoplay={{delay: 2000}}
-							
 							>
 								{item.foods.map(dish => {
 								return(
-									<SwiperSlide style={{width: "auto", background: "green"}}><span style={{background: "yellow"}}>{dish.name}</span></SwiperSlide>
+									<SwiperSlide style={{width: "auto"}}><span style={{background: "yellow"}}><Card /></span></SwiperSlide>
 								);
 							})}
 							</Swiper>
