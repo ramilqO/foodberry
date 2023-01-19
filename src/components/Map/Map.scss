@@ -1,0 +1,8 @@
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
+
+.map {
+    min-height: 665px;
+    min-width: 100%;
+    background-color: $inputSearchColor;
+}

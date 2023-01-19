@@ -2,6 +2,8 @@ import "./HomePage.scss";
 import NavBar from "../../components/NavBar/NavBar";
 import Intro from "../../components/Intro/Intro";
 import Content from "../../components/Content/Content";
+import Benefits from "../../components/Benefits/Benefits";
+import Map from "../../components/Map/Map";
 
 const HomePage = () => {
 
@@ -10,6 +12,8 @@ const HomePage = () => {
 			<Intro />
 			<NavBar />
 			<Content />
+			<Benefits />
+			<Map />
 		</main>
 	);
 };
