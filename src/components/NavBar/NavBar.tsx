@@ -1,7 +1,6 @@
 import "./NavBar.scss";
 import { useState } from "react";
 import { food } from "../../dataBase";
-import { HashLink } from "react-router-hash-link";
 import { useRef, useEffect } from "react";
 
 const NavBar = () => {

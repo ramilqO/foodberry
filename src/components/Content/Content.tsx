@@ -10,7 +10,6 @@ import 'swiper/css/scrollbar';
 
 import Card from '../Card/Card';
 
-
 const Content = () => {
 
 	return (
@@ -34,15 +33,25 @@ const Content = () => {
 							onSwiper={(swiper) => console.log(swiper)}
 							className="12345"
 							style={{maxWidth: "100%", display: "flex"}}
-							autoplay={{delay: 2000}}
+							autoplay={{delay: 5000}}
 							>
 								{item.foods.map(dish => {
-								return(
-									<SwiperSlide style={{width: "auto"}}><span style={{background: "yellow"}}><Card /></span></SwiperSlide>
+								return (
+									<SwiperSlide style={{ width: "auto" }}>
+										<span style={{ background: "yellow" }}>
+											<Card
+												img={dish.img}
+												name={dish.name}
+												weight={dish.weight}
+												price={dish.price}
+												about={dish.about}
+											/>
+										</span>
+									</SwiperSlide>
 								);
 							})}
 							</Swiper>
-							
+
 						</div>
 					);
 				})}
