@@ -7,14 +7,13 @@
     background: transparent;
     z-index: 0;
     position: relative;
-    height: auto;
+    min-height: 360px;
 
     &__container {
         height: auto;
         position: absolute;
-        margin: 0 auto;
         margin: 0 10px;
-        padding: 0 10px;
+        padding: 10px 10px;
         display: flex;
         align-items: center;
         background: $headerBackground;
@@ -22,6 +21,7 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom;
+		bottom: -100px;
 
         &::after {
             @include pseudo;
@@ -34,13 +34,17 @@
         }
     }
 
+	&__descriptions {
+
+	}
+
     .description-block {
         color: $primaryText;
         font-family: "Ubuntu-Light";
         position: relative;
         z-index: 3;
-        width: 100%;
-        top: 50px;
+        width: 75%;
+		top: 0;
         left: 0;
         display: none;
 
@@ -55,25 +59,25 @@
         &__subtitle {
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 12px;
             line-height: 25px;
             margin-bottom: 30px;
         }
 
         &__button {
-            width: 223px;
-            height: 59px;
+            width: 183px;
+            height: 39px;
             background: rgba(255, 255, 255, 0.05);
             color: $primaryText;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(2.5px);
             border-radius: 10px;
             text-transform: uppercase;
-            padding-right: 25px;
-            padding-left: 54px;
+            padding-right: 15px;
+            padding-left: 44px;
             font-style: normal;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 10px;
             line-height: 16px;
             cursor: pointer;
             transition: all 1s ease;
@@ -88,12 +92,12 @@
 
     &__buttons {
         display: grid;
-        grid-template-columns: repeat(2, 71px);
-        grid-template-rows: repeat(2, 71px);
+        grid-template-columns: repeat(1, 71px);
+        grid-template-rows: repeat(4, 71px);
         position: absolute;
         z-index: 2;
-        
-        top: 0;
+        top: 10px;
+		right: 10px;
         max-width: 40%;
 
         &>* {
@@ -117,11 +121,11 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 25px;
-        color: white;
+        color: $primaryText;
 
         svg {
             transition: all 1s ease;
-            fill: white;
+            fill: $primaryText;
             width: 40px;
             height: 40px;
         }
@@ -161,23 +165,16 @@
         background: transparent;
         z-index: 0;
         position: relative;
-        height: 360px;
-    
+        min-height: 360px;
+
         &__container {
-            min-width: 320px;
-            height: 460px;
-            position: absolute;
-            margin: 0 auto;
+            min-height: inherit;
+			bottom: -100px;
             margin: 0 30px;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            background: $headerBackground;
-            background-image: url("../../../public/images/curiza.jpg");
-            background-repeat: no-repeat;
+            padding: 20px 20px;
             background-size: contain;
             background-position: right;
-    
+
             &::after {
                 @include pseudo;
                 min-width: 100%;
@@ -188,7 +185,7 @@
                 background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
             }
         }
-    
+
         .description-block {
             color: $primaryText;
             font-family: "Ubuntu-Light";
@@ -197,7 +194,8 @@
             max-width: 75%;
             left: 0;
             display: none;
-    
+			padding-bottom: 20px;
+
             &__title {
                 font-style: normal;
                 font-weight: 700;
@@ -205,7 +203,7 @@
                 line-height: 39px;
                 margin-bottom: 26px;
             }
-    
+
             &__subtitle {
                 font-style: normal;
                 font-weight: 400;
@@ -213,43 +211,22 @@
                 line-height: 25px;
                 margin-bottom: 60px;
             }
-    
+
             &__button {
-                width: 223px;
-                height: 59px;
-                background: rgba(255, 255, 255, 0.05);
-                color: $primaryText;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(2.5px);
-                border-radius: 10px;
-                text-transform: uppercase;
-                padding-right: 25px;
-                padding-left: 54px;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 13px;
-                line-height: 16px;
-                cursor: pointer;
-                transition: all 1s ease;
-            }
-    
-            &__button:hover {
-                box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
-                transition: all 1s ease;
-                color: $tileTextColor;
+
             }
         }
-    
+
         &__buttons {
             display: grid;
             grid-template-columns: repeat(2, 71px);
             grid-template-rows: repeat(2, 71px);
             position: absolute;
             z-index: 2;
-            right: 0;
+            right: 15px;
             top: 10%;
             max-width: 25%;
-    
+
             &>* {
                 background: rgba(80, 75, 74, 0.9);
                 backdrop-filter: blur(5px);
@@ -257,7 +234,7 @@
                 cursor: pointer;
             }
         }
-    
+
         &__button {
             display: grid;
             gap: 10px;
@@ -271,11 +248,11 @@
             font-weight: 400;
             font-size: 18px;
             line-height: 25px;
-            color: white;
-    
+            color: $primaryText;
+
             svg {
                 transition: all 1s ease;
-                fill: white;
+                fill: $primaryText;
                 width: 40px;
                 height: 40px;
             }
@@ -284,17 +261,17 @@
                 display: none;
             }
         }
-    
-    
+
+
         .description-block.active {
             display: block;
         }
-    
+
         &__button:hover {
             box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
             transition: all 1s ease;
             color: $tileTextColor;
-    
+
             svg {
                 transition: all 1s ease;
                 fill: $tileTextColor;
@@ -311,13 +288,13 @@
         z-index: 0;
         position: relative;
         height: 510px;
-    
+
         &__container {
             max-width: 1363px;
             min-width: 320px;
             height: 610px;
             position: absolute;
-            margin: 0 auto;
+            margin: 0 30px;
             display: flex;
             align-items: center;
             background: $headerBackground;
@@ -326,7 +303,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: right;
-    
+
             &::after {
                 @include pseudo;
                 min-width: 100%;
@@ -337,7 +314,7 @@
                 background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
             }
         }
-    
+
         .description-block {
             color: $primaryText;
             font-family: "Ubuntu-Light";
@@ -346,7 +323,7 @@
             max-width: 50%;
             left: 0;
             display: none;
-    
+
             &__title {
                 font-style: normal;
                 font-weight: 700;
@@ -354,7 +331,7 @@
                 line-height: 39px;
                 margin-bottom: 26px;
             }
-    
+
             &__subtitle {
                 font-style: normal;
                 font-weight: 400;
@@ -362,7 +339,7 @@
                 line-height: 25px;
                 margin-bottom: 60px;
             }
-    
+
             &__button {
                 width: 223px;
                 height: 59px;
@@ -381,14 +358,14 @@
                 cursor: pointer;
                 transition: all 1s ease;
             }
-    
+
             &__button:hover {
                 box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
                 transition: all 1s ease;
                 color: $tileTextColor;
             }
         }
-    
+
         &__buttons {
             display: grid;
             grid-template-columns: repeat(2, 243px);
@@ -398,7 +375,7 @@
             right: 0;
             max-width: 50%;
             top: 10%;
-    
+
             &>* {
                 background: rgba(80, 75, 74, 0.9);
                 backdrop-filter: blur(5px);
@@ -406,7 +383,7 @@
                 cursor: pointer;
             }
         }
-    
+
         &__button {
             display: grid;
             gap: 10px;
@@ -421,7 +398,7 @@
             font-size: 18px;
             line-height: 25px;
             color: white;
-    
+
             svg {
                 transition: all 1s ease;
                 fill: white;
@@ -431,21 +408,29 @@
                 display: block;
             }
         }
-    
-    
+
+
         .description-block.active {
             display: block;
         }
-    
+
         &__button:hover {
             box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
             transition: all 1s ease;
             color: $tileTextColor;
-    
+
             svg {
                 transition: all 1s ease;
                 fill: $tileTextColor;
             }
         }
     }
+}
+
+@media screen and (min-width: 1440px) {
+    .benefits {
+		&__container {
+			margin: 0 auto;
+		}
+	}
 }
