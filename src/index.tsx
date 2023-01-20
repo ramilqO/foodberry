@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { HashRouter } from 'react-router-dom'
-import './fonts/Ubuntu-Light.ttf';
+import './fonts/Ubuntu/Ubuntu-Light.ttf';
 import './index.css';
 
 

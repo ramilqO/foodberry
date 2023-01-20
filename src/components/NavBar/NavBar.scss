@@ -5,8 +5,8 @@
 	background: $menuNavBarBackground;
 	padding-bottom: 10px;
 	position: sticky;
-	top: 96px;
-	z-index: 2;
+    top: 100px;
+    z-index: 10;
 
 	&:before {
 		@include pseudo;
@@ -32,6 +32,7 @@
 		padding-top: 16px;
 		position: relative;
 		z-index: 2;
+		margin-bottom: -17px;
 
 		&::-webkit-scrollbar { width: 0; }
 		-ms-overflow-style: none;
@@ -59,27 +60,30 @@
 			border-bottom: 3px solid transparent;
 			outline: none;
 			background: transparent;
+			padding-bottom: 20px;
 
 			&:focus {
 				border-bottom: 3px solid $scrollNavBar;
 				position: relative;
 			}
-
-			&:hover {
-
-			}
 		}
 	}
 
-	&__item.active button {
-		border-bottom: 3px solid $scrollNavBar;
-		position: relative;
+	&__item.active{
+
+		button {
+			border-bottom: 3px solid $scrollNavBar;
+			position: relative;
+			padding-bottom: 20px;
+		}
 	}
 }
 
 @media screen and (min-width: 768px) {
 	.navbar {
 		background: $menuNavBarBackground;
+		top: 96px;
+
 		&__item {
 			button {
 				font-size: 18px;
