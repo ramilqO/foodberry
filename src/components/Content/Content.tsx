@@ -29,15 +29,13 @@ const Content = () => {
 							modules={[Autoplay]}
 							spaceBetween={10}
 							slidesPerView={4}
-							onSlideChange={() => console.log('slide change')}
-							onSwiper={(swiper) => console.log(swiper)}
 							className="12345"
 							style={{maxWidth: "100%", display: "flex"}}
 							autoplay={{delay: 5000}}
 							>
-								{item.foods.map(dish => {
+								{item.foods.map((dish, index) => {
 								return (
-									<SwiperSlide style={{ width: "auto" }}>
+									<SwiperSlide style={{ width: "auto" }} key={index}>
 										<span style={{ background: "yellow" }}>
 											<Card
 												img={dish.img}
