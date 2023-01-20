@@ -1,10 +1,12 @@
 import "./NavBar.scss";
-import { useState } from "react";
 import { food } from "../../dataBase";
 import { useRef, useEffect } from "react";
 
-const NavBar = () => {
-	const [isActive, setisActive] = useState('coldSnackes');
+interface IactiveSection {
+	activeSection: string;
+}
+
+const NavBar = ({activeSection}: IactiveSection) => {
 	const NavBarRef = useRef<HTMLUListElement>(null);
 
 	useEffect(() => {
@@ -39,10 +41,9 @@ const NavBar = () => {
 						return (
 							<li
 								className={`navbar__item ${
-									(isActive === item.id) ? "active" : ''
+									activeSection === item.id ? "active" : ""
 								}`}
 								key={item.id}
-								onClick={() => setisActive(item.id)}
 							>
 								<button onClick={() => goScroll(item.id)}>
 									{item.menuTitle}
