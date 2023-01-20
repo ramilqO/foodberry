@@ -11,6 +11,7 @@
 	position: relative;
 	color: $primaryText;
 	margin-top: 96px;
+	font-family: 'Russo';
 
 	&::after {
 		@include pseudo;
@@ -25,7 +26,7 @@
 		@include pseudo;
 		min-width: 100%;
 		min-height: inherit;
-		background: radial-gradient(circle, rgba(33,31,32,1) 30%, rgba(0,0,0,0) 100%);
+		background: radial-gradient(circle, rgba(33,31,32,1) 0%, rgba(0,0,0,0) 80%);
 		top: 0;
 		left: -50%;
 		z-index: 0;
@@ -33,6 +34,7 @@
 
 	&__wrapper {
 		@include container;
+		position: relative;
 	}
 
 	&__inner {
@@ -40,57 +42,108 @@
 		position: absolute;
 		z-index: 1;
 		text-align: center;
-		margin-top: 120px;
-		transform: rotate(-14deg);
+		margin-top: 135px;
 		font-weight: bold;
+
+		left: 50%;
+		transform: translate(-50%, 0)  rotate(-14deg);
 	}
 
 	&__title {
-		font-size: 24px;
+		font-size: 20px;
 		display: grid;
 		margin-bottom: 20px;
+		font-style: italic;
+		text-shadow: -5px -5px 0px rgba(255,255,255,0.4);
+		min-width: max-content;
 	}
 
 	&__subtitle {
-		font-size: 25px;
+		font-size: 14px;
+		font-style: italic;
 		position: relative;
-		z-index: 5;
 
 		&::before {
 			@include pseudo;
-			width: 100%;
+			width: 64%;
 			z-index: -1;
-			height: 50px;
+			top: -8px;
+			left: 48px;
+			height: 33px;
 			background: $introButtonColor;
-			transform: skew(10deg, 10deg);
+			transform: skew(318deg, 10deg) rotate(349deg);
 		}
 
 		&::after {
 			@include pseudo;
-			// background-image: url('images/decorIntro.png');
+			background-image: url("../../../public/images/decorIntro.png");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: -2;
+			width: 90%;
+			height: 60px;
+			top: -14px;
+			left: 8px;
+			transform: skew(326deg, 10deg) rotate(356deg);
 		}
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
 	.intro {
 		min-height: 350px;
-		.inner {
-			&__title {
-				font-size: 48px;
+
+		&__inner {
+			margin-top: 120px;
+		}
+		&__title {
+			font-size: 36px;
+		}
+		&__subtitle {
+			font-size: 26px;
+
+			&::after {
+				height: 92px;
+				top: -19px;
+				left: 13px;
+			}
+
+			&::before {
+				top: -10px;
+				left: 71px;
+				height: 51px;
 			}
 		}
 	}
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
 	.intro {
 		min-height: 484px;
 
-		.inner {
-			&__title {
-				font-size: 56px;
+		&__inner {
+			left: 0%;
+			transform: translate(5%, 0)  rotate(-14deg);
+		}
+
+		&__title {
+			font-size: 66px;
+		}
+		&__subtitle {
+			font-size: 46px;
+
+			&::after {
+				height: 117px;
+				top: -11px;
+				left: 101px;
+			}
+
+			&::before {
+				top: -7px;
+				left: 115px;
+				height: 72px;
 			}
 		}
 	}
