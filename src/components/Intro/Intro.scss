@@ -40,13 +40,13 @@
 		position: absolute;
 		z-index: 1;
 		text-align: center;
-		margin-top: 10%;
+		margin-top: 120px;
 		transform: rotate(-14deg);
 		font-weight: bold;
 	}
 
 	&__title {
-		font-size: 36px;
+		font-size: 24px;
 		display: grid;
 		margin-bottom: 20px;
 	}
@@ -59,9 +59,15 @@
 		&::before {
 			@include pseudo;
 			width: 100%;
-			z-index: 0;
+			z-index: -1;
 			height: 50px;
 			background: $introButtonColor;
+			transform: skew(10deg, 10deg);
+		}
+
+		&::after {
+			@include pseudo;
+			// background-image: url('images/decorIntro.png');
 		}
 	}
 }
