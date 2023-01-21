@@ -4,9 +4,85 @@
 .checkoutForm {
 	padding-top: 190px;
 	min-height: 360px;
+	color: $primaryText;
+	font-family: "Ubuntu-Light", "Arial", sans-serif;
 
 	&__container {
 		@include container;
 		max-width: 800px;
+	}
+
+	&__link {
+		color: $primaryText;
+		text-decoration: none;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 43px;
+	}
+
+	&__subtitle {
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	form input, textarea {
+		&:placeholder {
+			font-family: "Ubuntu-Light", "Arial", sans-serif;
+			color: $primaryText;
+		}
+
+		background: transparent;
+		padding: 10px 10px;
+		border: 1px solid rgba(255,255,255,0.1);
+		border-radius: 10px;
+		color: $primaryText;
+		min-height: 60px;
+	}
+
+	form button {
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+	}
+
+	&__form-contacts,
+	&__form-delivery,
+	&__form-pay,
+	&__form-deliveryTime,
+	&__form-check {
+		background: $cardBackground;
+		padding: 10px 10px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+	}
+}
+
+.input-contacts {
+	display: grid;
+	gap: 17px;
+}
+
+.toggle-delivery {
+	border-radius: 10px;
+	padding: 10px 10px;
+
+	span {
+		padding: 10px 10px;
+		border-radius: 10px;
+		border: 1px solid rgba(255,255,255,0.1);
+		cursor: poiner;
+
+		&:first-of-type {
+			border-radius: 10px 0px 0px 10px;
+		}
+
+		&:last-of-type {
+			border-radius: 0px 10px 10px 0px;
+		}
+	}
+
+	span.active {
+		background: $buttonColor;
 	}
 }

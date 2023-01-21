@@ -4,7 +4,7 @@ import CheckoutForm from "../../../components/CheckoutForm/CheckoutForm";
 const CheckoutPage = () => {
 
 	return (
-		<main className="main">
+		<main className="main main-checkoutPage">
 			<CheckoutForm />
 		</main>
 	);
