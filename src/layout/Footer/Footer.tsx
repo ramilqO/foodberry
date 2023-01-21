@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<div className="footer container">
+		<footer className="footer container">
 			<div className="footer__main-text">
 				<a href="/#" className="logo">
 					L O G O S
@@ -13,7 +13,7 @@ const Footer = () => {
 				<div className="text">
 					<p>© ООО СК «АПШЕРОН»</p>
 					<p>Все права защищены</p>
-                    
+
                     <div className="text__policy">
                         <p><Link to="/#">Пользовательское соглашение</Link></p>
                         <p><Link to="/#">Карта сайта</Link></p>
@@ -36,7 +36,7 @@ const Footer = () => {
 					Акции
 				</a>
 			</nav>
-		</div>
+		</footer>
 	);
 };
 
