@@ -61,11 +61,6 @@
 			outline: none;
 			background: transparent;
 			padding-bottom: 20px;
-
-			&:focus {
-				border-bottom: 3px solid $scrollNavBar;
-				position: relative;
-			}
 		}
 	}
 
