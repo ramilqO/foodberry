@@ -10,6 +10,7 @@ import { useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import { food } from "../../dataBase";
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +70,9 @@ const Header = () => {
 					</ul>
 				</nav>
 				<div className="header__logo">
-					<a href="#no_scroll" className="logo">
+					<Link to="checkout" className="logo">
 						L O G O S
-					</a>
+					</Link>
 				</div>
 				<div className="input-block header__input-block">
 					<form className="input-block__form">
