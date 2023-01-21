@@ -9,11 +9,11 @@ import Footer from "./layout/Footer/Footer";
 function App() {
 
 	return (
-		<div>
+		<div className="wrapper">
 			<Header />
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/сheckout" element={<CheckoutPage />} />
+				<Route path="/checkout" element={<CheckoutPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />

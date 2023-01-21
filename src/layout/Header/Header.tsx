@@ -14,9 +14,12 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const zIndexHeader = {
+		zIndex: 11
+	};
 
 	return (
-		<div className="header">
+		<header className="header" style={isOpen ? zIndexHeader : {} }>
 			<div className="header__container">
 				<div
 					className={`overlay overlay--${
@@ -29,7 +32,7 @@ const Header = () => {
 				<button
 					className={`burger-wrapper burger-wrapper--${
 						isOpen ? "opened" : "closed"
-					}`}
+						}`}
 					type="button"
 					onClick={() => {
 						setIsOpen(!isOpen);
@@ -70,7 +73,7 @@ const Header = () => {
 					</ul>
 				</nav>
 				<div className="header__logo">
-					<Link to="checkout" className="logo">
+					<Link to="/checkout" className="logo">
 						L O G O S
 					</Link>
 				</div>
@@ -110,7 +113,7 @@ const Header = () => {
 				</div>
 				<Cart isHeader />
 			</div>
-		</div>
+		</header>
 	);
 };
 

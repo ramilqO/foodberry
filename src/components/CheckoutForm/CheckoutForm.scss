@@ -1,0 +1,12 @@
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
+
+.checkoutForm {
+	padding-top: 190px;
+	min-height: 360px;
+
+	&__container {
+		@include container;
+		max-width: 800px;
+	}
+}
