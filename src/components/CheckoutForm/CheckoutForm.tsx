@@ -5,7 +5,6 @@ import { useRef } from "react";
 
 const CheckoutForm = () => {
 	const windowSize = useRef([window.innerWidth]);
-	console.log(windowSize.current)
 
 	return (
 		<section className="checkoutForm">
@@ -120,37 +119,73 @@ const CheckoutForm = () => {
 								4. Когда доставить
 							</p>
 							<div className="toggle-checkTime">
-								<span>В ближайшее время</span>
-								<span>Ко времени</span>
+								<span className="toggle-checkTime__span active">
+									В ближайшее время
+								</span>
+								<span className="toggle-checkTime__span">
+									Ко времени
+								</span>
 							</div>
-							<input type="text" placeholder="Укажите время" />
-							<input type="text" placeholder="Кол-во персон" />
-							<button type="button">-</button>
-							<button type="button">+</button>
-							<p className="base-text">Хотите мы позвоним?</p>
-							<label htmlFor="notCall">Не перезванивать</label>
-							<label htmlFor="callOperator">
-								Потребуется звонок оператора
-							</label>
-							<input
-								type="radio"
-								name="callbackUs"
-								id="notCall"
-							/>
-							<input
-								type="radio"
-								name="callbackUs"
-								id="callOperator"
-							/>
+							<span className="span">
+								<input
+									type="text"
+									placeholder="Укажите время"
+								/>
+							</span>
+							<span className="span">
+								<input
+									type="text"
+									placeholder="Кол-во персон"
+								/>
+								<div className="count-wrap">
+									<button
+										type="button"
+										className="count-wrap__button"
+									></button>
+									<span className="count-wrap__num">1</span>
+									<button type="button">+</button>
+								</div>
+							</span>
+							<p className="base-text checkoutForm__subtitle">
+								Хотите мы позвоним?
+							</p>
+							<div className="radio-wrapper">
+								<div className="radio">
+									<input
+										type="radio"
+										name="notCall"
+										id="notCall"
+									/>
+									<label htmlFor="notCall">
+										Не перезванивать
+									</label>
+								</div>
+								<div className="radio">
+									<input
+										type="radio"
+										name="callbackUs"
+										id="callOperator"
+									/>
+									<label htmlFor="callOperator">
+										Потребуется звонок оператора
+									</label>
+								</div>
+							</div>
 						</div>
 						<div className="checkoutForm__form-check">
 							<button>Оформить заказ</button>
-							<label htmlFor="policy">
-								Я согласен на обработку моих перс. данных в
-								соответствии с{" "}
-								<Link to={"policy"}>Условиями</Link>
-							</label>
-							<input type="checkbox" name="policy" id="policy" />
+							<div className="policy-check">
+								<input
+									type="checkbox"
+									name="policy"
+									id="policy"
+								/>
+								<label htmlFor="policy">
+									Я согласен на обработку моих перс. данных в
+									соответствии с{" "}
+									<Link to={"policy"}>Условиями</Link>
+								</label>
+							</div>
 						</div>
 					</form>
 				</div>
