@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import "./CheckoutForm.scss";
+import { ClockIcon } from './../../icons/ClockIcon';
+import { useRef } from "react";
 
 const CheckoutForm = () => {
+	const windowSize = useRef([window.innerWidth]);
+	console.log(windowSize.current)
+
 	return (
 		<section className="checkoutForm">
 			<div className="checkoutForm__container">
@@ -16,10 +21,16 @@ const CheckoutForm = () => {
 								1. Контактная информация
 							</p>
 							<div className="input-contacts">
-								<input type="text" placeholder="Имя" required />
+								<input
+									type="text"
+									placeholder="Имя"
+									name="userName"
+									required
+								/>
 								<input
 									type="text"
 									placeholder="Телефон"
+									name="userPhone"
 									required
 								/>
 							</div>
@@ -29,10 +40,19 @@ const CheckoutForm = () => {
 								2. Доставка
 							</p>
 							<div className="toggle-delivery">
-								<span className="active">Доставка</span>
-								<span>Самовывоз</span>
+								<span className="toggle-delivery__span active">
+									Доставка
+								</span>
+								<span className="toggle-delivery__span ">
+									Самовывоз
+								</span>
 							</div>
-							<span>Доставим через 1 час 30 минут</span>
+							<div className="time-clock">
+								<ClockIcon />
+								<span className="base-text">
+									Доставим через 1 час 30 минут
+								</span>
+							</div>
 							<p className="base-text checkoutForm__subtitle">
 								Адрес доставки
 							</p>
@@ -40,15 +60,34 @@ const CheckoutForm = () => {
 								<input
 									type="text"
 									placeholder="Укажите улицу"
+									required
 								/>
-								<input type="text" placeholder="Номер дома" />
+								<input
+									type="text"
+									name="numberHouse"
+									placeholder="Номер дома"
+									required
+								/>
 								<input
 									type="text"
 									placeholder="№ квартиры/офиса"
 								/>
-								<input type="text" placeholder="Подъезд" />
-								<input type="text" placeholder="Этаж" />
-								<textarea placeholder="Комментарий" />
+								<input
+									type="text"
+									name="entrance"
+									placeholder="Подъезд"
+								/>
+								<input
+									type="text"
+									name="floor"
+									placeholder="Этаж"
+								/>
+								<textarea
+									placeholder="Комментарий"
+									autoComplete="off"
+									maxLength={200}
+									name="comment"
+								/>
 							</div>
 						</div>
 						<div className="checkoutForm__form-pay">
@@ -56,11 +95,25 @@ const CheckoutForm = () => {
 								3. Оплатить
 							</p>
 							<div className="toggle-pay">
-								<span>Оплата онлайн</span>
-								<span>Курьеру картой</span>
-								<span>Наличными</span>
+								<span className="toggle-pay__span">
+									{`${
+										windowSize.current[0] >= 768
+											? "Оплата онлайн"
+											: "онлайн"
+									}`}
+								</span>
+								<span className="toggle-pay__span">
+									{`${
+										windowSize.current[0] >= 768
+											? "Курьеру картой"
+											: "картой"
+									}`}
+								</span>
+								<span className="toggle-pay__span active">
+									Наличными
+								</span>
 							</div>
-							<span>Сдача с</span>
+							<span className="form-pay-result">Сдача с</span>
 						</div>
 						<div className="checkoutForm__form-deliveryTime">
 							<p className="base-text  checkoutForm__subtitle">
