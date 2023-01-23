@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 
 const CheckoutForm = () => {
 	const windowSize = useRef([window.innerWidth]);
-	const [tabActive, setTabActive] = useState()
+	const [isDelivery, setIsDelivery] = useState(false)
 
 	return (
 		<section className="checkoutForm">
@@ -26,10 +26,7 @@ const CheckoutForm = () => {
 							</p>
 						</div>
 						<div className="not-work__image">
-							<img
-								src="../images/notWork.png"
-								alt=""
-							/>
+							<img src="../images/notWork.png" alt="" />
 						</div>
 					</div>
 					<form className="checkoutForm__form">
@@ -63,8 +60,11 @@ const CheckoutForm = () => {
 									<div className="">
 										<span
 											className={`toggle-delivery__span ${
-												tabActive ? "active" : ""
+												isDelivery  ? "active" : ""
 											}`}
+											onClick={() =>
+												setIsDelivery(true)
+											}
 										>
 											Доставка
 										</span>
@@ -117,8 +117,11 @@ const CheckoutForm = () => {
 									<div className="">
 										<span
 											className={`toggle-delivery__span ${
-												tabActive ? "active" : ""
+												!isDelivery ? "active" : ""
 											}`}
+											onClick={() =>
+												setIsDelivery(false)
+											}
 										>
 											Самовывоз
 										</span>
