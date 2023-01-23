@@ -21,12 +21,14 @@ const CheckoutForm = () => {
 							</p>
 							<div className="input-contacts">
 								<input
+									className="input-contacts__input"
 									type="text"
 									placeholder="Имя"
 									name="userName"
 									required
 								/>
 								<input
+									className="input-contacts__input"
 									type="text"
 									placeholder="Телефон"
 									name="userPhone"
@@ -38,50 +40,59 @@ const CheckoutForm = () => {
 							<p className="base-text checkoutForm__subtitle">
 								2. Доставка
 							</p>
-							<div className="toggle-delivery">
-								<span className="toggle-delivery__span active">
-									Доставка
-								</span>
-								<span className="toggle-delivery__span ">
-									Самовывоз
-								</span>
+							<div className="delivery-time">
+								<div className="toggle-delivery">
+									<span className="toggle-delivery__span active">
+										Доставка
+									</span>
+									<span className="toggle-delivery__span ">
+										Самовывоз
+									</span>
+								</div>
+								<div className="time-clock">
+									<ClockIcon />
+									<span className="base-text">
+										Доставим через 1 час 30 минут
+									</span>
+								</div>
 							</div>
-							<div className="time-clock">
-								<ClockIcon />
-								<span className="base-text">
-									Доставим через 1 час 30 минут
-								</span>
-							</div>
+
 							<p className="base-text checkoutForm__subtitle">
 								Адрес доставки
 							</p>
-							<div className="input-contacts">
+							<div className="input-adress">
 								<input
+									className="input-adress__input"
 									type="text"
 									placeholder="Укажите улицу"
 									required
 								/>
 								<input
+									className="input-adress__input"
 									type="text"
 									name="numberHouse"
 									placeholder="Номер дома"
 									required
 								/>
 								<input
+									className="input-adress__input"
 									type="text"
 									placeholder="№ квартиры/офиса"
 								/>
 								<input
+									className="input-adress__input"
 									type="text"
 									name="entrance"
 									placeholder="Подъезд"
 								/>
 								<input
+									className="input-adress__input"
 									type="text"
 									name="floor"
 									placeholder="Этаж"
 								/>
 								<textarea
+									className="input-adress__input"
 									placeholder="Комментарий"
 									autoComplete="off"
 									maxLength={200}
@@ -118,21 +129,24 @@ const CheckoutForm = () => {
 							<p className="base-text  checkoutForm__subtitle">
 								4. Когда доставить
 							</p>
-							<div className="toggle-checkTime">
-								<span className="toggle-checkTime__span active">
-									В ближайшее время
-								</span>
-								<span className="toggle-checkTime__span">
-									Ко времени
+							<div className="delivery-time">
+								<div className="toggle-checkTime">
+									<span className="toggle-checkTime__span active">
+										В ближайшее время
+									</span>
+									<span className="toggle-checkTime__span">
+										Ко времени
+									</span>
+								</div>
+								<span className="span">
+									<input
+										type="text"
+										placeholder="Укажите время"
+									/>
 								</span>
 							</div>
-							<span className="span">
-								<input
-									type="text"
-									placeholder="Укажите время"
-								/>
-							</span>
-							<span className="span">
+
+							<div className="span">
 								<input
 									type="text"
 									placeholder="Кол-во персон"
@@ -145,7 +159,7 @@ const CheckoutForm = () => {
 									<span className="count-wrap__num">1</span>
 									<button type="button">+</button>
 								</div>
-							</span>
+							</div>
 							<p className="base-text checkoutForm__subtitle">
 								Хотите мы позвоним?
 							</p>
