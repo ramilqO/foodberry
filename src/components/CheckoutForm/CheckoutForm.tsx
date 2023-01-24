@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./CheckoutForm.scss";
 import { ClockIcon } from './../../icons/ClockIcon';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const CheckoutForm = () => {
 	const windowSize = useRef([window.innerWidth]);
+	const [isDelivery, setIsDelivery] = useState(false)
 
 	return (
 		<section className="checkoutForm">
@@ -14,6 +15,20 @@ const CheckoutForm = () => {
 				</Link>
 				<h2 className="checkoutForm__title">Оформление заказа</h2>
 				<div className="checkoutForm__wrapper">
+					<div className="not-work">
+						<div className="not-work__text">
+							<p className="checkoutForm__subtitle">
+								Сегодня мы уже не доставляем.
+							</p>
+							<p className="checkoutForm__subtitle">
+								Заказы принимаем до 20:50, доставляем с 8:30 до
+								21:30
+							</p>
+						</div>
+						<div className="not-work__image">
+							<img src="../images/notWork.png" alt="" />
+						</div>
+					</div>
 					<form className="checkoutForm__form">
 						<div className="checkoutForm__form-contacts">
 							<p className="base-text checkoutForm__subtitle">
@@ -21,14 +36,14 @@ const CheckoutForm = () => {
 							</p>
 							<div className="input-contacts">
 								<input
-									className="input-contacts__input"
+									className="input-contacts__input input"
 									type="text"
 									placeholder="Имя"
 									name="userName"
 									required
 								/>
 								<input
-									className="input-contacts__input"
+									className="input-contacts__input input"
 									type="text"
 									placeholder="Телефон"
 									name="userPhone"
@@ -42,12 +57,101 @@ const CheckoutForm = () => {
 							</p>
 							<div className="delivery-time">
 								<div className="toggle-delivery">
-									<span className="toggle-delivery__span active">
-										Доставка
-									</span>
-									<span className="toggle-delivery__span ">
-										Самовывоз
-									</span>
+									<div className="">
+										<span
+											className={`toggle-delivery__span ${
+												isDelivery  ? "active" : ""
+											}`}
+											onClick={() =>
+												setIsDelivery(true)
+											}
+										>
+											Доставка
+										</span>
+
+										<div className="tab-adress">
+											<p className="base-text checkoutForm__subtitle">
+												Адрес доставки
+											</p>
+											<div className="input-adress">
+												<input
+													className="input-adress__input  input"
+													type="text"
+													placeholder="Укажите улицу"
+													required
+												/>
+												<input
+													className="input-adress__input  input"
+													type="text"
+													name="numberHouse"
+													placeholder="Номер дома"
+													required
+												/>
+												<input
+													className="input-adress__input  input"
+													type="text"
+													placeholder="№ квартиры/офиса"
+												/>
+												<input
+													className="input-adress__input  input"
+													type="text"
+													name="entrance"
+													placeholder="Подъезд"
+												/>
+												<input
+													className="input-adress__input  input"
+													type="text"
+													name="floor"
+													placeholder="Этаж"
+												/>
+												<textarea
+													className="input-adress__input  input"
+													placeholder="Комментарий"
+													autoComplete="off"
+													maxLength={200}
+													name="comment"
+												/>
+											</div>
+										</div>
+									</div>
+									<div className="">
+										<span
+											className={`toggle-delivery__span ${
+												!isDelivery ? "active" : ""
+											}`}
+											onClick={() =>
+												setIsDelivery(false)
+											}
+										>
+											Самовывоз
+										</span>
+
+										<div className="tab-adress">
+											<p className="base-text checkoutForm__subtitle">
+												Выберите ресторан
+											</p>
+											<select
+												name="restaurant"
+												id="restaurant"
+											>
+												<option value="restaurant1">
+													Ресторан Заморский
+												</option>
+												<option value="restaurant2">
+													Пальчики Оближешь
+												</option>
+												<option value="restaurant3">
+													Чревоугодие наш конек
+												</option>
+												<option value="restaurant4">
+													Шашлычки-машлычки
+												</option>
+												<option value="restaurant5">
+													Чет кушать захотелось
+												</option>
+											</select>
+										</div>
+									</div>
 								</div>
 								<div className="time-clock">
 									<ClockIcon />
@@ -55,49 +159,6 @@ const CheckoutForm = () => {
 										Доставим через 1 час 30 минут
 									</span>
 								</div>
-							</div>
-
-							<p className="base-text checkoutForm__subtitle">
-								Адрес доставки
-							</p>
-							<div className="input-adress">
-								<input
-									className="input-adress__input"
-									type="text"
-									placeholder="Укажите улицу"
-									required
-								/>
-								<input
-									className="input-adress__input"
-									type="text"
-									name="numberHouse"
-									placeholder="Номер дома"
-									required
-								/>
-								<input
-									className="input-adress__input"
-									type="text"
-									placeholder="№ квартиры/офиса"
-								/>
-								<input
-									className="input-adress__input"
-									type="text"
-									name="entrance"
-									placeholder="Подъезд"
-								/>
-								<input
-									className="input-adress__input"
-									type="text"
-									name="floor"
-									placeholder="Этаж"
-								/>
-								<textarea
-									className="input-adress__input"
-									placeholder="Комментарий"
-									autoComplete="off"
-									maxLength={200}
-									name="comment"
-								/>
 							</div>
 						</div>
 						<div className="checkoutForm__form-pay">
@@ -140,14 +201,16 @@ const CheckoutForm = () => {
 								</div>
 								<span className="span">
 									<input
+										className="input-enterTime input"
 										type="text"
 										placeholder="Укажите время"
 									/>
 								</span>
 							</div>
 
-							<div className="span">
+							<div className="count-person">
 								<input
+									className="input"
 									type="text"
 									placeholder="Кол-во персон"
 								/>
@@ -157,7 +220,12 @@ const CheckoutForm = () => {
 										className="count-wrap__button"
 									></button>
 									<span className="count-wrap__num">1</span>
-									<button type="button">+</button>
+									<button
+										type="button"
+										className="count-wrap__button"
+									>
+										+
+									</button>
 								</div>
 							</div>
 							<p className="base-text checkoutForm__subtitle">
@@ -166,8 +234,9 @@ const CheckoutForm = () => {
 							<div className="radio-wrapper">
 								<div className="radio">
 									<input
+										className="radio__input"
 										type="radio"
-										name="notCall"
+										name="callbackUs"
 										id="notCall"
 									/>
 									<label htmlFor="notCall">
@@ -176,6 +245,7 @@ const CheckoutForm = () => {
 								</div>
 								<div className="radio">
 									<input
+										className="radio__input"
 										type="radio"
 										name="callbackUs"
 										id="callOperator"
@@ -190,6 +260,7 @@ const CheckoutForm = () => {
 							<button>Оформить заказ</button>
 							<div className="policy-check">
 								<input
+									className="policy-check__input "
 									type="checkbox"
 									name="policy"
 									id="policy"

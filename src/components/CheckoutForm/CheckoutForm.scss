@@ -1,6 +1,28 @@
 @import "../../globalStyles/variables.scss";
 @import "../../globalStyles/mixins.scss";
 
+.not-work {
+	background-color: $notWorkBlockBackground;
+	padding-top: 20px;
+	display: flex;
+	justify-content: space-between;
+
+	p:last-of-type {
+		font-weight: 400;
+	}
+
+	&__image {
+		width: 154px;
+		height: 154px;
+		margin-left: 20px;
+		margin-right: 20px;
+
+		img {
+			height: 100%;
+		}
+	}
+}
+
 .checkoutForm {
 	padding-top: 210px;
 	min-height: 360px;
@@ -66,7 +88,7 @@
 		margin-bottom: 30px;
 	}
 
-	&__form input, textarea {
+	&__form .input {
 		&:placeholder {
 			font-family: "Ubuntu-Light", "Arial", sans-serif;
 			color: $primaryText;
@@ -152,7 +174,7 @@
 		padding: 20px 30px;
 		border-radius: 10px;
 		border: 1px solid $tileTextColor;
-		cursor: poiner;
+		cursor: pointer;
 		display: flex;
 		min-width: 50%;
 		justify-content: center;
@@ -166,11 +188,29 @@
 		&:last-of-type {
 			border-radius: 0px 10px 10px 0px;
 		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	.tab-adress {
+		display: none;
 	}
 
 	&__span.active {
 		background: $buttonColor;
 		font-weight: 600;
+
+		&+.tab-adress {
+			display: block;
+		}
+	}
+	&__span:not(.active) {
+		&:hover {
+			background: $buttonColor;
+			font-weight: 600;
+		}
 	}
 }
 
@@ -229,7 +269,7 @@
 	min-width: 100%;
     border-radius: 10px;
     color: $primaryText;
-    min-height: 60px;
+    height: 60px;
 	margin-bottom: 20px;
 
 	&:last-of-type {
@@ -255,6 +295,7 @@
 .count-wrap {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	flex-grow: 1;
 
 	&__num {
@@ -265,16 +306,25 @@
 
 	&__button {
 		position: relative;
+		cursor: pointer;
+		width: 40px;
+		height: 50px;
 
-		&::before {
+		&:first-of-type:before {
 			@include pseudo;
 			width: 20px;
 			height: 4px;
-			left: -15px;
-			top: 21px;
+			left: 10px;
+			top: 25px;
 			background-color: $primaryText;
 		}
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
+
+
 }
 
 .radio {
@@ -284,17 +334,153 @@
 
 	label {
 		padding-left: 10px;
+		position: relative;
+		cursor: pointer;
+
+		&::before {
+			@include pseudo;
+			width: 20px;
+			height: 20px;
+			border: 1px solid $tileTextColor;
+			border-radius: 50%;
+			left: -16px;
+			top: -3px;
+		}
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&__input {
+		overflow: hidden;
+		opacity: 0;
+		position: relative;
+		cursor: pointer;
+
+		&:checked + label {
+			&::after {
+				@include pseudo;
+				width: 14px;
+				height: 14px;
+				border: 1px solid transparent;
+				background-color: $tileTextColor;
+				border-radius: 50%;
+				left: -13px;
+				top: 0px;
+				opacity: 1;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&:not(:checked) + label {
+			&::after {
+				display: none;
+			}
+		}
+		&:disabled + label {
+			&::after,&::before {
+				opacity: 0.1;
+			}
+		}
 	}
 }
 
 .policy-check {
 	display: flex;
 	align-items: center;
+	position: relative;
+
+	label {
+		padding-left: 30px;
+		margin-left: 0;
+		font-size: 13px;
+		min-width: 100%;
+	}
+
+	&__input {
+		overflow: hidden;
+		opacity: 0;
+		position: relative;
+		height: 10px;
+		min-height: 10px;
+
+		&:checked + label {
+			&::after {
+				@include pseudo;
+				width: 22px;
+				height: 22px;
+				border: 1px solid $primaryText;
+				background: url('../../../public/images/checkbox.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				background-color: $primaryText;
+				border-radius: 3px;
+				left: 0;
+				top: -5px;
+			}
+		}
+		&:not(:checked) + label {
+			&::after {
+				@include pseudo;
+				width: 22px;
+				height: 22px;
+				left: 0;
+				top: -5px;
+				border: 1px solid $primaryText;
+				border-radius: 3px;
+				background: $primaryText;
+				background-color: $primaryText;
+			}
+		}
+		&:disabled + label {
+			&::after,&::before {
+				opacity: 0.1;
+			}
+		}
+	}
 }
 
 .delivery-time{
 	display: grid;
 	gap: 20px;
+}
+
+.count-person {
+	border: 1px solid rgba(255,255,255,0.1);
+	display: flex;
+    border-radius: 10px;
+    color: $primaryText;
+    height: 60px;
+	margin-bottom: 20px;
+
+	&:last-of-type {
+		margin-bottom: 30px;
+	}
+
+	.input {
+		border: none;
+		padding: 0;
+		min-width: 60%;
+		padding: 5px 10px;
+	}
+
+	button {
+		background: transparent;
+		border: none;
+		color: $primaryText;
+		font-size: 45px;
+		margin: 5px;
+		line-height: 0;
+	}
+}
+
+.input-enterTime.input {
+	border: 1px solid transparent;
+	border-radius: 0px;
 }
 
 // media phone-lg
@@ -310,14 +496,17 @@
 	.delivery-time {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		margin-bottom: 20px;
 
-		span {
-			min-width: 60%;
+		.span {
+			flex-grow: 0;
+			margin-bottom: 0;
+			min-width: max-content;
 
-			&:last-of-type {
-				margin-bottom: 0;
-				min-width: 40%;
+
+			input {
+				text-align: center;
 			}
 		}
 	}
@@ -364,13 +553,8 @@
 
 	.toggle-checkTime {
 		margin-bottom: 0;
+		flex-grow: 1;
 	}
-}
-
-// media tablet
-
-@media screen and (min-width: $tablet) {
-
 
 	.toggle-pay {
 		flex-direction: row;
@@ -389,6 +573,44 @@
 			&:last-of-type {
 				border-radius: 0px 10px 10px 0px;
 			}
+		}
+	}
+
+	.count-person {
+		max-width: 60%;
+	}
+}
+
+
+@media screen and (min-width: $tablet ) {
+	.toggle-checkTime {
+		flex-grow: 1;
+	}
+
+	.delivery-time {
+		max-width: 80%;
+
+		.span {
+			flex-grow: 0;
+			min-width: max-content;
+		}
+	}
+
+
+	.count-person {
+		max-width: 80%;
+	}
+
+	.checkoutForm__form-check {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		button {
+			min-width: 200px;
+			padding: 17px 10px;
+			white-space: nowrap;
+			order: 2;
 		}
 	}
 }
