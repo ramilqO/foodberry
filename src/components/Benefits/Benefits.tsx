@@ -9,10 +9,15 @@ import { ChefIcon } from "../../icons/ChefIcon";
 import benefitsData from "./benefitsData";
 
 const Benefits = () => {
-	const [descriptionActive, setDescriptionActive] = useState({
-		title: benefitsData[0].title,
-		description: benefitsData[0].description,
-	});
+	const [descriptionActive, setDescriptionActive] = useState(0);
+
+	const icons: {
+		[key: string]: JSX.Element;
+	} = {
+		onion: <OnionIcon />,
+		flash: <FlashIcon />,
+		chef: <ChefIcon />,
+	};
 
 	return (
 		<section className="benefits">
@@ -20,10 +25,10 @@ const Benefits = () => {
 				<div className="benefits__descriptions">
 					<div className="description-block active">
 						<h2 className="description-block__title">
-							{descriptionActive.title}
+							{benefitsData[descriptionActive].title}
 						</h2>
 						<p className="description-block__subtitle">
-							{descriptionActive.description}
+							{benefitsData[descriptionActive].description}
 						</p>
 					</div>
 
@@ -33,16 +38,13 @@ const Benefits = () => {
 				</div>
 
 				<div className="benefits__buttons">
-					{benefitsData.map((item) => {
+					{benefitsData.map((item, index) => {
 						return (
 							<button
 								key={item.button.name}
 								className="benefits__button"
 								onClick={() => {
-									setDescriptionActive({
-										title: item.title,
-										description: item.description,
-									});
+									setDescriptionActive(index);
 								}}
 							>
 								{item.button.name}
