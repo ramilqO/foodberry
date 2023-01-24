@@ -5,13 +5,19 @@
     display: flex;
     justify-content: center;
     background: transparent;
+    align-items: center;
     z-index: 0;
     position: relative;
     min-height: 360px;
 
     &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column-reverse;
         height: auto;
         position: absolute;
+        z-index: 1;
         margin: 0 10px;
         padding: 10px 10px;
         display: flex;
@@ -21,58 +27,66 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom;
-		bottom: -100px;
-
-        &::after {
-            @include pseudo;
-            min-width: 100%;
-            min-height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
-        }
+        bottom: -100px;
     }
 
-    .descriptions {
-        display: flex;
-        justify-content: space-between;
+    &__overflow {
+        @include pseudo;
+        min-width: 100%;
+        min-height: 100%;
         top: 0;
         left: 0;
-        z-index: 3;
+        z-index: 0;
+        background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
+    }
 
-        &__button {
-            width: 183px;
-            height: 39px;
-            background: rgba(255, 255, 255, 0.05);
-            color: $primaryText;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(2.5px);
-            border-radius: 10px;
-            text-transform: uppercase;
-            padding-right: 15px;
-            padding-left: 44px;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 10px;
-            line-height: 16px;
-            cursor: pointer;
-            transition: all 1s ease;
-        }
+    &__descriptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        min-height: 100%;
+    }
 
-        &__button:hover {
-            box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
-            transition: all 1s ease;
-            color: $tileTextColor;
-        }
+    .wrapper {
+        min-height: 100%;
+        width: 100%;
+    }
+
+    .description-block__button {
+        width: 183px;
+        height: 39px;
+        background: rgba(255, 255, 255, 0.05);
+        color: $primaryText;
+        border: 0;
+        backdrop-filter: blur(2.5px);
+        border-radius: 10px;
+        text-transform: uppercase;
+        padding-right: 15px;
+        padding-left: 44px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 16px;
+        cursor: pointer;
+        transition: all 1s ease;
+    }
+
+    .description-block__button:hover {
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        color: $tileTextColor;
     }
 
     .description-block {
         color: $primaryText;
         font-family: "Ubuntu-Light";
         z-index: 3;
-        width: 75%;
-		top: 0;
+        min-width: 75%;
+        top: 0;
         left: 0;
         display: none;
 
@@ -95,13 +109,12 @@
 
     &__buttons {
         display: grid;
-        grid-template-columns: repeat(1, 71px);
-        grid-template-rows: repeat(4, 71px);
+        grid-template-columns: repeat(4, 71px);
+        grid-template-rows: repeat(1, 71px);
         z-index: 2;
         top: 10px;
-		right: 0;
+        right: 0;
         margin: 0;
-        max-width: 40%;
 
         &>* {
             background: rgba(80, 75, 74, 0.9);
@@ -167,6 +180,8 @@
         height: 360px;
 
         &__container {
+            flex-direction: row;
+            justify-content: space-between;
             min-width: 320px;
             height: 460px;
             margin: 0 30px;
@@ -176,10 +191,19 @@
         }
 
         .descriptions {
-            &__button {
-                width: 283px;
-                height: 59px;
-            }
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            min-height: 100%;
+        }
+    
+        .wrapper {
+            min-height: 100%;
+            min-width: 50%;
         }
 
         .description-block.active {
@@ -200,9 +224,10 @@
         }
 
         &__buttons {
+            grid-template-columns: repeat(1, 71px);
+            grid-template-rows: repeat(4, 71px);
             right: 0;
             top: 10%;
-            max-width: 25%;
         }
 
         span {
@@ -222,6 +247,11 @@
             padding: 0 20px;
         }
 
+        .wrapper {
+            min-height: 100%;
+            min-width: 0;
+        }
+
         .description-block.active {
             display: block;
         }
@@ -238,10 +268,14 @@
             }
         }
 
+        .description-block__button {
+            width: 223px;
+            height: 59px;
+        }
+
         &__buttons {
             grid-template-columns: repeat(2, 243px);
             grid-template-rows: repeat(2, 243px);
-            max-width: 50%;
             top: 10%;
         }
 

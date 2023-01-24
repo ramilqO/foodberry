@@ -22,6 +22,7 @@ const Benefits = () => {
 	return (
 		<section className="benefits">
 			<div className="benefits__container">
+				<div className="benefits__overflow"></div>
 				<div className="benefits__descriptions">
 					<div className="description-block active">
 						<h2 className="description-block__title">
