@@ -7,6 +7,9 @@ const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
 	const [isDelivery, setIsDelivery] = useState(false);
 	const [isSelectRestraunt, setIsSelectRestraunt] = useState(false);
+	const [activeTabPay, setActiveTabPay] = useState(0);
+	const [isTimeDate, setIsTimeDate] = useState(false);
+	const [count, setCount] = useState(1);
 
 	return (
 		<main className="main main-checkoutPage">
@@ -59,7 +62,7 @@ const CheckoutFormPage = () => {
 								</p>
 								<div className="delivery-time">
 									<div className="toggle-delivery">
-										<div className="">
+										<div className="delivery">
 											<div className="delivery-tabs">
 												<span
 													className={`toggle-delivery__span-delivery ${
@@ -86,7 +89,11 @@ const CheckoutFormPage = () => {
 													Самовывоз
 												</span>
 												<div
-													className={`time-clock ${!isDelivery && "none" }`}
+													className={`time-clock ${
+														!isDelivery
+															? "none"
+															: ""
+													}`}
 												>
 													<ClockIcon />
 													<span className="base-text">
@@ -204,25 +211,52 @@ const CheckoutFormPage = () => {
 									3. Оплатить
 								</p>
 								<div className="toggle-pay">
-									<span className="toggle-pay__span">
+									<span
+										className={`toggle-pay__span ${
+											activeTabPay === 1 ? "active" : ""
+										}`}
+										onClick={() => {
+											setActiveTabPay(1);
+										}}
+									>
 										{`${
 											windowSize.current[0] >= 768
 												? "Оплата онлайн"
 												: "онлайн"
 										}`}
 									</span>
-									<span className="toggle-pay__span">
+									<span
+										className={`toggle-pay__span ${
+											activeTabPay === 2 ? "active" : ""
+										}`}
+										onClick={() => {
+											setActiveTabPay(2);
+										}}
+									>
 										{`${
 											windowSize.current[0] >= 768
 												? "Курьеру картой"
 												: "картой"
 										}`}
 									</span>
-									<span className="toggle-pay__span active">
+									<span
+										className={`toggle-pay__span ${
+											activeTabPay === 3 ? "active" : ""
+										}`}
+										onClick={() => {
+											setActiveTabPay(3);
+										}}
+									>
 										Наличными
 									</span>
 								</div>
-								<span className="form-pay-result">Сдача с</span>
+								<span
+									className={`form-pay-result ${
+										activeTabPay === 3 ? "block" : ""
+									} `}
+								>
+									Сдача с
+								</span>
 							</div>
 							<div className="checkoutForm__form-deliveryTime">
 								<p className="base-text  checkoutForm__subtitle">
@@ -230,20 +264,30 @@ const CheckoutFormPage = () => {
 								</p>
 								<div className="delivery-time">
 									<div className="toggle-checkTime">
-										<span className="toggle-checkTime__span active">
+										<span
+											className={`toggle-checkTime__span ${
+												!isTimeDate ? "active" : ""
+											}`}
+											onClick={() => setIsTimeDate(false)}
+										>
 											В ближайшее время
 										</span>
-										<span className="toggle-checkTime__span">
+										<span
+											className={`toggle-checkTime__span ${
+												isTimeDate ? "active" : ""
+											}`}
+											onClick={() => setIsTimeDate(true)}
+										>
 											Ко времени
 										</span>
 									</div>
-									<span className="span">
-										<input
-											className="input-enterTime input"
-											type="text"
-											placeholder="Укажите время"
-										/>
-									</span>
+									<input
+										className={`input-enterTime input ${
+											isTimeDate ? "active" : ""
+										} `}
+										type="text"
+										placeholder="Укажите время"
+									/>
 								</div>
 
 								<div className="count-person">
@@ -256,13 +300,15 @@ const CheckoutFormPage = () => {
 										<button
 											type="button"
 											className="count-wrap__button"
+											onClick={() => setCount(count - 1)}
 										></button>
 										<span className="count-wrap__num">
-											1
+											{count}
 										</span>
 										<button
 											type="button"
 											className="count-wrap__button"
+											onClick={() => setCount(count + 1)}
 										>
 											+
 										</button>
