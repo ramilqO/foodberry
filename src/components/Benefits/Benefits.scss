@@ -5,13 +5,19 @@
     display: flex;
     justify-content: center;
     background: transparent;
+    align-items: center;
     z-index: 0;
     position: relative;
     min-height: 360px;
 
     &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column-reverse;
         height: auto;
         position: absolute;
+        z-index: 1;
         margin: 0 10px;
         padding: 10px 10px;
         display: flex;
@@ -22,25 +28,26 @@
         background-size: contain;
         background-position: bottom;
         bottom: -100px;
-
-        &::after {
-            @include pseudo;
-            min-width: 100%;
-            min-height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
-        }
     }
 
-    .descriptions {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+    &__overflow {
+        @include pseudo;
+        min-width: 100%;
+        min-height: 100%;
         top: 0;
         left: 0;
-        z-index: 3;
+        z-index: 0;
+        background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &__descriptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
         min-height: 100%;
     }
 
@@ -49,12 +56,12 @@
         width: 100%;
     }
 
-    .descriptions__button {
+    .description-block__button {
         width: 183px;
         height: 39px;
         background: rgba(255, 255, 255, 0.05);
         color: $primaryText;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 0;
         backdrop-filter: blur(2.5px);
         border-radius: 10px;
         text-transform: uppercase;
@@ -68,7 +75,7 @@
         transition: all 1s ease;
     }
 
-    .descriptions__button:hover {
+    .description-block__button:hover {
         box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
         transition: all 1s ease;
         color: $tileTextColor;
@@ -173,6 +180,8 @@
         height: 360px;
 
         &__container {
+            flex-direction: row;
+            justify-content: space-between;
             min-width: 320px;
             height: 460px;
             margin: 0 30px;
@@ -188,7 +197,7 @@
             align-items: center;
             top: 0;
             left: 0;
-            z-index: 3;
+            z-index: 4;
             min-height: 100%;
         }
     
@@ -257,6 +266,11 @@
             &__subtitle {
                 font-size: 20px;
             }
+        }
+
+        .description-block__button {
+            width: 223px;
+            height: 59px;
         }
 
         &__buttons {
