@@ -27,6 +27,10 @@
 	}
 }
 
+.delivery {
+	min-width: 100%;
+}
+
 .checkoutForm {
 	padding-top: 210px;
 	min-height: 360px;
@@ -184,7 +188,6 @@
 		border: 1px solid $tileTextColor;
 		cursor: pointer;
 		display: flex;
-		min-width: 50%;
 		justify-content: center;
 		font-size: 12px;
 
@@ -219,6 +222,11 @@
 }
 
 .toggle-delivery {
+
+	span:not(.base-text) {
+		height: 60px;
+	}
+
 	&__span-delivery {
 		padding: 20px 30px;
 		border: 1px solid $tileTextColor;
@@ -234,10 +242,6 @@
 		background: $buttonColor;
 		font-weight: 600;
 	}
-
-	&__span-selfDekivery {
-		min-width: 181px;
-	}
 }
 
 .tab-adress.active {
@@ -247,15 +251,11 @@
 .delivery-tabs {
 	display: flex;
 	min-width: 100%;
-
-	span {
-		flex-grow: 1;
-	}
+	align-items: center;
 
 	div {
 		flex-grow: 1;
 		min-width: 50%;
-		flex-basis: 50%;
 	}
 }
 
@@ -306,9 +306,14 @@
     min-width: 100%;
 	position: relative;
 	font-family: "Ubuntu-Light", "Arial", sans-serif;
+	cursor: pointer;
 
 	option {
 		background-color: $headerBackground;
+	}
+
+	&:hover {
+		opacity: 0.8;
 	}
 }
 
@@ -342,9 +347,13 @@
 	border-radius: 10px;
 	color: $primaryText;
 	min-height: 60px;
-	display: flex;
+	display: none;
 	align-items: center;
 	max-width: 173px;
+
+	&.block {
+		display: flex;
+	}
 }
 
 .toggle-checkTime {
@@ -421,8 +430,6 @@
 			opacity: 0.8;
 		}
 	}
-
-
 }
 
 .radio {
@@ -579,10 +586,41 @@
 .input-enterTime.input {
 	border: 1px solid transparent;
 	border-radius: 0px;
+	border: 1px solid rgba(255,255,255,0.1);
+	display: flex;
+    border-radius: 10px;
+    color: $primaryText;
+    height: 60px;
+	margin-bottom: 20px;
+
+	display: none;
+
+	&.active {
+		display: block;
+	}
 }
 
 // media phone-lg
 @media screen and (min-width: $phone-lg) {
+	.input-enterTime.input {
+		margin-bottom: 0px;
+	}
+	
+	.toggle-delivery {
+
+		span:not(.base-text) {
+			width: 183px;
+		}
+
+		&__span-delivery.active {
+			min-width: 183px;
+		}
+
+		&__span-selfDelivery {
+			min-width: 183px;
+		}
+
+	}
 	.input-contacts {
 		display: flex;
 
