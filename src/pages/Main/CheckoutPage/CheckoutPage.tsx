@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
 import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState} from "react";
+
+import {validPhone, validName, validPerson} from "./../../../functions/regex"
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -19,13 +21,9 @@ const CheckoutFormPage = () => {
 		setCountPerson(val);
 	};
 
-	// regex
-
-	// const regex = (e: React.FormEvent<HTMLInputElement>): void => {
-	// 	const value = (e.target as HTMLInputElement).value;
+	// const validation = (regex, validator) => {
 
 	// }
-
 
 	return (
 		<main className="main main-checkoutPage">
@@ -59,14 +57,14 @@ const CheckoutFormPage = () => {
 									<input
 										className="input-contacts__input input"
 										type="text"
-										placeholder="Имя"
+										placeholder="Имя&#42;"
 										name="userName"
 										required
 									/>
 									<input
 										className="input-contacts__input input"
 										type="text"
-										placeholder="Телефон"
+										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
 									/>
@@ -131,14 +129,14 @@ const CheckoutFormPage = () => {
 													<input
 														className="input-adress__input  input"
 														type="text"
-														placeholder="Укажите улицу"
+														placeholder="Укажите улицу&#42;"
 														required
 													/>
 													<input
 														className="input-adress__input  input"
 														type="text"
 														name="numberHouse"
-														placeholder="Номер дома"
+														placeholder="Номер дома&#42;"
 														required
 													/>
 													<input
@@ -294,6 +292,7 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
+
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
@@ -304,12 +303,21 @@ const CheckoutFormPage = () => {
 								</div>
 
 								<div className="count-person">
+									<label
+										className="personTitle"
+										htmlFor="personTitle"
+									>
+										Кол-во персон
+									</label>
 									<input
 										className="input"
 										type="text"
 										placeholder="Кол-во персон"
+										id="personTitle"
 										value={valuePerson}
-										onChange={(e) => updateValue(e.currentTarget.value)}
+										onChange={(e) =>
+											updateValue(e.currentTarget.value)
+										}
 									/>
 									<div className="count-wrap">
 										<button
@@ -324,7 +332,9 @@ const CheckoutFormPage = () => {
 													  );
 												countPerson === 1
 													? setCountPerson(1)
-													: setCountPerson(countPerson - 1);
+													: setCountPerson(
+															countPerson - 1
+													  );
 											}}
 										></button>
 										<span className="count-wrap__num">
