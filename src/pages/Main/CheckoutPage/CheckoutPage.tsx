@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
 import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -9,7 +9,23 @@ const CheckoutFormPage = () => {
 	const [isSelectRestraunt, setIsSelectRestraunt] = useState(false);
 	const [activeTabPay, setActiveTabPay] = useState(0);
 	const [isTimeDate, setIsTimeDate] = useState(false);
+
 	const [count, setCount] = useState(1);
+	const [value, setValue] = useState(1);
+
+	const updateValue = (e: React.FormEvent<HTMLInputElement>): void => {
+		const value = Number((e.target as HTMLInputElement).value);
+
+		setCount(value);
+	};
+
+	// regex
+
+	// const regex = (e: React.FormEvent<HTMLInputElement>): void => {
+	// 	const value = (e.target as HTMLInputElement).value;
+
+	// }
+
 
 	return (
 		<main className="main main-checkoutPage">
@@ -176,10 +192,7 @@ const CheckoutFormPage = () => {
 															);
 														}}
 													>
-														<option
-															value="restaurant"
-															selected
-														>
+														<option value="restaurant">
 															Выберите ресторан
 														</option>
 														<option value="restaurant1">
@@ -295,12 +308,24 @@ const CheckoutFormPage = () => {
 										className="input"
 										type="text"
 										placeholder="Кол-во персон"
+										value={value}
+										onChange={(e) => updateValue(e)}
 									/>
 									<div className="count-wrap">
 										<button
 											type="button"
 											className="count-wrap__button"
-											onClick={() => setCount(count - 1)}
+											onClick={() => {
+												count === 1
+													? setValue(1)
+													: setValue(
+															(prev) =>
+																Number(prev) - 1
+													  );
+												count === 1
+													? setCount(1)
+													: setCount(count - 1);
+											}}
 										></button>
 										<span className="count-wrap__num">
 											{count}
@@ -308,7 +333,12 @@ const CheckoutFormPage = () => {
 										<button
 											type="button"
 											className="count-wrap__button"
-											onClick={() => setCount(count + 1)}
+											onClick={() => {
+												setValue(
+													(prev) => Number(prev) + 1
+												);
+												setCount(count + 1);
+											}}
 										>
 											+
 										</button>
