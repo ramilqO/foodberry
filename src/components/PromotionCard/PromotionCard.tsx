@@ -25,9 +25,7 @@ const PromotionCard = ({img, title, description, dateTime}: ICard) => {
 				/>
 			</div>
 			<div className="promotion-card__main-text">
-				<div className="promotion-card__title-container">
-					<span className="promotion-card__card-title">{title}</span>
-				</div>
+					<h2 className="promotion-card__card-title">{title}</h2>
 
 				<p className="promotion-card__card-description">{description}</p>
 
