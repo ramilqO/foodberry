@@ -3,6 +3,7 @@
 
 .main-content {
 	background: $menuNavBarBackground;
+	padding-top: 50px;
 
 	&__container {
 		@include container;
@@ -27,9 +28,23 @@
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 39px;
-	/* identical to box height */
-
 	text-transform: uppercase;
-
 	color: $primaryText;
+
+	display: flex;
+
+	margin-bottom: 20px;
+	padding: 10px;
+
+	&__line {
+		background: $scrollNavBar;
+		width: 4px;
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.main-content {
+		padding: 0;
+	}
 }
