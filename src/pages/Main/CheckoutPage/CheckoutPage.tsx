@@ -10,13 +10,13 @@ const CheckoutFormPage = () => {
 	const [activeTabPay, setActiveTabPay] = useState(0);
 	const [isTimeDate, setIsTimeDate] = useState(false);
 
-	const [count, setCount] = useState(1);
-	const [value, setValue] = useState(1);
+	const [countPerson, setCountPerson] = useState(1);
+	const [valuePerson, setValuePerson] = useState(1);
 
-	const updateValue = (e: React.FormEvent<HTMLInputElement>): void => {
-		const value = Number((e.target as HTMLInputElement).value);
 
-		setCount(value);
+	const updateValue = (value: string): void => {
+		const val = Number(value);
+		setCountPerson(val);
 	};
 
 	// regex
@@ -308,36 +308,36 @@ const CheckoutFormPage = () => {
 										className="input"
 										type="text"
 										placeholder="Кол-во персон"
-										value={value}
-										onChange={(e) => updateValue(e)}
+										value={valuePerson}
+										onChange={(e) => updateValue(e.currentTarget.value)}
 									/>
 									<div className="count-wrap">
 										<button
 											type="button"
 											className="count-wrap__button"
 											onClick={() => {
-												count === 1
-													? setValue(1)
-													: setValue(
+												countPerson === 1
+													? setValuePerson(1)
+													: setValuePerson(
 															(prev) =>
 																Number(prev) - 1
 													  );
-												count === 1
-													? setCount(1)
-													: setCount(count - 1);
+												countPerson === 1
+													? setCountPerson(1)
+													: setCountPerson(countPerson - 1);
 											}}
 										></button>
 										<span className="count-wrap__num">
-											{count}
+											{countPerson}
 										</span>
 										<button
 											type="button"
 											className="count-wrap__button"
 											onClick={() => {
-												setValue(
+												setValuePerson(
 													(prev) => Number(prev) + 1
 												);
-												setCount(count + 1);
+												setCountPerson(countPerson + 1);
 											}}
 										>
 											+
