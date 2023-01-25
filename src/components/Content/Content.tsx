@@ -2,11 +2,7 @@ import { food } from "../../dataBase";
 import "./Content.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 import Card from "../Card/Card";
 import { InView } from "react-intersection-observer";
@@ -34,16 +30,14 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 							<span className="menu-title">{item.menuTitle}</span>
 
 							<Swiper
-								modules={[Autoplay]}
 								spaceBetween={10}
-								// slidesPerView={4}
 								className="main-content__slider"
-								autoplay={{ delay: 5000 }}
 								breakpoints={{
 									// when window width is >= 640px
 									640: {
 										width: 640,
 										slidesPerView: 1,
+										centeredSlides: true
 									},
 									// when window width is >= 768px
 									768: {
@@ -63,7 +57,6 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 								{item.foods.map((dish, index) => {
 									return (
 										<SwiperSlide
-											style={{ width: "auto" }}
 											key={index}
 										>
 											<Card
@@ -86,4 +79,3 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 };
 
 export default Content;
-
