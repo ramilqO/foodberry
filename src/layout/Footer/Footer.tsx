@@ -14,11 +14,11 @@ const Footer = () => {
 					<p>© ООО СК «АПШЕРОН»</p>
 					<p>Все права защищены</p>
 
-                    <div className="text__policy">
-                        <p><Link to="/#">Пользовательское соглашение</Link></p>
-                        <p><Link to="/#">Карта сайта</Link></p>
-                        <p><Link to="/#">Политика конфиденциальности</Link></p>
-                    </div>
+					<div className="text__policy">
+						<p><Link to="/#">Пользовательское соглашение</Link></p>
+						<p><Link to="/#">Карта сайта</Link></p>
+						<p><Link to="/#">Политика конфиденциальности</Link></p>
+					</div>
 				</div>
 			</div>
 
@@ -32,9 +32,9 @@ const Footer = () => {
 				<a href="/#" className="nav-item">
 					Возврат товара
 				</a>
-				<a href="/#" className="nav-item">
+				<Link to="/promotions" className="nav-item">
 					Акции
-				</a>
+				</Link>
 			</nav>
 		</footer>
 	);

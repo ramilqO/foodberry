@@ -8,7 +8,6 @@ import Promotions from "./pages/Main/Promotions/Promotions";
 import Footer from "./layout/Footer/Footer";
 
 function App() {
-
 	return (
 		<div className="wrapper">
 			<Header />
@@ -19,7 +18,7 @@ function App() {
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
-		</div>
+		</div >
 	);
 }
 
