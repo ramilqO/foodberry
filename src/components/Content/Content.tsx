@@ -27,7 +27,7 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 								inView && setActiveSection(item.id)
 							}
 						>
-							<span className="menu-title">{item.menuTitle}</span>
+							<span className="menu-title"><span className="menu-title__line"></span>{item.menuTitle}</span>
 
 							<Swiper
 								spaceBetween={10}
