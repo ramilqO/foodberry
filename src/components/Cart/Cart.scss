@@ -83,20 +83,12 @@
 		&__counter-block {
 			display: flex;
 			position: static;
-			width: 24px;
-			height: 24px;
 			border-radius: 50%;
-			background: #fff;
 			margin-left: 12px;
 		}
 
 		&__counter {
 			position: static;
-			margin: auto;
-			font-weight: 600;
-			font-size: 14px;
-			line-height: 14px;
-			color: #403c3b;
 		}
 	}
 }
