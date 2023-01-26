@@ -10,6 +10,7 @@ import benefitsData from "./benefitsData";
 
 const Benefits = () => {
 	const [descriptionActive, setDescriptionActive] = useState(0);
+	const [isActive, setIsActive] = useState(false);
 
 	const icons: {
 		[key: string]: JSX.Element;
@@ -43,12 +44,16 @@ const Benefits = () => {
 						return (
 							<button
 								key={item.button.name}
-								className="benefits__button"
+								className={`benefits__button ${
+									isActive ? "green" : "orange"
+								}`}
 								onClick={() => {
 									setDescriptionActive(index);
+									setIsActive(!isActive);
 								}}
 							>
 								{item.button.name}
+								{icons[item.button.icon]}
 							</button>
 						);
 					})}
@@ -59,4 +64,3 @@ const Benefits = () => {
 };
 
 export default Benefits;
-
