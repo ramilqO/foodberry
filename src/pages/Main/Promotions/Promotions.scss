@@ -1,0 +1,74 @@
+@import "../../../globalStyles/variables.scss";
+@import "../../../globalStyles/mixins.scss";
+
+.promotions {
+    background: $navBackground;
+
+    &__title-wrapper {
+        &::before {
+            @include pseudo;
+            margin-top: 219px;
+            margin-left: 90px;
+            width: 4px;
+            height: 33px;
+            background: $scrollNavBar;
+        }
+    }
+
+    &__title {
+        padding-left: 113px;
+        padding-bottom: 40px;
+        padding-top: 215px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: uppercase;
+        color: $primaryText;
+    }
+
+    &__container {
+        border-top: 0.1px solid $primaryText;
+        display: grid;
+        gap: 25px;
+        grid-template-rows: repeat(9, auto);
+        grid-template-columns: repeat(1, 100%);
+        padding: 0 40px;
+        padding-top: 40px;
+        padding-bottom: 80px;
+        background: $navBackground;
+
+        &>* {
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .promotions {
+        &__title-wrapper {
+            &::before {
+                margin-top: 150px;
+            }
+        }
+    
+        &__title {
+            padding-top: 146px;
+        }
+
+        &__container {
+            grid-template-rows: repeat(5, auto);
+            grid-template-columns: repeat(2, 50%);
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .promotions {
+        &__container {
+            justify-content: center;
+            grid-template-rows: repeat(3, 440px);
+            grid-template-columns: repeat(3, 33%);
+        }
+    }
+}

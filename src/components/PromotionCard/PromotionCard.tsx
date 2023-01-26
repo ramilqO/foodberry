@@ -11,12 +11,12 @@ interface ICard {
 
 const PromotionCard = ({img, title, description, dateTime}: ICard) => {
     return (
-		<div className="card">
-			<div className="card__image-wrapper">
+		<div className="promotion-card">
+			<div className="promotion-card__image-wrapper">
 				<img
 					src={img || skeleton}
 					alt={title}
-					className="card__image"
+					className="promotion-card__image"
 					onError={(
 						event: React.SyntheticEvent<HTMLImageElement, Event>
 					) => {
@@ -24,15 +24,13 @@ const PromotionCard = ({img, title, description, dateTime}: ICard) => {
 					}}
 				/>
 			</div>
-			<div className="card__main-text">
-				<div className="card__title-container">
-					<span className="card__card-title">{title}</span>
-				</div>
+			<div className="promotion-card__main-text">
+					<h2 className="promotion-card__card-title">{title}</h2>
 
-				<p className="card__card-description">{description}</p>
+				<p className="promotion-card__card-description">{description}</p>
 
-				<div className="card__date-container">
-					<span className="card__card-dateTime">{dateTime}</span>
+				<div className="promotion-card__date-container">
+					<span className="promotion-card__card-dateTime">{dateTime}</span>
 				</div>
 			</div>
 		</div>
