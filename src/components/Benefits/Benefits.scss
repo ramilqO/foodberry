@@ -14,7 +14,6 @@
 
     &__container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         flex-direction: column-reverse;
         height: auto;
@@ -111,10 +110,9 @@
 
     &__buttons {
         display: grid;
-        grid-template-columns: repeat(4, calc(25% - 10px));
+        grid-template-columns: repeat(4, 71px);
         grid-template-rows: repeat(1, 71px);
         justify-content: space-between;
-        gap: 10px;
         z-index: 2;
         top: 10px;
         right: 0;
@@ -132,7 +130,6 @@
 
     &__button {
         display: grid;
-        gap: 10px;
         align-content: center;
         justify-items: center;
         width: 100%;
@@ -141,15 +138,15 @@
         font-family: "Ubuntu-Light";
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 25px;
+        font-size: 12px;
+        line-height: 15px;
         color: $primaryText;
 
         svg {
             transition: all 1s ease;
             fill: $primaryText;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
 
         span {
@@ -233,10 +230,12 @@
         }
 
         &__buttons {
-            grid-template-columns: repeat(1, 71px);
-            grid-template-rows: repeat(4, 71px);
+            gap: 20px;
+            grid-template-columns: repeat(1, 91px);
+            grid-template-rows: repeat(4, 91px);
             right: 0;
             top: 10%;
+            width: 25%;
         }
 
         span {
@@ -286,6 +285,8 @@
             grid-template-columns: repeat(2, 243px);
             grid-template-rows: repeat(2, 243px);
             top: 10%;
+            gap: 1px;
+            width: auto;
         }
 
         &__button {
@@ -296,6 +297,11 @@
 
             span {
                 display: block;
+            }
+
+            svg {
+                width: 60px;
+                height: 60px;
             }
         }
     }
