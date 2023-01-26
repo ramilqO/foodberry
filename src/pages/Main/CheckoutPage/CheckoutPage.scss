@@ -561,6 +561,7 @@
     color: $primaryText;
     height: 60px;
 	margin-bottom: 20px;
+	position: relative;
 
 	&:last-of-type {
 		margin-bottom: 30px;
@@ -600,12 +601,19 @@
 	}
 }
 
+.personTitle {
+	position: absolute;
+	top: -10px;
+	left: 10px;
+
+}
+
 // media phone-lg
 @media screen and (min-width: $phone-lg) {
 	.input-enterTime.input {
 		margin-bottom: 0px;
 	}
-	
+
 	.toggle-delivery {
 
 		span:not(.base-text) {
@@ -707,7 +715,6 @@
 	}
 }
 
-
 @media screen and (min-width: $tablet ) {
 	.toggle-checkTime {
 		flex-grow: 1;
@@ -721,7 +728,6 @@
 			min-width: max-content;
 		}
 	}
-
 
 	.count-person {
 		max-width: 80%;

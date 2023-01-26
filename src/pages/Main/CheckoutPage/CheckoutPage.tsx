@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
 import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState } from "react";
+import { useRef, useState} from "react";
+
+import {validPhone, validName, validPerson} from "./../../../functions/regex"
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -9,7 +11,19 @@ const CheckoutFormPage = () => {
 	const [isSelectRestraunt, setIsSelectRestraunt] = useState(false);
 	const [activeTabPay, setActiveTabPay] = useState(0);
 	const [isTimeDate, setIsTimeDate] = useState(false);
-	const [count, setCount] = useState(1);
+
+	const [countPerson, setCountPerson] = useState(1);
+	const [valuePerson, setValuePerson] = useState(1);
+
+
+	const updateValue = (value: string): void => {
+		const val = Number(value);
+		setCountPerson(val);
+	};
+
+	// const validation = (regex, validator) => {
+
+	// }
 
 	return (
 		<main className="main main-checkoutPage">
@@ -43,14 +57,14 @@ const CheckoutFormPage = () => {
 									<input
 										className="input-contacts__input input"
 										type="text"
-										placeholder="Имя"
+										placeholder="Имя&#42;"
 										name="userName"
 										required
 									/>
 									<input
 										className="input-contacts__input input"
 										type="text"
-										placeholder="Телефон"
+										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
 									/>
@@ -115,14 +129,14 @@ const CheckoutFormPage = () => {
 													<input
 														className="input-adress__input  input"
 														type="text"
-														placeholder="Укажите улицу"
+														placeholder="Укажите улицу&#42;"
 														required
 													/>
 													<input
 														className="input-adress__input  input"
 														type="text"
 														name="numberHouse"
-														placeholder="Номер дома"
+														placeholder="Номер дома&#42;"
 														required
 													/>
 													<input
@@ -176,10 +190,7 @@ const CheckoutFormPage = () => {
 															);
 														}}
 													>
-														<option
-															value="restaurant"
-															selected
-														>
+														<option value="restaurant">
 															Выберите ресторан
 														</option>
 														<option value="restaurant1">
@@ -281,6 +292,7 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
+
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
@@ -291,24 +303,52 @@ const CheckoutFormPage = () => {
 								</div>
 
 								<div className="count-person">
+									<label
+										className="personTitle"
+										htmlFor="personTitle"
+									>
+										Кол-во персон
+									</label>
 									<input
 										className="input"
 										type="text"
 										placeholder="Кол-во персон"
+										id="personTitle"
+										value={valuePerson}
+										onChange={(e) =>
+											updateValue(e.currentTarget.value)
+										}
 									/>
 									<div className="count-wrap">
 										<button
 											type="button"
 											className="count-wrap__button"
-											onClick={() => setCount(count - 1)}
+											onClick={() => {
+												countPerson === 1
+													? setValuePerson(1)
+													: setValuePerson(
+															(prev) =>
+																Number(prev) - 1
+													  );
+												countPerson === 1
+													? setCountPerson(1)
+													: setCountPerson(
+															countPerson - 1
+													  );
+											}}
 										></button>
 										<span className="count-wrap__num">
-											{count}
+											{countPerson}
 										</span>
 										<button
 											type="button"
 											className="count-wrap__button"
-											onClick={() => setCount(count + 1)}
+											onClick={() => {
+												setValuePerson(
+													(prev) => Number(prev) + 1
+												);
+												setCountPerson(countPerson + 1);
+											}}
 										>
 											+
 										</button>
