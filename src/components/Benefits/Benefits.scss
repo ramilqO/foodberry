@@ -8,7 +8,8 @@
     align-items: center;
     z-index: 0;
     position: relative;
-    min-height: 360px;
+    min-height: 375px;
+    background: #211f20;
 
     &__container {
         display: flex;
@@ -18,7 +19,6 @@
         height: auto;
         position: absolute;
         z-index: 1;
-        margin: 0 10px;
         padding: 10px 10px;
         display: flex;
         align-items: center;
@@ -28,6 +28,7 @@
         background-size: contain;
         background-position: bottom;
         bottom: -100px;
+        min-height: 475px;
     }
 
     &__overflow {
@@ -109,12 +110,15 @@
 
     &__buttons {
         display: grid;
-        grid-template-columns: repeat(4, 71px);
+        grid-template-columns: repeat(4, calc(25% - 10px));
         grid-template-rows: repeat(1, 71px);
+        justify-content: space-between;
+        gap: 10px;
         z-index: 2;
         top: 10px;
         right: 0;
         margin: 0;
+        width: 100%;
 
         &>* {
             background: rgba(80, 75, 74, 0.9);
@@ -130,8 +134,8 @@
         gap: 10px;
         align-content: center;
         justify-items: center;
-        width: 64px;
-        height: 63px;
+        width: 100%;
+        height: auto;
         transition: all 1s ease;
         font-family: "Ubuntu-Light";
         font-style: normal;
@@ -167,6 +171,10 @@
             fill: $tileTextColor;
         }
     }
+}
+
+@media screen and (min-width: $phone-md) {
+    
 }
 
 @media screen and (min-width: 560px) {
