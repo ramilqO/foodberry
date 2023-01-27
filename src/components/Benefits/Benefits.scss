@@ -8,18 +8,17 @@
     align-items: center;
     z-index: 0;
     position: relative;
-    min-height: 360px;
+    min-height: 375px;
+    background: #211f20;
 
 
     &__container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         flex-direction: column-reverse;
         height: auto;
         position: absolute;
         z-index: 1;
-        margin: 0 10px;
         padding: 10px 10px;
         display: flex;
         align-items: center;
@@ -29,6 +28,7 @@
         background-size: contain;
         background-position: bottom;
         bottom: -100px;
+        min-height: 475px;
     }
 
     &__overflow {
@@ -112,10 +112,12 @@
         display: grid;
         grid-template-columns: repeat(4, 71px);
         grid-template-rows: repeat(1, 71px);
+        justify-content: space-between;
         z-index: 2;
         top: 10px;
         right: 0;
         margin: 0;
+        width: 100%;
 
         &>* {
             background: rgba(80, 75, 74, 0.9);
@@ -128,24 +130,23 @@
 
     &__button {
         display: grid;
-        gap: 10px;
         align-content: center;
         justify-items: center;
-        width: 64px;
-        height: 63px;
+        width: 100%;
+        height: auto;
         transition: all 1s ease;
         font-family: "Ubuntu-Light";
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 25px;
+        font-size: 12px;
+        line-height: 15px;
         color: $primaryText;
 
         svg {
             transition: all 1s ease;
             fill: $primaryText;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
 
         span {
@@ -168,6 +169,10 @@
             fill: $tileTextColor;
         }
     }
+}
+
+@media screen and (min-width: $phone-md) {
+    
 }
 
 @media screen and (min-width: 560px) {
@@ -225,10 +230,12 @@
         }
 
         &__buttons {
-            grid-template-columns: repeat(1, 71px);
-            grid-template-rows: repeat(4, 71px);
+            gap: 20px;
+            grid-template-columns: repeat(1, 91px);
+            grid-template-rows: repeat(4, 91px);
             right: 0;
             top: 10%;
+            width: 25%;
         }
 
         span {
@@ -278,6 +285,8 @@
             grid-template-columns: repeat(2, 243px);
             grid-template-rows: repeat(2, 243px);
             top: 10%;
+            gap: 1px;
+            width: auto;
         }
 
         &__button {
@@ -288,6 +297,11 @@
 
             span {
                 display: block;
+            }
+
+            svg {
+                width: 60px;
+                height: 60px;
             }
         }
     }
