@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import Card from "../Card/Card";
+import Benefits from "../Benefits/Benefits";
 import { InView } from "react-intersection-observer";
 
 interface IactiveSection {
@@ -74,6 +75,7 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 					);
 				})}
 			</div>
+			<Benefits />
 		</section>
 	);
 };
