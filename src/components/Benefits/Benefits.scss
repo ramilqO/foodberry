@@ -6,29 +6,25 @@
     justify-content: center;
     background: transparent;
     align-items: center;
-    z-index: 0;
-    position: relative;
     min-height: 375px;
-    background: #211f20;
 
 
     &__container {
         display: flex;
-        align-items: center;
         flex-direction: column-reverse;
+        justify-content: start;
         height: auto;
-        position: absolute;
+        position: relative;
         z-index: 1;
         padding: 10px 10px;
         display: flex;
-        align-items: center;
         background: $headerBackground;
         background-image: url("../../../public/images/curiza.jpg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom;
         bottom: -100px;
-        min-height: 475px;
+        min-height: auto;
     }
 
     &__overflow {
@@ -94,8 +90,9 @@
         &__title {
             font-style: normal;
             font-weight: 700;
-            font-size: 12px;
+            font-size: 18px;
             line-height: 39px;
+            margin-top: 26px;
             margin-bottom: 26px;
         }
 
@@ -104,12 +101,13 @@
             font-weight: 400;
             font-size: 12px;
             line-height: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
     }
 
     &__buttons {
         display: grid;
+        justify-content: flex-start;
         grid-template-columns: repeat(4, 71px);
         grid-template-rows: repeat(1, 71px);
         justify-content: space-between;
@@ -130,6 +128,7 @@
 
     &__button {
         display: grid;
+        flex-direction: column-reverse;
         align-content: center;
         justify-items: center;
         width: 100%;
@@ -172,7 +171,12 @@
 }
 
 @media screen and (min-width: $phone-md) {
-    
+    .benefits {
+        &__buttons {
+            justify-content: center;
+            gap: 10px;
+        }
+    }
 }
 
 @media screen and (min-width: 560px) {
@@ -188,6 +192,7 @@
         &__container {
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
             min-width: 320px;
             height: 460px;
             margin: 0 30px;
@@ -234,7 +239,6 @@
             grid-template-columns: repeat(1, 91px);
             grid-template-rows: repeat(4, 91px);
             right: 0;
-            top: 10%;
             width: 25%;
         }
 
@@ -277,6 +281,7 @@
         }
 
         .description-block__button {
+
             width: 223px;
             height: 59px;
         }
@@ -290,7 +295,7 @@
         }
 
         &__button {
-            gap: 10px;
+            gap: 30px;
             width: 228px;
             height: 226px;
             font-size: 18px;
