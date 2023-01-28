@@ -111,7 +111,7 @@ const Header = () => {
 						</a>
 					</div>
 				</div>
-				<Cart isHeader />
+				<Cart />
 			</div>
 		</header>
 	);

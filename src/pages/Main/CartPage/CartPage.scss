@@ -1,0 +1,58 @@
+@import "../../../globalStyles/variables.scss";
+
+.cart-page {
+	height: 1000px;
+	padding-top: 100px;
+	background: $sectionBackground;
+	margin: 0 auto;
+
+	&___wrapper {
+		display: block;
+	}
+}
+
+.nav-path {
+	margin: 0 auto;
+	margin-bottom: 70px;
+	margin-top: 34px;
+
+	&__path {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 39px;
+		text-transform: uppercase;
+	}
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        min-width: 350px;
+    }
+}
+
+.go-back {
+	display: block;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	text-decoration: none;
+
+	margin-bottom: 20px;
+}
+
+.line {
+    width: 4px;
+    height: 33px;
+    background: $scrollNavBar;
+}
+
+.orders-counter {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 18px;
+	text-transform: lowercase;
+	color: #72a479;
+}
