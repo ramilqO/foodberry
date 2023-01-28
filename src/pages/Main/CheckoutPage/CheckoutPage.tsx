@@ -3,7 +3,7 @@ import "./CheckoutPage.scss";
 import { ClockIcon } from "./../../../icons/ClockIcon";
 import { useRef, useState} from "react";
 
-import {validPhone, validName, validPerson} from "./../../../functions/regex"
+import {validName, validPerson} from "./../../../functions/regex"
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -15,15 +15,59 @@ const CheckoutFormPage = () => {
 	const [countPerson, setCountPerson] = useState(1);
 	const [valuePerson, setValuePerson] = useState(1);
 
+	// const [isValidation, setIsValidation] = useState(Boolean);
+	// const [valueInput, setValueInput] = useState(' ');
+
+	const [name, setName] = useState("");
+
+	const [classValid, setClassValid] = useState("invalid");
+
+	const [isValid, setIsValid] = useState(false);
+
+	const [isFocus, setIsFocus] = useState(false);
+	const [isBlur, setIsBlur] = useState(false);
 
 	const updateValue = (value: string): void => {
 		const val = Number(value);
 		setCountPerson(val);
 	};
 
-	// const validation = (regex, validator) => {
+	// const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+	// 	setName(event.target.value);
+	// };
 
-	// }
+	// // Handling input onFocus event
+	// const focusHandler = (event: React.FocusEvent<HTMLInputElement>) => {
+	// 	setIsFocus(true);
+	// 	setIsBlur(false);
+	// };
+
+	// const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
+	// 	setIsFocus(false);
+	// 	setIsBlur(true);
+
+	// 	if (name === ""){
+	// 		setClassValid("");
+	// 	} else if (name.match(/^[а-яА-ЯёЁa-zA-Z]/gmi)) {
+	// 		setIsValid(true);
+	// 		setClassValid("valid");
+	// 	} else {
+	// 		setIsValid(false);
+	// 		setClassValid("invalid");
+	// 	}
+	// };
+
+	let regexName = new RegExp(/[а-яА-ЯёЁa-zA-Z]*/gmi)
+
+	const fooValidate = (regex: any, value: string) => {
+		let reg = regex.test(value);
+		console.log(value, reg)
+
+		if (reg) {
+			setName(value)
+			console.log('прошел');
+		}
+	}
 
 	return (
 		<main className="main main-checkoutPage">
@@ -45,7 +89,10 @@ const CheckoutFormPage = () => {
 								</p>
 							</div>
 							<div className="not-work__image">
-								<img src="../images/notWork.png" alt="" />
+								<img
+									src="../images/notWork.png"
+									alt="later working, not deliveries"
+								/>
 							</div>
 						</div>
 						<form className="checkoutForm__form">
@@ -54,12 +101,31 @@ const CheckoutFormPage = () => {
 									1. Контактная информация
 								</p>
 								<div className="input-contacts">
+									{/* <input
+										className={`input-contacts__input input ${
+											!isFocus && isValid
+												? classValid
+												: ""
+										} ${
+											isBlur && !isValid ? classValid : ""
+										}`}
+										type="text"
+										placeholder="Имя&#42;"
+										name="userName"
+										required
+										onFocus={focusHandler}
+										onBlur={blurHandler}
+										value={name}
+										onChange={()=>fooValidate}
+									/> */}
 									<input
 										className="input-contacts__input input"
 										type="text"
 										placeholder="Имя&#42;"
 										name="userName"
 										required
+										value={name}
+										onChange={(e) => fooValidate(regexName, e.target.value)}
 									/>
 									<input
 										className="input-contacts__input input"
