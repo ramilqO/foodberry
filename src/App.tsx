@@ -1,11 +1,16 @@
 import "./App.scss";
-import Header from "./layout/Header/Header";
-import HomePage from "./pages/Main/HomePage/HomePage";
+
 import { Routes, Route } from "react-router-dom";
-import NotFoundPage from "./pages/NotFoundPage";
+
+import Header from "./layout/Header/Header";
+import Footer from "./layout/Footer/Footer";
+
+import HomePage from "./pages/Main/HomePage/HomePage";
 import CheckoutPage from "./pages/Main/CheckoutPage/CheckoutPage";
 import Promotions from "./pages/Main/Promotions/Promotions";
-import Footer from "./layout/Footer/Footer";
+import CartPage from "./pages/Main/CartPage/CartPage";
+import NotFoundPage from "./pages/NotFoundPage";
+
 
 function App() {
 	return (
@@ -15,6 +20,7 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/checkout" element={<CheckoutPage />} />
 				<Route path="/promotions" element={<Promotions />} />
+				<Route path="/cart" element={<CartPage />} /> 
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
