@@ -52,8 +52,8 @@ const Benefits = () => {
 									setIsActive(!isActive);
 								}}
 							>
-								{item.button.name}
 								{icons[item.button.icon]}
+								{item.button.name}
 							</button>
 						);
 					})}
