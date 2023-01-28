@@ -3,10 +3,10 @@
 
 .benefits {
     display: flex;
-    justify-content: center;
     background: transparent;
     align-items: center;
     min-height: 375px;
+    justify-content: center;
 
 
     &__container {
@@ -107,10 +107,9 @@
 
     &__buttons {
         display: grid;
-        justify-content: flex-start;
+        justify-content: start;
         grid-template-columns: repeat(4, 71px);
         grid-template-rows: repeat(1, 71px);
-        justify-content: space-between;
         z-index: 2;
         top: 10px;
         right: 0;
