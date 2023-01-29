@@ -1,0 +1,11 @@
+@import "../../../globalStyles/variables.scss";
+
+.offer-card {
+    width: 274px;
+    height: 100%;
+    border-right: 1px solid black;
+
+    &__wrapper {
+        padding: 20px 35px 0;
+    }
+}
