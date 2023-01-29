@@ -12,7 +12,6 @@
     &__container {
         display: flex;
         flex-direction: column-reverse;
-        justify-content: start;
         height: auto;
         position: relative;
         z-index: 1;
@@ -101,13 +100,13 @@
             font-weight: 400;
             font-size: 12px;
             line-height: 25px;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
         }
     }
 
     &__buttons {
         display: grid;
-        justify-content: start;
+        justify-content: space-between;
         grid-template-columns: repeat(4, 71px);
         grid-template-rows: repeat(1, 71px);
         z-index: 2;
@@ -155,6 +154,17 @@
 
     .description-block.active {
         display: block;
+    }
+
+    &__button:focus{
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        color: $tileTextColor;
+
+        svg {
+            fill: $tileTextColor;
+            transition: all 1s ease;
+        }
     }
 
     &__button:hover {
@@ -280,7 +290,6 @@
         }
 
         .description-block__button {
-
             width: 223px;
             height: 59px;
         }

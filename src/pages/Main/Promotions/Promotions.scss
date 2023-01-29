@@ -4,11 +4,18 @@
 .promotions {
     background: $navBackground;
 
+    &__container {
+        padding: 0 40px;
+        padding-top: 40px;
+        padding-bottom: 80px;
+        background: $navBackground;
+    }
+
     &__title-wrapper {
         &::before {
             @include pseudo;
             margin-top: 219px;
-            margin-left: 90px;
+            margin-left: 10px;
             width: 4px;
             height: 33px;
             background: $scrollNavBar;
@@ -16,7 +23,7 @@
     }
 
     &__title {
-        padding-left: 113px;
+        padding-left: 33px;
         padding-bottom: 40px;
         padding-top: 215px;
         font-style: normal;
@@ -27,16 +34,12 @@
         color: $primaryText;
     }
 
-    &__container {
+    &__promotion-cards {
         border-top: 0.1px solid $primaryText;
         display: grid;
         gap: 25px;
         grid-template-rows: repeat(9, auto);
         grid-template-columns: repeat(1, 100%);
-        padding: 0 40px;
-        padding-top: 40px;
-        padding-bottom: 80px;
-        background: $navBackground;
 
         &>* {
             max-width: 100%;
@@ -56,7 +59,7 @@
             padding-top: 146px;
         }
 
-        &__container {
+        &__promotion-cards {
             grid-template-rows: repeat(5, auto);
             grid-template-columns: repeat(2, 50%);
         }
@@ -65,8 +68,15 @@
 
 @media screen and (min-width: $desktop) {
     .promotions {
+        display: flex;
+        flex-direction: column;
+
         &__container {
-            justify-content: center;
+            margin: 0 auto;
+            max-width: $full-hd;
+        }
+
+        &__promotion-cards {
             grid-template-rows: repeat(3, 440px);
             grid-template-columns: repeat(3, 33%);
         }
