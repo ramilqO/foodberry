@@ -2,7 +2,8 @@ import "./CartPage.scss";
 
 import { Link } from "react-router-dom";
 
-import Order from "../../../components/Order/Order";
+import Order from "../../../components/CartPage/Order/Order";
+import OfferCard from "../../../components/CartPage/OfferCard/OfferCard";
 
 const CartPage = () => {
 	return (
@@ -23,13 +24,18 @@ const CartPage = () => {
 
 				<div className="orders">
 					<div className="orders__wrapper">
-						{/* <Order /> */}
+						<Order />
+						<Order />
 					</div>
 				</div>
 
 				<div className="dish-offers">
+					<span className="dish-offers__title">
+						Добавить к заказу
+					</span>
 
-                </div>
+					<div className="dish-offers__wrapper"><OfferCard /><OfferCard /><OfferCard /><OfferCard /></div>
+				</div>
 				<hr />
 
 				<div className="place-order">
