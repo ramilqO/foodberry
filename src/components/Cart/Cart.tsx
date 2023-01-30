@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 	return (
-			<button className="cart header__cart">
+		<button className="cart header__cart">
+			<Link to="/cart" className="cart header__cart">
 				<div className="buyIcon">
 					<BuyIcon />
 				</div>
@@ -13,7 +14,8 @@ const Cart = () => {
 				<div className="cart__counter-block">
 					<span className="cart__counter">4</span>
 				</div>
-			</button>
+			</Link>
+		</button>
 	);
 };
 
