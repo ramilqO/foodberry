@@ -72,7 +72,12 @@
 	&__wrapper {
 		height: 234px;
 		width: 1096px;
-		border: 1px solid black;
+
+		background: $offerCardBackground;
+		color: $primaryText;
+
+		border-radius: 10px;
+		overflow: hidden;
 
 		display: flex;
 	}

@@ -1,11 +1,42 @@
 @import "../../../globalStyles/variables.scss";
 
 .offer-card {
-    width: 274px;
-    height: 100%;
-    border-right: 1px solid black;
+	width: 274px;
+	height: 100%;
 
-    &__wrapper {
-        padding: 20px 35px 0;
-    }
+	&__wrapper {
+		padding: 20px 35px 0;
+		text-align: center;
+	}
+
+	&__image-block {
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+
+	&__image {
+		border-radius: 10px;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+
+		margin-bottom: 10px;
+	}
+
+	&__add-block {
+		margin: 10px 0 10px 0;
+	}
+
+	&__subtitle {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+
+		color: $offerCardSubtitleColor;
+
+        margin-right: 10px;
+	}
 }

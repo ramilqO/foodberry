@@ -52,9 +52,14 @@
 		align-items: center;
 
 		cursor: pointer;
+		transition: 0.3s;
 
 		font-size: 15px;
 		font-weight: bold;
+
+		&:hover {
+			background: #58835d;
+		}
 	}
 
 	&__counter {
