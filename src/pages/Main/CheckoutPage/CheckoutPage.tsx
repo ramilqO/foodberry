@@ -3,7 +3,9 @@ import "./CheckoutPage.scss";
 import { ClockIcon } from "./../../../icons/ClockIcon";
 import { useRef, useState} from "react";
 
-import {validName, validPerson} from "./../../../functions/regex"
+import { validName, validPerson } from "./../../../functions/regex"
+
+import Input from "./Input";
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -18,9 +20,6 @@ const CheckoutFormPage = () => {
 	// const [isValidation, setIsValidation] = useState(Boolean);
 	// const [valueInput, setValueInput] = useState(' ');
 
-	const [name, setName] = useState("");
-
-	const [classValid, setClassValid] = useState("invalid");
 
 	const [isValid, setIsValid] = useState(false);
 
@@ -32,42 +31,9 @@ const CheckoutFormPage = () => {
 		setCountPerson(val);
 	};
 
-	// const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-	// 	setName(event.target.value);
-	// };
+	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
 
-	// // Handling input onFocus event
-	// const focusHandler = (event: React.FocusEvent<HTMLInputElement>) => {
-	// 	setIsFocus(true);
-	// 	setIsBlur(false);
-	// };
-
-	// const blurHandler = (event: React.FocusEvent<HTMLInputElement>) => {
-	// 	setIsFocus(false);
-	// 	setIsBlur(true);
-
-	// 	if (name === ""){
-	// 		setClassValid("");
-	// 	} else if (name.match(/^[а-яА-ЯёЁa-zA-Z]/gmi)) {
-	// 		setIsValid(true);
-	// 		setClassValid("valid");
-	// 	} else {
-	// 		setIsValid(false);
-	// 		setClassValid("invalid");
-	// 	}
-	// };
-
-	let regexName = new RegExp(/[а-яА-ЯёЁa-zA-Z]*/gmi)
-
-	const fooValidate = (regex: any, value: string) => {
-		let reg = regex.test(value);
-		console.log(value, reg)
-
-		if (reg) {
-			setName(value)
-			console.log('прошел');
-		}
-	}
+	let regexPhone = new RegExp(/[а-яА-ЯёЁa-zA-Z]*/gmi)
 
 	return (
 		<main className="main main-checkoutPage">
@@ -101,38 +67,17 @@ const CheckoutFormPage = () => {
 									1. Контактная информация
 								</p>
 								<div className="input-contacts">
-									{/* <input
-										className={`input-contacts__input input ${
-											!isFocus && isValid
-												? classValid
-												: ""
-										} ${
-											isBlur && !isValid ? classValid : ""
-										}`}
-										type="text"
+									<Input
 										placeholder="Имя&#42;"
 										name="userName"
+										regex={regexName}
 										required
-										onFocus={focusHandler}
-										onBlur={blurHandler}
-										value={name}
-										onChange={()=>fooValidate}
-									/> */}
-									<input
-										className="input-contacts__input input"
-										type="text"
-										placeholder="Имя&#42;"
-										name="userName"
-										required
-										value={name}
-										onChange={(e) => fooValidate(regexName, e.target.value)}
 									/>
-									<input
-										className="input-contacts__input input"
-										type="text"
+									<Input
 										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
+										regex={regexPhone}
 									/>
 								</div>
 							</div>
@@ -194,31 +139,31 @@ const CheckoutFormPage = () => {
 												<div className="input-adress">
 													<input
 														className="input-adress__input  input"
-														type="text"
+			
 														placeholder="Укажите улицу&#42;"
 														required
 													/>
 													<input
 														className="input-adress__input  input"
-														type="text"
+			
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
 													/>
 													<input
 														className="input-adress__input  input"
-														type="text"
+			
 														placeholder="№ квартиры/офиса"
 													/>
 													<input
 														className="input-adress__input  input"
-														type="text"
+			
 														name="entrance"
 														placeholder="Подъезд"
 													/>
 													<input
 														className="input-adress__input  input"
-														type="text"
+			
 														name="floor"
 														placeholder="Этаж"
 													/>
@@ -363,7 +308,6 @@ const CheckoutFormPage = () => {
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
 										} `}
-										type="text"
 										placeholder="Укажите время"
 									/>
 								</div>
@@ -377,7 +321,6 @@ const CheckoutFormPage = () => {
 									</label>
 									<input
 										className="input"
-										type="text"
 										placeholder="Кол-во персон"
 										id="personTitle"
 										value={valuePerson}
