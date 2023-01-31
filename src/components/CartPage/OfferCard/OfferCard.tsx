@@ -1,6 +1,12 @@
 import "./OfferCard.scss";
 
-const OfferCard = () => {
+interface IOfferCard {
+	name: string;
+	about: string;
+	price: number;
+}
+
+const OfferCard = ({name, about, price}: IOfferCard) => {
 	return (
 		<div className="offer-card">
 			<div className="offer-card__wrapper">
@@ -13,14 +19,14 @@ const OfferCard = () => {
 						height="100px"
 					/>
 				</div>
-				<span className="offer-card__title">Квас ананасовый</span>
+				<span className="offer-card__title">{name}</span>
 
 				<div className="offer-card__add-block">
 					<span className="offer-card__subtitle">Добавить</span>
 					<button className="offer-card__btn">+</button>
 				</div>
 
-                <div className="offer-card__price">1640 ₽</div>
+                <div className="offer-card__price">{price} ₽</div>
 			</div>
 		</div>
 	);
