@@ -7,7 +7,6 @@ interface Iinput {
 	regex?: any;
 }
 
-
 const Input = (
 	{
 	placeholder,
@@ -17,29 +16,32 @@ const Input = (
 ) => {
 
 	const [value, setValue] = useState("");
-	const [isValid, setIsValid] = useState('');
+	const [classValid, setClassValid] = useState('');
 
 	const fooValidate = (value: string) => {
-		let reg = regex.test(value);
+		let isValid = regex.test(value);
 		setValue(value);
 
-		if (reg) {
-			setIsValid('valid');
+		if (isValid) {
+			setClassValid("valid");
 		} else {
-			setIsValid('invalid')
+			setClassValid("invalid");
 		}
 	};
 
 	return (
 		<input
-			type='text'
-			className={`input-contacts__input input ${isValid}`}
+			type="text"
+			className={`input-contacts__input input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
 			required={required}
 			value={value}
 			onChange={(e) => {
 				fooValidate(e.target.value);
+				if (name === 'userPhone') {
+
+				}
 			}}
 		/>
 	);
