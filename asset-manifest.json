@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/foodberry/static/css/main.43b436a6.css",
-    "main.js": "/foodberry/static/js/main.b60aade3.js",
+    "main.js": "/foodberry/static/js/main.e2c876d3.js",
     "static/media/yagnonek.jpg": "/foodberry/static/media/yagnonek.36c225eef67e05cf156f.jpg",
     "static/media/Ubuntu-Light.ttf": "/foodberry/static/media/Ubuntu-Light.0dd2d5986e2731a16ee7.ttf",
     "static/media/Ubuntu-LightItalic.ttf": "/foodberry/static/media/Ubuntu-LightItalic.643c0a5c4ac0440c45e5.ttf",
@@ -15,10 +15,10 @@
     "static/media/checkbox.svg": "/foodberry/static/media/checkbox.9133d4cae3d98d83eb32.svg",
     "index.html": "/foodberry/index.html",
     "main.43b436a6.css.map": "/foodberry/static/css/main.43b436a6.css.map",
-    "main.b60aade3.js.map": "/foodberry/static/js/main.b60aade3.js.map"
+    "main.e2c876d3.js.map": "/foodberry/static/js/main.e2c876d3.js.map"
   },
   "entrypoints": [
     "static/css/main.43b436a6.css",
-    "static/js/main.b60aade3.js"
+    "static/js/main.e2c876d3.js"
   ]
 }
