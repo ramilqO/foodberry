@@ -1,15 +1,19 @@
 @import "../../../globalStyles/variables.scss";
 
 .cart-page {
-	margin: 0 auto;
 	padding: 100px 0 90px 0;
+	min-width: 100%;
+	background: $cartPageBackground;
 
-	&___wrapper {
+	&__wrapper {
 		display: block;
+		max-width: 1096px;
+
+		margin: 0 auto;
 	}
 }
 
-.nav-path {
+.orders-amount {
 	margin: 0 auto;
 	margin-bottom: 70px;
 	margin-top: 34px;
@@ -20,6 +24,7 @@
 		font-size: 32px;
 		line-height: 39px;
 		text-transform: uppercase;
+		color: $primaryText;
 	}
 
 	&__wrapper {
@@ -40,6 +45,8 @@
 	text-decoration: none;
 
 	margin-bottom: 20px;
+
+	color: $primaryText;
 }
 
 .line {
@@ -72,6 +79,7 @@
 	&__wrapper {
 		height: 234px;
 		width: 1096px;
+		margin: 0 auto;
 
 		background: $offerCardBackground;
 		color: $primaryText;
@@ -80,5 +88,104 @@
 		overflow: hidden;
 
 		display: flex;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 30px;
+
+		color: $primaryText;
+	}
+
+	&__divider {
+		border: 0;
+
+		height: 1px;
+		width: 100%;
+
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	margin-bottom: 30px;
+}
+
+.place-order {
+	display: flex;
+	justify-content: center;
+
+	width: 763px;
+	height: 105px;
+
+	border-radius: 10px;
+
+	margin: 0 auto;
+	margin-top: 50px;
+
+	color: $primaryText;
+	background: $offerCardBackground;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		padding: 20px 30px 10px 40px;
+	}
+
+	&__price-total {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 14px;
+
+		color: #c6ced1;
+	}
+
+	&__price {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 21px;
+
+		color: $primaryText;
+	}
+
+	&__subtitle {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
+
+		color: $primaryText;
+	}
+
+	&__subtitle-sm {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	&__place-btn {
+		width: 209px;
+		height: 50px;
+
+		color: $primaryText;
+		font-weight: 600;
+		background: $buttonColor;
+
+		border: 0;
+		border-radius: 10px;
+
+		cursor: pointer;
+
+		&:hover {
+			background: #618c67;
+		}
+	}
+}
+
+@media screen and (min-width: 320px) {
+	.cart-page {
+		overflow: hidden;
 	}
 }

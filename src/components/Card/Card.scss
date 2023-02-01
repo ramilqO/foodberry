@@ -2,7 +2,7 @@
 
 .card {
 	border-radius: 10px;
-	width: 325px;
+	width: 320px;
 	height: 400px;
 
 	background: $cardBackground;
@@ -99,5 +99,11 @@
 		&:hover {
 			background: linear-gradient(114.93deg, #597e5f 5.11%, #5d8863 94%);
 		}
+	}
+}
+
+@media screen and (max-width: $phone-md) {
+	.card {
+		width: 300px;
 	}
 }

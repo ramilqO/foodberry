@@ -4,6 +4,8 @@
 	width: 274px;
 	height: 100%;
 
+	border-right: 1px solid $primaryText;
+
 	&__wrapper {
 		padding: 20px 35px 0;
 		text-align: center;
@@ -37,6 +39,22 @@
 
 		color: $offerCardSubtitleColor;
 
-        margin-right: 10px;
+		margin-right: 10px;
+	}
+
+	&__btn {
+		width: 27px;
+		height: 27px;
+		background: $buttonColor;
+		border: 0;
+		border-radius: 10px;
+		font-size: 20px;
+		color: $primaryText;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			background: #6f9a75;
+		}
 	}
 }
