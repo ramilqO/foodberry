@@ -7,6 +7,8 @@ import { validName, validPerson } from "./../../../functions/regex"
 
 import Input from "./Input";
 
+
+
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
 	const [isDelivery, setIsDelivery] = useState(false);
@@ -33,7 +35,9 @@ const CheckoutFormPage = () => {
 
 	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
 
-	let regexPhone = new RegExp(/[а-яА-ЯёЁa-zA-Z]*/gmi)
+	let regexPhone = new RegExp(
+		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
+	);
 
 	return (
 		<main className="main main-checkoutPage">
@@ -137,33 +141,26 @@ const CheckoutFormPage = () => {
 													Адрес доставки
 												</p>
 												<div className="input-adress">
-													<input
-														className="input-adress__input  input"
-			
+													<Input
+														name="street"
 														placeholder="Укажите улицу&#42;"
 														required
 													/>
-													<input
-														className="input-adress__input  input"
-			
+													<Input
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
 													/>
-													<input
-														className="input-adress__input  input"
-			
+													<Input
+														name="numberOfficeFlat"
 														placeholder="№ квартиры/офиса"
+														required
 													/>
-													<input
-														className="input-adress__input  input"
-			
+													<Input
 														name="entrance"
 														placeholder="Подъезд"
 													/>
-													<input
-														className="input-adress__input  input"
-			
+													<Input
 														name="floor"
 														placeholder="Этаж"
 													/>
@@ -303,11 +300,16 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
-
+{/*
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
 										} `}
+										placeholder="Укажите время"
+									/> */}
+
+									<Input
+										name="edd"
 										placeholder="Укажите время"
 									/>
 								</div>

@@ -3,7 +3,7 @@
 
 .intro {
 	min-height: 296px;
-	background-image: url('./../../../public/images/yagnonek.jpg');
+	background-image: url('../../images/yagnonek.jpg');
 	min-width: 100%;
 	background-position: right;
 	background-repeat: no-repeat;
@@ -76,7 +76,7 @@
 
 		&::after {
 			@include pseudo;
-			background-image: url("../../../public/images/decorIntro.png");
+			background-image: url("../../images/decorIntro.png");
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;

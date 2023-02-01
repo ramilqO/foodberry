@@ -518,7 +518,7 @@
 				width: 22px;
 				height: 22px;
 				border: 1px solid $primaryText;
-				background: url('../../../../public/images/checkbox.svg');
+				background: url('../../../images/checkbox.svg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: contain;
@@ -632,7 +632,7 @@
 	.input-contacts {
 		display: flex;
 
-		&__input {
+		.input {
 			flex-grow: 1;
 		}
 	}
@@ -659,7 +659,7 @@
 		grid-template-columns: repeat(3, minmax(100px, auto));
 		gap: 10px;
 
-		&__input{
+		.input{
 			&:first-child {
 				grid-column: 1/3;
 			}
