@@ -21,27 +21,29 @@ const Input = (
 	const fooValidate = (value: string) => {
 		let isValid = regex.test(value);
 		setValue(value);
+		console.log(value, isValid)
 
 		if (isValid) {
 			setClassValid("valid");
 		} else {
 			setClassValid("invalid");
 		}
+
+		if (value === '') {
+			setClassValid('')
+		}
 	};
 
 	return (
 		<input
 			type="text"
-			className={`input-contacts__input input ${classValid}`}
+			className={`input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
 			required={required}
 			value={value}
 			onChange={(e) => {
 				fooValidate(e.target.value);
-				if (name === 'userPhone') {
-
-				}
 			}}
 		/>
 	);

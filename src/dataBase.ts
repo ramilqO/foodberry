@@ -1,3 +1,24 @@
+import assortFishImage from "./images/allMenu/coldSnacks/assorted-fish.jpg";
+import eggplantRoulletsImage from "./images/allMenu/coldSnacks/eggplant-roulletes.webp";
+import assortCheeseImage from "./images/allMenu/coldSnacks/assorted-cheese.jpg";
+import meatDelicusiImage from "/images/allMenu/coldSnacks/meat-delicusi.jpg";
+import saloImage from "/images/allMenu/coldSnacks/salo-garlicGrenki.jpg";
+import brouslettImage from "/images/allMenu/coldSnacks/brouskett.jpg";
+import buritoImage from "/images/allMenu/coldSnacks/burito.jpeg";
+import assortVegetablesImage from "/images/allMenu/coldSnacks/assorted-vegetables.jpeg";
+
+
+import hachapuryImage from "/images/allMenu/hotSnacks/ajarsky-hachapuri.jpg";
+import chuduImage from "/images/allMenu/hotSnacks/chudu.jpg";
+import italianPizzaImage from "/images/allMenu/hotSnacks/italian-pizza.jpg";
+import homePizzaImage from "/images/allMenu/hotSnacks/home-pizza.jpg";
+import tomatHachapuryImage from "/images/allMenu/hotSnacks/tomat-hachapuri.jpg";
+import shpinatHachapuryImage from "/images/allMenu/hotSnacks/shpinat-hachapuri.jpeg";
+import threeCheesesImage from "/images/allMenu/hotSnacks/three-cheeses.jpg";
+import margaritaPizzaImage from "/images/allMenu/hotSnacks/margarita-pizza.jpg";
+
+
+
 export const food: {
 	menuTitle: string;
 	id: string;
@@ -14,56 +35,56 @@ export const food: {
 		id: "coldSnackes",
 		foods: [
 			{
-				img: "/images/allMenu/coldSnacks/assorted-fish.jpg",
+				img: assortFishImage,
 				name: "Ассорти из рыбы",
 				weight: "360",
 				about: "Слабосолёная сёмга, кета холодного копчения, слабосолёная скумбрия, рулетик из масляной рыбы, оливки, маслины.",
 				price: 1635,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/eggplant-roulletes.webp",
+				img: eggplantRoulletsImage,
 				name: "Рулетики из баклажанов",
 				weight: "250",
 				about: "Два варианта рулетиков из жареных баклажанов для истинных гурманов: с сыром креметте, базиликом и чесноком, и с пряной ореховой пастой. Блюдо украшено соусом песто, зёрнами граната и маслом из печёного перца.",
 				price: 360,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/assorted-cheese.jpg",
+				img: assortCheeseImage,
 				name: "Ассорти сыров",
 				weight: "210",
 				about: "Сыры Пармезан, Маасдам, Чечил, с грецким орехом, сырная палочка, сыр дорблю, виноград, курага, грецкий орех, крендельки сдобные.",
 				price: 745,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/meat-delicusi.jpg",
+				img: meatDelicusiImage,
 				name: "Мясные деликатесы",
 				weight: "500",
 				about: "Ростбиф из говядины в пряном маринаде, буженина печёная с дижонской горчицей, рулет из свинины с сыром дор блю, рулет из курицы и свинины с паприкой, баллотин с куриной печенью и фисташками, томаты черри, зелень.",
 				price: 1450,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/salo-garlicGrenki.jpg",
+				img: saloImage,
 				name: "Сало с чесночными гренками",
 				weight: "100",
 				about: "Ароматное копчёное и солёное сало собственного приготовления.",
 				price: 240,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/brouskett.jpg",
+				img: brouslettImage,
 				name: "Брускетта",
 				weight: "70",
 				about: "Традиционное центральноитальянское простонародное блюдо; в наше время - закуска-антипасто перед основными приёмами блюд.",
 				price: 100,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/burito.jpeg",
+				img: buritoImage,
 				name: "Буррито",
 				weight: "90",
 				about: "Мексиканское блюдо, состоящее из мягкой пшеничной лепёшки (тортильи), в которую завёрнута разнообразная начинка, к примеру, рубленое мясо, пережаренные бобы, рис, помидоры, авокадо или сыр.",
 				price: 150,
 			},
 			{
-				img: "/images/allMenu/coldSnacks/assorted-vegetables.jpeg",
+				img: assortVegetablesImage,
 				name: "Овощное ассорти",
 				weight: "370",
 				about: "Ассорти в составе которого только овощи натурального происхождения из Краснодара",
@@ -76,56 +97,56 @@ export const food: {
 		id: "hotSnackes",
 		foods: [
 			{
-				img: "/images/allMenu/hotSnacks/ajarsky-hachapuri.jpg",
+				img: hachapuryImage,
 				name: "Хачапури по–аджарски",
 				weight: "370",
 				about: "«Лодочка» из теста с сыром сулугуни и яйцом",
 				price: 570,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/chudu.jpg",
+				img: chuduImage,
 				name: "Чуду",
 				weight: "100",
 				about: "Блюдо народов Дагестана, входит в даргинскую, кумыкскую и другие национальные кухни.",
 				price: 275,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/italian-pizza.jpg",
+				img: italianPizzaImage,
 				name: "Пицца итальянская",
 				weight: "450",
 				about: "Классическая пицца по итальянскому рецепту",
 				price: 580,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/home-pizza.jpg",
+				img: homePizzaImage,
 				name: "Пицца домашняя",
 				weight: "480",
 				about: "Пицца, приготовленная по домашнему рецепту",
 				price: 550,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/tomat-hachapuri.jpg",
+				img: tomatHachapuryImage,
 				name: "Хачапури с томатом и базиликом",
 				weight: "400",
 				about: "Блюдо грузинской кухни, национальное мучное изделие, булка с начинкой из сыра.",
 				price: 500,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/shpinat-hachapuri.jpeg",
+				img: shpinatHachapuryImage,
 				name: "Хачапури со шпинатом",
 				weight: "",
 				about: "Блюдо грузинской кухни, национальное мучное изделие, булка с начинкой из сыра и шпината",
 				price: 470,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/three-cheeses.jpg",
+				img: threeCheesesImage,
 				name: "Пицца три сыра",
 				weight: "500",
 				about: "Пицца с моцареллой, пармезаном и камамбером.",
 				price: 500,
 			},
 			{
-				img: "/images/allMenu/hotSnacks/margarita-pizza.jpg",
+				img: margaritaPizzaImage,
 				name: "Пицца Маргарита",
 				weight: "520",
 				about: "Неаполитанская пицца, приготовленная из помидоров Сан-Марцано, сыра моцарелла, свежего базилика, соли и оливкового масла первого отжима.",
