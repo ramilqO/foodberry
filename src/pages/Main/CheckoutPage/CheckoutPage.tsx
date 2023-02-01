@@ -33,6 +33,7 @@ const CheckoutFormPage = () => {
 		setCountPerson(val);
 	};
 
+	let regexAny = new RegExp(/[!@$%^&*(),?":{}|<>]/g);
 	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
 
 	let regexPhone = new RegExp(
@@ -76,6 +77,8 @@ const CheckoutFormPage = () => {
 										name="userName"
 										regex={regexName}
 										required
+										mask={"39:99"}
+										maskPlaceholder="Имя&#42;"
 									/>
 									<Input
 										placeholder="Телефон&#42;"
@@ -145,24 +148,29 @@ const CheckoutFormPage = () => {
 														name="street"
 														placeholder="Укажите улицу&#42;"
 														required
+														regex={regexAny}
 													/>
 													<Input
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
+														regex={regexAny}
 													/>
 													<Input
 														name="numberOfficeFlat"
 														placeholder="№ квартиры/офиса"
 														required
+														regex={regexAny}
 													/>
 													<Input
 														name="entrance"
 														placeholder="Подъезд"
+														regex={regexAny}
 													/>
 													<Input
 														name="floor"
 														placeholder="Этаж"
+														regex={regexAny}
 													/>
 													<textarea
 														className="input-adress__input  input"
@@ -300,7 +308,7 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
-{/*
+									{/*
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
