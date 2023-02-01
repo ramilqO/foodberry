@@ -9,13 +9,13 @@ const CartPage = () => {
 	return (
 		<div className="cart-page">
 			<div className="cart-page__wrapper">
-				<div className="nav-path">
+				<div className="orders-amount">
 					<Link to="/" className="go-back">
-						к выбору блюда
+					&lt; к выбору блюда
 					</Link>
-					<div className="nav-path__wrapper">
+					<div className="orders-amount__wrapper">
 						<div className="line"></div>
-						<span className="nav-path__path">Корзина</span>
+						<span className="orders-amount__path">Корзина</span>
 						<span className="orders-counter">
 							(в корзине n товаров)
 						</span>
