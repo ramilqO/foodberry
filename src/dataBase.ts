@@ -1,21 +1,21 @@
 import assortFishImage from "./images/allMenu/coldSnacks/assorted-fish.jpg";
 import eggplantRoulletsImage from "./images/allMenu/coldSnacks/eggplant-roulletes.webp";
 import assortCheeseImage from "./images/allMenu/coldSnacks/assorted-cheese.jpg";
-import meatDelicusiImage from "/images/allMenu/coldSnacks/meat-delicusi.jpg";
-import saloImage from "/images/allMenu/coldSnacks/salo-garlicGrenki.jpg";
-import brouslettImage from "/images/allMenu/coldSnacks/brouskett.jpg";
-import buritoImage from "/images/allMenu/coldSnacks/burito.jpeg";
-import assortVegetablesImage from "/images/allMenu/coldSnacks/assorted-vegetables.jpeg";
+import meatDelicusiImage from "./images/allMenu/coldSnacks/meat-delicusi.jpg";
+import saloImage from "./images/allMenu/coldSnacks/salo-garlicGrenki.jpg";
+import brouslettImage from "./images/allMenu/coldSnacks/brouskett.jpg";
+import buritoImage from "./images/allMenu/coldSnacks/burito.jpeg";
+import assortVegetablesImage from "./images/allMenu/coldSnacks/assorted-vegetables.jpeg";
 
 
-import hachapuryImage from "/images/allMenu/hotSnacks/ajarsky-hachapuri.jpg";
-import chuduImage from "/images/allMenu/hotSnacks/chudu.jpg";
-import italianPizzaImage from "/images/allMenu/hotSnacks/italian-pizza.jpg";
-import homePizzaImage from "/images/allMenu/hotSnacks/home-pizza.jpg";
-import tomatHachapuryImage from "/images/allMenu/hotSnacks/tomat-hachapuri.jpg";
-import shpinatHachapuryImage from "/images/allMenu/hotSnacks/shpinat-hachapuri.jpeg";
-import threeCheesesImage from "/images/allMenu/hotSnacks/three-cheeses.jpg";
-import margaritaPizzaImage from "/images/allMenu/hotSnacks/margarita-pizza.jpg";
+import hachapuryImage from "./images/allMenu/hotSnacks/ajarsky-hachapuri.jpg";
+import chuduImage from "./images/allMenu/hotSnacks/chudu.jpg";
+import italianPizzaImage from "./images/allMenu/hotSnacks/italian-pizza.jpg";
+import homePizzaImage from "./images/allMenu/hotSnacks/home-pizza.jpg";
+import tomatHachapuryImage from "./images/allMenu/hotSnacks/tomat-hachapuri.jpg";
+import shpinatHachapuryImage from "./images/allMenu/hotSnacks/shpinat-hachapuri.jpeg";
+import threeCheesesImage from "./images/allMenu/hotSnacks/three-cheeses.jpg";
+import margaritaPizzaImage from "./images/allMenu/hotSnacks/margarita-pizza.jpg";
 
 
 
