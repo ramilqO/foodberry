@@ -1,15 +1,19 @@
 @import "../../../globalStyles/variables.scss";
 
 .cart-page {
-	margin: 0 auto;
 	padding: 100px 0 90px 0;
+	min-width: 100%;
+	background: $cartPageBackground;
 
-	&___wrapper {
+	&__wrapper {
 		display: block;
+		max-width: 1096px;
+
+		margin: 0 auto;
 	}
 }
 
-.nav-path {
+.orders-amount {
 	margin: 0 auto;
 	margin-bottom: 70px;
 	margin-top: 34px;
@@ -20,6 +24,7 @@
 		font-size: 32px;
 		line-height: 39px;
 		text-transform: uppercase;
+		color: $primaryText;
 	}
 
 	&__wrapper {
@@ -40,6 +45,8 @@
 	text-decoration: none;
 
 	margin-bottom: 20px;
+
+	color: $primaryText;
 }
 
 .line {
@@ -72,6 +79,7 @@
 	&__wrapper {
 		height: 234px;
 		width: 1096px;
+		margin: 0 auto;
 
 		background: $offerCardBackground;
 		color: $primaryText;
@@ -87,7 +95,7 @@
 		font-size: 25px;
 		line-height: 30px;
 
-		color: black;
+		color: $primaryText;
 	}
 
 	&__divider {

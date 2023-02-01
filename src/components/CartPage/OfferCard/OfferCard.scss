@@ -4,7 +4,7 @@
 	width: 274px;
 	height: 100%;
 
-	border: 1px solid #fff;
+	border-right: 1px solid $primaryText;
 
 	&__wrapper {
 		padding: 20px 35px 0;
@@ -45,7 +45,7 @@
 	&__btn {
 		width: 27px;
 		height: 27px;
-		background: #66906c;
+		background: $buttonColor;
 		border: 0;
 		border-radius: 10px;
 		font-size: 20px;
