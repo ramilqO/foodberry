@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/foodberry/static/css/main.43b436a6.css",
+    "main.js": "/foodberry/static/js/main.b60aade3.js",
+    "static/media/yagnonek.jpg": "/foodberry/static/media/yagnonek.36c225eef67e05cf156f.jpg",
+    "static/media/Ubuntu-Light.ttf": "/foodberry/static/media/Ubuntu-Light.0dd2d5986e2731a16ee7.ttf",
+    "static/media/Ubuntu-LightItalic.ttf": "/foodberry/static/media/Ubuntu-LightItalic.643c0a5c4ac0440c45e5.ttf",
+    "static/media/Ubuntu-Italic.ttf": "/foodberry/static/media/Ubuntu-Italic.fbb3310412795b02afc4.ttf",
+    "static/media/Ubuntu-MediumItalic.ttf": "/foodberry/static/media/Ubuntu-MediumItalic.d68d789a6be6e034d129.ttf",
+    "static/media/curiza.jpg": "/foodberry/static/media/curiza.19c39e77d9fa8b26b6a3.jpg",
+    "static/media/Ubuntu-Medium.ttf": "/foodberry/static/media/Ubuntu-Medium.e37c5546eb1a6efc4818.ttf",
+    "static/media/Ubuntu-BoldItalic.ttf": "/foodberry/static/media/Ubuntu-BoldItalic.6fe54aaa592aa54a8c88.ttf",
+    "static/media/Ubuntu-Bold.ttf": "/foodberry/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
+    "static/media/RussoOne-Regular.ttf": "/foodberry/static/media/RussoOne-Regular.b2f5b287ccb8fd446eae.ttf",
+    "static/media/checkbox.svg": "/foodberry/static/media/checkbox.9133d4cae3d98d83eb32.svg",
+    "index.html": "/foodberry/index.html",
+    "main.43b436a6.css.map": "/foodberry/static/css/main.43b436a6.css.map",
+    "main.b60aade3.js.map": "/foodberry/static/js/main.b60aade3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43b436a6.css",
+    "static/js/main.b60aade3.js"
+  ]
+}
