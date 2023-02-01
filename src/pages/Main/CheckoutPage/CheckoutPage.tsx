@@ -82,7 +82,6 @@ const CheckoutFormPage = () => {
 										name="userPhone"
 										required
 										regex={regexPhone}
-
 									/>
 								</div>
 							</div>
@@ -142,33 +141,26 @@ const CheckoutFormPage = () => {
 													Адрес доставки
 												</p>
 												<div className="input-adress">
-													<input
-														className="input-adress__input  input"
-
+													<Input
+														name="street"
 														placeholder="Укажите улицу&#42;"
 														required
 													/>
-													<input
-														className="input-adress__input  input"
-
+													<Input
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
 													/>
-													<input
-														className="input-adress__input  input"
-
+													<Input
+														name="numberOfficeFlat"
 														placeholder="№ квартиры/офиса"
+														required
 													/>
-													<input
-														className="input-adress__input  input"
-
+													<Input
 														name="entrance"
 														placeholder="Подъезд"
 													/>
-													<input
-														className="input-adress__input  input"
-
+													<Input
 														name="floor"
 														placeholder="Этаж"
 													/>
@@ -308,11 +300,16 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
-
+{/*
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
 										} `}
+										placeholder="Укажите время"
+									/> */}
+
+									<Input
+										name="edd"
 										placeholder="Укажите время"
 									/>
 								</div>
