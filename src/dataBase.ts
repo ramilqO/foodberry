@@ -18,6 +18,51 @@ import threeCheesesImage from "./images/allMenu/hotSnacks/three-cheeses.jpg";
 import margaritaPizzaImage from "./images/allMenu/hotSnacks/margarita-pizza.jpg";
 
 
+import ketaMeatImage from "./images/allMenu/meatDishes/keta-meat.jpg";
+import spicyKrilyshkiImage from "./images/allMenu/meatDishes/spicy-krilyshki.jpg"
+import assortedChikenImage from "./images/allMenu/meatDishes/assorted-chicken.jpg"
+import assortedChikenAndPigImage from "./images/allMenu/meatDishes/assorted-chicken-and-pig.jpeg"
+import chikenShashlykImage from "./images/allMenu/meatDishes/chicken-shashlyk.webp"
+import assortedChickenAndHorseImage from "./images/allMenu/meatDishes/assorted-chickend-and-horse.jpg"
+import meatPigNeckImage from "./images/allMenu/meatDishes/meat-pig-neck.jpg"
+import forelMeatImage from "./images/allMenu/meatDishes/forel-meat.jpg"
+
+
+import borshMyasnoyImage from "./images/allMenu/soups/borsh-myasnoy.jpg";
+import solynkaImage from "./images/allMenu/soups/solyanka.jpg"
+import harchoImage from "./images/allMenu/soups/harcho.jpg"
+import udonCKyriceyKrevetikamiImage from "./images/allMenu/soups/udon-c-kyricey-krevetikami.jpg"
+import ramenCKrevetikamiImage from "./images/allMenu/soups/ramen-c-krevetikami.jpg"
+import lagmanImage from "./images/allMenu/soups/lagman.jpg"
+import meksikanskiyChiliImage from "./images/allMenu/soups/meksikanskiy-chili.jpg"
+
+
+import steakRibayImage from "./images/allMenu/grill/stejk-ribay.jpg";
+import steakNewYorkImage from "./images/allMenu/grill/stejk-new-york.jpg"
+import steakChakRollImage from "./images/allMenu/grill/stejk-chak-roll.jpg"
+import steakMacheteImage from "./images/allMenu/grill/stejk-machete.jpg"
+import rebraImage from "./images/allMenu/grill/rebra.jpg"
+import baraninaGrillImage from "./images/allMenu/grill/baranina-grill.jpg"
+import govyadinaGrillImage from "./images/allMenu/grill/govyadina-grill.jpg"
+
+
+import morskoyEjImage from "./images/allMenu/fishDelicuos/morskoy-ej.jpg"
+import ugolnayaRubaImage from "./images/allMenu/fishDelicuos/ugolnaya-ruba.jpeg"
+import assortyMorskoePlatoImage from "./images/allMenu/fishDelicuos/assorty-morskoe-plato.jpg"
+import shushiKotletuImage from "./images/allMenu/fishDelicuos/shushi-kotletu.jpg"
+import assortyIzUstrizImage from "./images/allMenu/fishDelicuos/assorty-iz-ustriz.jpg"
+import filePaltysaImage from "./images/allMenu/fishDelicuos/file-paltysa.jpg"
+
+
+import seldereeyeviuFreshImage from "./images/allMenu/drinks/seldereeyeviu-fresh.jpg";
+import apelsinoviuFreshImage from "./images/allMenu/drinks/apelsinoviu-fresh.jpg"
+import greypfrutoviuFreshImage from "./images/allMenu/drinks/greypfrutoviu-fresh.jpg"
+import ananasoviuFreshImage from "./images/allMenu/drinks/ananasoviu-fresh.jpg"
+import limonniuFreshImage from "./images/allMenu/drinks/limonniu-fresh.jpeg"
+import mineralnayaVodaBaykalImage from "./images/allMenu/drinks/mineralnaya-voda-baykal.png"
+import mineralnayaVadaNarzanImage from "./images/allMenu/drinks/mineralnaya-voda-narzan.jpg"
+
+
 
 export const food: {
 	menuTitle: string;
@@ -159,56 +204,56 @@ export const food: {
 		id: "meatDelicious",
 		foods: [
 			{
-				img: "/images/allMenu/meatDishes/keta-meat.jpg",
+				img: ketaMeatImage,
 				name: "Стейк из кеты",
 				weight: "100",
 				about: "Рыбный стейк прожаренный на мангале",
 				price: 320,
 			},
 			{
-				img: "/images/allMenu/meatDishes/spicy-krilyshki.jpg",
+				img: spicyKrilyshkiImage,
 				name: "Крылышки острые",
 				weight: "100",
 				about: "Сочные куриные крылышки в фирменном маринаде из Индии",
 				price: 290,
 			},
 			{
-				img: "/images/allMenu/meatDishes/assorted-chicken.jpg",
+				img: assortedChikenImage,
 				name: "Ассорти из курицы",
 				weight: "800",
 				about: "Шашлык, из курицы, куриные крылышки, люля-кебаб, шашлык из куриного филе, наггетсы, картофель фри, специи.",
 				price: 1800,
 			},
 			{
-				img: "/images/allMenu/meatDishes/assorted-chicken-and-pig.jpeg",
+				img: assortedChikenAndPigImage,
 				name: "Ассорти из курицы и свинины",
 				weight: "1000",
 				about: "Шашлык из курицы, шашлык из свинины, шашлык из куриного филе, стейк из свинины, люля-кебаб из курицы, лаваш, лук.",
 				price: 2500,
 			},
 			{
-				img: "/images/allMenu/meatDishes/chicken-shashlyk.webp",
+				img: chikenShashlykImage,
 				name: "Шашлык из курицы по-баварски",
 				weight: "200",
 				about: "Шашлык из куриного филе в специях.",
 				price: 350,
 			},
 			{
-				img: "/images/allMenu/meatDishes/assorted-chickend-and-horse.jpg",
+				img: assortedChickenAndHorseImage,
 				name: "Ассорти из курицы и баранины",
 				weight: "1500",
 				about: 'Шашлык из баранины, шашлык из бараньей лопатки, шашлык "семечки", люля-кебаб из баранины, люля-кебаб из курицы, шашлык из курицы, шашлык из филе курицы.',
 				price: 3200,
 			},
 			{
-				img: "/images/allMenu/meatDishes/meat-pig-neck.jpg",
+				img: meatPigNeckImage,
 				name: "Стейк из свиной шеи",
 				weight: "150",
 				about: "Подаётся с гарниром из квашеной капусты, яблок, лука и мяты.",
 				price: 750,
 			},
 			{
-				img: "/images/allMenu/meatDishes/forel-meat.jpg",
+				img: forelMeatImage,
 				name: "Стейк из форели",
 				weight: "200",
 				about: "Аппетитный стейк из премиальной рыбы",
@@ -221,56 +266,56 @@ export const food: {
 		id: "soups",
 		foods: [
 			{
-				img: "/images/allMenu/soups/borsh-myasnoy.jpg",
+				img: borshMyasnoyImage,
 				name: "Борщ мясной ",
 				weight: "300",
 				about: "Украинский борщ, любимый всеми славянскими народами, редко назовут супом. Это особенное, ароматное блюдо зовут только по имени. Горячий, наваристый мясной борщ всегда пахнет домом, печкой и семейным уютом. Густой, красивый, сваренный в лучших традициях. Особый вкус борщу придает чесночная приправа, смягченная нежнейшей сливочной сметаной.",
 				price: 350,
 			},
 			{
-				img: "/images/allMenu/soups/solyanka.jpg",
+				img: solynkaImage,
 				name: "Солянка мясная",
 				weight: "300",
 				about: "Исконно русское блюдо обладает особым островатым привкусом с кислинкой и восхитительным ароматом. Солянка вобрала в себя все самое лучшее из национальных блюд: тут и обжаренное сочное мясо, и ароматные копченые колбаски, и хрустящие соленые огурчики и свежая капуста. Все это приготовлено по старинному рецепту и приправлено нежнейшей сметаной.",
 				price: 350,
 			},
 			{
-				img: "/images/allMenu/soups/harcho.jpg",
+				img: harchoImage,
 				name: "Харчо ",
 				weight: "300",
 				about: "Настоящий грузинский харчо прославился своей остротой и обилием ароматных пряностей. Мягкая волокнистая говядина, нежнейший рис и свежие сочные помидоры – основа правильного супа. Харчо, сваренный у нас в кафе по оригинальному рецепту получается густым, с мягким разваренным рисом, имеющим острый, необыкновенный кисловато-чесночный вкус, а яркая зелень делает подачу необычайно красивой. В нашем меню суп харчо отличается особым пряным вкусом и готовится по особой технологии.",
 				price: 350,
 			},
 			{
-				img: "/images/allMenu/soups/udon-c-kyricey-krevetikami.jpg",
+				img: udonCKyriceyKrevetikamiImage,
 				name: "Удон с курицей и креветками",
 				weight: "300",
 				about: "Суп с лапшой удон - отличный выбор для тех, кто следит за своей фигурой. Куриная грудка и креветки в его составе – это источник белка, который является главным «строителем» мышц. ",
 				price: 440,
 			},
 			{
-				img: "/images/allMenu/soups/ramen-c-krevetikami.jpg",
+				img: ramenCKrevetikamiImage,
 				name: "Рамен с креветками",
 				weight: "300",
 				about: "Традиционное азиатское блюдо с пшеничной лапшой и тигровыми креветками. На родине оно представляет собой недорогое блюдо быстрого питания, обладающее большой энергетической ценностью и насыщенным вкусом. ",
 				price: 404,
 			},
 			{
-				img: "/images/allMenu/soups/lagman.jpg",
+				img: lagmanImage,
 				name: "Лагман",
 				weight: "300",
 				about: "Лагман – происходит и крайне популярен в странах Центральной Азии. Это густое, изысканное и безумно вкусное блюдо первое блюдо. Существует много разновидностей лагмана, которые различны по особенностям приготовления и составу, но все вариации неизменно включает в себя специальную лапшу, мясо и овощи. ",
 				price: 404,
 			},
 			{
-				img: "/images/allMenu/soups/meksikanskiy-chili.jpg",
+				img: meksikanskiyChiliImage,
 				name: "Мексиканский чили",
 				weight: "300",
 				about: "",
 				price: 377,
 			},
 			{
-				img: "/images/allMenu/soups/harcho.jpg",
+				img: harchoImage,
 				name: "Харчо ",
 				weight: "300",
 				about: "Настоящий грузинский харчо прославился своей остротой и обилием ароматных пряностей. Мягкая волокнистая говядина, нежнейший рис и свежие сочные помидоры – основа правильного супа. Харчо, сваренный у нас в кафе по оригинальному рецепту получается густым, с мягким разваренным рисом, имеющим острый, необыкновенный кисловато-чесночный вкус, а яркая зелень делает подачу необычайно красивой. В нашем меню суп харчо отличается особым пряным вкусом и готовится по особой технологии.",
@@ -283,56 +328,56 @@ export const food: {
 		id: "grillMenu",
 		foods: [
 			{
-				img: "/images/allMenu/grill/stejk-ribay.jpg",
+				img: steakRibayImage,
 				name: "Стейк Рибай",
 				weight: "100/50/30",
 				about: "Стейк из толстого края мраморной говядины",
 				price: 220,
 			},
 			{
-				img: "/images/allMenu/grill/stejk-new-york.jpg",
+				img: steakNewYorkImage,
 				name: "Стейк Нью-Йорк",
 				weight: "170/50/30",
 				about: "Стейк из тонкого края мраморной говядины",
 				price: 312,
 			},
 			{
-				img: "/images/allMenu/grill/stejk-chak-roll.jpg",
+				img: steakChakRollImage,
 				name: "Стейк Чак Ролл",
 				weight: "100/20/30",
 				about: "Стейк из шейно-лопаточной части мраморной говядины",
 				price: 445,
 			},
 			{
-				img: "/images/allMenu/grill/stejk-machete.jpg",
+				img: steakMacheteImage,
 				name: "Стейк Мачете",
 				weight: "180/20/30",
 				about: "Тонкий удлиненный кусок мяса из диафрагмы быка",
 				price: 360,
 			},
 			{
-				img: "/images/allMenu/grill/rebra.jpg",
+				img: rebraImage,
 				name: "Ребра из мраморной говядины",
 				weight: "",
 				about: "запечённых по-Гренобольски",
 				price: 870,
 			},
 			{
-				img: "/images/allMenu/grill/baranina-grill.jpg",
+				img: baraninaGrillImage,
 				name: "Баранина гриль",
 				weight: "150/30",
 				about: "Мякоть баранины с маринованным луком ",
 				price: 509,
 			},
 			{
-				img: "/images/allMenu/grill/govyadina-grill.jpg",
+				img: govyadinaGrillImage,
 				name: "Говядина гриль",
 				weight: "160/30",
 				about: "Мякоть мраморной говядины с маринованным луком",
 				price: 520,
 			},
 			{
-				img: "/images/allMenu/grill/stejk-machete.jpg",
+				img: steakMacheteImage,
 				name: "Стейк Мачете",
 				weight: "180/20/30",
 				about: "Тонкий удлиненный кусок мяса из диафрагмы быка",
@@ -345,56 +390,56 @@ export const food: {
 		id: "fishDelicious",
 		foods: [
 			{
-				img: "/images/allMenu/fishDelicuos/morskoy-ej.jpg",
+				img: morskoyEjImage,
 				name: "Морские ежи с эспуме",
 				weight: "126",
 				about: "из манго и красной икрой.",
 				price: 970,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/ugolnaya-ruba.jpeg",
+				img: ugolnayaRubaImage,
 				name: "Угольная рыба",
 				weight: "300",
 				about: "с артишоками и вялеными томатами",
 				price: 1520,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/assorty-morskoe-plato.jpg",
+				img: assortyMorskoePlatoImage,
 				name: "Ассорти «Морское плато»",
 				weight: "1 000",
 				about: "Ассорти из королевских креветок, дальневосточного гребешка, фаланги камчатского краба, жаренного на гриле кальмара и мидий.",
 				price: 8400,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/shushi-kotletu.jpg",
+				img: shushiKotletuImage,
 				name: "Щучьи котлеты",
 				weight: "140",
 				about: "с картофельным пюре и красной икрой ",
 				price: 860,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/assorty-iz-ustriz.jpg",
+				img: assortyIzUstrizImage,
 				name: "Ассорти из устриц",
 				weight: "152",
 				about: "запечённых по-Гренобольски",
 				price: 1870,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/file-paltysa.jpg",
+				img: filePaltysaImage,
 				name: "Филе палтуса",
 				weight: "313",
 				about: 'с зелёной спаржей и "Голландским" соусом ',
 				price: 1509,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/ugolnaya-ruba.jpeg",
+				img: ugolnayaRubaImage,
 				name: "Угольная рыба",
 				weight: "310",
 				about: "с артишоками и вялеными томатами",
 				price: 1220,
 			},
 			{
-				img: "/images/allMenu/fishDelicuos/assorty-morskoe-plato.jpg",
+				img: assortyMorskoePlatoImage,
 				name: "Ассорти «Морское плато»",
 				weight: "1 000",
 				about: "Ассорти из королевских креветок, дальневосточного гребешка, фаланги камчатского краба, жаренного на гриле кальмара и мидий.",
@@ -407,56 +452,56 @@ export const food: {
 		id: "drinks",
 		foods: [
 			{
-				img: "/images/allMenu/drinks/seldereeyeviu-fresh.jpg",
+				img: seldereeyeviuFreshImage,
 				name: "Сельдереевый фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый.",
 				price: 190,
 			},
 			{
-				img: "/images/allMenu/drinks/apelsinoviu-fresh.jpg",
+				img: apelsinoviuFreshImage,
 				name: "Апельсиновый фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый",
 				price: 190,
 			},
 			{
-				img: "/images/allMenu/drinks/greypfrutoviu-fresh.jpg",
+				img: greypfrutoviuFreshImage,
 				name: "Грейпфрутовый фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый.",
 				price: 190,
 			},
 			{
-				img: "/images/allMenu/drinks/ananasoviu-fresh.jpg",
+				img: ananasoviuFreshImage,
 				name: "Ананасовый фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый.",
 				price: 380,
 			},
 			{
-				img: "/images/allMenu/drinks/limonniu-fresh.jpeg",
+				img: limonniuFreshImage,
 				name: "Лимонный фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый.",
 				price: 190,
 			},
 			{
-				img: "/images/allMenu/drinks/mineralnaya-voda-baykal.png",
+				img: mineralnayaVodaBaykalImage,
 				name: 'Мин. вода "Байкал"',
 				weight: "530",
 				about: "Газированная / Без газа",
 				price: 170,
 			},
 			{
-				img: "/images/allMenu/drinks/mineralnaya-voda-narzan.jpg",
+				img: mineralnayaVadaNarzanImage,
 				name: 'Мин. вода "Нарзан"',
 				weight: "500",
 				about: "Натуральная газация",
 				price: 150,
 			},
 			{
-				img: "/images/allMenu/drinks/seldereeyeviu-fresh.jpg",
+				img: seldereeyeviuFreshImage,
 				name: "Сельдереевый фреш",
 				weight: "250",
 				about: "сок натуральный свежевыжатый.",
