@@ -2,54 +2,51 @@ import { useState } from "react";
 import InputMask from "react-input-mask";
 
 interface Iinput {
-	placeholder: string;
+	type?: string;
 	name: string;
 	required?: boolean;
 	regex?: any;
 	mask?: any;
-	maskPlaceholder?: any;
+	placeholder?: string;
 }
 
 const Input = ({
-	placeholder,
+	type,
 	name,
 	required,
 	regex,
 	mask,
-	maskPlaceholder,
+	placeholder,
 }: Iinput) => {
-	const [value, setValue] = useState("");
+	const [values, setValues] = useState("");
 	const [classValid, setClassValid] = useState("");
 
 	const fooValidate = (value: string) => {
-		if (regex) {
-			let isValid = regex.test(value);
+		let isValid = regex.test(value);
 
-			setValue(value);
-			console.log(value, isValid, regex);
+		setValues(value);
+		console.log(value, isValid, regex);
 
-			if (isValid) {
-				setClassValid("valid");
-			} else {
-				setClassValid("invalid");
-			}
+		if (isValid) {
+			setClassValid("valid");
+		} else {
+			setClassValid("invalid");
+		}
 
-			if (value === "") {
-				setClassValid("");
-			}
+		if (value === "") {
+			setClassValid("");
 		}
 	};
 
 	return (
 		<InputMask
-			type="text"
+			type={!type ? 'text' :  type}
 			className={`input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
 			required={required}
 			mask={mask}
-			value={value}
-			maskPlaceholder={maskPlaceholder}
+			value={values}
 			onChange={(e) => {
 				fooValidate(e.target.value);
 			}}

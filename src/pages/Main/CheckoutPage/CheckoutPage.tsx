@@ -33,8 +33,9 @@ const CheckoutFormPage = () => {
 		setCountPerson(val);
 	};
 
-	let regexAny = new RegExp(/[!@$%^&*(),?":{}|<>]/g);
-	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
+	let regexAny = new RegExp(/^[а-яА-ЯёЁa-zA-Z0-9]*/i);
+	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/i);
+	let regexHouseNumber = new RegExp(/^[0-9]*$/i);
 
 	let regexPhone = new RegExp(
 		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
@@ -77,14 +78,14 @@ const CheckoutFormPage = () => {
 										name="userName"
 										regex={regexName}
 										required
-										mask={"39:99"}
-										maskPlaceholder="Имя&#42;"
 									/>
 									<Input
+										type="tel"
 										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
 										regex={regexPhone}
+										mask={"+7 (999) 999-99-99"}
 									/>
 								</div>
 							</div>
@@ -154,7 +155,7 @@ const CheckoutFormPage = () => {
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
-														regex={regexAny}
+														regex={regexHouseNumber}
 													/>
 													<Input
 														name="numberOfficeFlat"
