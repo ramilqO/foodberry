@@ -45,3 +45,9 @@ input.invalid,
 input.input.invalid{
 	border: 1px solid red;
 }
+
+input.input {
+	&:focus {
+		outline: 1px solid transparent;
+	}
+}
