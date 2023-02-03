@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
-import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState} from "react";
+import { ClockIcon } from "./../../icons/ClockIcon";
+import { useRef, useState } from "react";
 
-import { validName, validPerson } from "./../../../functions/regex"
+import notWorkImage from "../../images/notWork.png";
+
+import { validName, validPerson } from "./../../functions/regex"
 
 import Input from "./Input";
 
@@ -33,8 +35,9 @@ const CheckoutFormPage = () => {
 		setCountPerson(val);
 	};
 
-	let regexAny = new RegExp(/[!@$%^&*(),?":{}|<>]/g);
-	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
+	let regexAny = new RegExp(/^[а-яА-ЯёЁa-zA-Z0-9]*/i);
+	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/i);
+	let regexHouseNumber = new RegExp(/^[0-9]*$/i);
 
 	let regexPhone = new RegExp(
 		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
@@ -61,7 +64,7 @@ const CheckoutFormPage = () => {
 							</div>
 							<div className="not-work__image">
 								<img
-									src="../images/notWork.png"
+									src={notWorkImage}
 									alt="later working, not deliveries"
 								/>
 							</div>
@@ -77,14 +80,14 @@ const CheckoutFormPage = () => {
 										name="userName"
 										regex={regexName}
 										required
-										mask={"39:99"}
-										maskPlaceholder="Имя&#42;"
 									/>
 									<Input
+										type="tel"
 										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
 										regex={regexPhone}
+										mask={"+7 (999) 999-99-99"}
 									/>
 								</div>
 							</div>
@@ -154,7 +157,7 @@ const CheckoutFormPage = () => {
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
-														regex={regexAny}
+														regex={regexHouseNumber}
 													/>
 													<Input
 														name="numberOfficeFlat"
@@ -402,7 +405,9 @@ const CheckoutFormPage = () => {
 								</div>
 							</div>
 							<div className="checkoutForm__form-check">
-								<button>Оформить заказ</button>
+								<button className="checkoutForm__submit" type="submit">
+									Оформить заказ
+								</button>
 								<div className="policy-check">
 									<input
 										className="policy-check__input "

@@ -1,5 +1,5 @@
-@import "../../../globalStyles/variables.scss";
-@import "../../../globalStyles/mixins.scss";
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
 
 .promotions {
     background: $navBackground;
@@ -54,7 +54,7 @@
                 margin-top: 150px;
             }
         }
-    
+
         &__title {
             padding-top: 146px;
         }
