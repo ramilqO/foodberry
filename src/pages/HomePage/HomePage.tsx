@@ -1,8 +1,8 @@
 import "./HomePage.scss";
-import NavBar from "../../../components/NavBar/NavBar";
-import Intro from "../../../components/Intro/Intro";
-import Content from "../../../components/Content/Content";
-import Map from "../../../components/Map/Map";
+import NavBar from "../../components/NavBar/NavBar";
+import Intro from "../../components/Intro/Intro";
+import Content from "../../components/Content/Content";
+import Map from "../../components/Map/Map";
 
 import { useState } from "react";
 
