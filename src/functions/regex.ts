@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+export const regexAny = new RegExp(/^[а-яА-ЯёЁa-zA-Z0-9]*/i);
+export const regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/i);
+export const regexHouseNumber = new RegExp(/^[0-9]*$/i);
 
-// export const validPhone = new RegExp(
-// 	"/^(+7|[7,8] ?)(d{10}|((?d{3})? ?d{3}[-, ]?d{2}[-, ]?d{2}))$/gm"
-// );
-
-export const validName = new RegExp("/^[a-zA-Z ]+$/");
-
-export const validPerson = new RegExp("^[0-9]$");
+export const regexPhone = new RegExp(
+		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
+	);

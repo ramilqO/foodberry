@@ -8,6 +8,7 @@ interface Iinput {
 	regex?: any;
 	mask?: any;
 	placeholder?: string;
+	setDisabled?: (arg: boolean)=> void;
 }
 
 const Input = ({
@@ -16,7 +17,7 @@ const Input = ({
 	required,
 	regex,
 	mask,
-	placeholder,
+	placeholder
 }: Iinput) => {
 	const [values, setValues] = useState("");
 	const [classValid, setClassValid] = useState("");
@@ -31,6 +32,7 @@ const Input = ({
 			setClassValid("valid");
 		} else {
 			setClassValid("invalid");
+			// setDisabled?.(true);
 		}
 
 		if (value === "") {
@@ -40,7 +42,7 @@ const Input = ({
 
 	return (
 		<InputMask
-			type={!type ? 'text' :  type}
+			type={!type ? "text" : type}
 			className={`input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
