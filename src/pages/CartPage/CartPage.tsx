@@ -2,8 +2,8 @@ import "./CartPage.scss";
 
 import { Link } from "react-router-dom";
 
-import Order from "../../../components/CartPage/Order/Order";
-import OfferCard from "../../../components/CartPage/OfferCard/OfferCard";
+import Order from "../../components/CartPage/Order/Order";
+import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 
 const CartPage = () => {
 	return (
@@ -11,7 +11,7 @@ const CartPage = () => {
 			<div className="cart-page__wrapper">
 				<div className="orders-amount">
 					<Link to="/" className="go-back">
-					&lt; к выбору блюда
+						&lt; к выбору блюда
 					</Link>
 					<div className="orders-amount__wrapper">
 						<div className="line"></div>
@@ -35,14 +35,30 @@ const CartPage = () => {
 					</span>
 
 					<div className="dish-offers__wrapper">
-						<OfferCard name='Пицца пеперонни с колбасой' about="lorem ipsum dolor sit amet consectutur" price={1240}/>
-						<OfferCard name='Пицца пеперонни с колбасой' about="lorem ipsum dolor sit amet consectutur" price={1240}/>
-						<OfferCard name='Пицца пеперонни с колбасой' about="lorem ipsum dolor sit amet consectutur" price={1240}/>
-						<OfferCard name='Пицца пеперонни с колбасой' about="lorem ipsum dolor sit amet consectutur" price={1240}/>
+						<OfferCard
+							name="Пицца пеперонни с колбасой"
+							about="lorem ipsum dolor sit amet consectutur"
+							price={1240}
+						/>
+						<OfferCard
+							name="Пицца пеперонни с колбасой"
+							about="lorem ipsum dolor sit amet consectutur"
+							price={1240}
+						/>
+						<OfferCard
+							name="Пицца пеперонни с колбасой"
+							about="lorem ipsum dolor sit amet consectutur"
+							price={1240}
+						/>
+						<OfferCard
+							name="Пицца пеперонни с колбасой"
+							about="lorem ipsum dolor sit amet consectutur"
+							price={1240}
+						/>
 					</div>
 				</div>
 
-				<hr className="dish-offers__divider"/>
+				<hr className="dish-offers__divider" />
 
 				<div className="place-order">
 					<div className="place-order__wrapper">

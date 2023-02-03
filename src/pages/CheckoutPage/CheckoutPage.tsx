@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
-import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState} from "react";
+import { ClockIcon } from "./../../icons/ClockIcon";
+import { useRef, useState } from "react";
 
-import { validName, validPerson } from "./../../../functions/regex"
+import notWorkImage from "../../images/notWork.png";
+
+import { validName, validPerson } from "./../../functions/regex"
 
 import Input from "./Input";
 
@@ -62,7 +64,7 @@ const CheckoutFormPage = () => {
 							</div>
 							<div className="not-work__image">
 								<img
-									src="../images/notWork.png"
+									src={notWorkImage}
 									alt="later working, not deliveries"
 								/>
 							</div>
@@ -403,7 +405,9 @@ const CheckoutFormPage = () => {
 								</div>
 							</div>
 							<div className="checkoutForm__form-check">
-								<button>Оформить заказ</button>
+								<button className="checkoutForm__submit" type="submit">
+									Оформить заказ
+								</button>
 								<div className="policy-check">
 									<input
 										className="policy-check__input "
