@@ -12,6 +12,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PolicyPage from './pages/Policy/Policy';
 
+
 function App() {
 	return (
 		<div className="wrapper">
