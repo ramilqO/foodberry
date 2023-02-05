@@ -7,12 +7,6 @@ import { useState} from "react";
 import notWorkImage from "../../images/notWork.png";
 
 // functions
-import {
-	regexAny,
-	regexName,
-	regexHouseNumber,
-	regexPhone,
-} from "./../../functions/regex";
 
 // components
 import ContactInfo from "./ContactInfo";
