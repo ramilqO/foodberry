@@ -8,8 +8,6 @@ interface Iinput {
 	regex?: any;
 	mask?: any;
 	placeholder?: string;
-	setDisabled?: (arg: boolean)=> void;
-
 }
 
 const Input = ({
@@ -33,8 +31,6 @@ const Input = ({
 			setClassValid("valid");
 		} else {
 			setClassValid("invalid");
-			// setDisabled?.(true);
-
 		}
 
 		if (value === "") {
