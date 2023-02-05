@@ -13,9 +13,6 @@ import {
 } from "./../../functions/regex";
 
 import Input from "./Input";
-import { validName, validPerson } from "./../../functions/regex"
-
-import Input from "./Input";
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -30,30 +27,10 @@ const CheckoutFormPage = () => {
 
 	const [disabled, setDisabled] = useState(false)
 
-	// const [isValidation, setIsValidation] = useState(Boolean);
-	// const [valueInput, setValueInput] = useState(' ');
-
-
-	const [isValid, setIsValid] = useState(false);
-
-	const [isFocus, setIsFocus] = useState(false);
-	const [isBlur, setIsBlur] = useState(false);
-
-
 	const updateValue = (value: string): void => {
 		const val = Number(value);
 		setCountPerson(val);
 	};
-
-
-	let regexAny = new RegExp(/^[а-яА-ЯёЁa-zA-Z0-9]*/i);
-	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/i);
-	let regexHouseNumber = new RegExp(/^[0-9]*$/i);
-
-	let regexPhone = new RegExp(
-		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
-	);
-
 
 	return (
 		<main className="main main-checkoutPage">
@@ -82,10 +59,6 @@ const CheckoutFormPage = () => {
 							</div>
 						</div>
 
-						<form
-							className="checkoutForm__form"
-						>
-
 						<form className="checkoutForm__form">
 
 							<div className="checkoutForm__form-contacts">
@@ -98,7 +71,6 @@ const CheckoutFormPage = () => {
 										name="userName"
 										regex={regexName}
 										required
-
 										setDisabled={setDisabled}
 
 									/>
@@ -109,10 +81,7 @@ const CheckoutFormPage = () => {
 										required
 										regex={regexPhone}
 										mask={"+7 (999) 999-99-99"}
-
 										setDisabled={setDisabled}
-
-
 									/>
 								</div>
 							</div>
@@ -337,15 +306,6 @@ const CheckoutFormPage = () => {
 										</span>
 									</div>
 
-									{/*
-									<input
-										className={`input-enterTime input ${
-											isTimeDate ? "active" : ""
-										} `}
-										placeholder="Укажите время"
-									/> */}
-
-
 									<Input
 										name="edd"
 										placeholder="Укажите время"
@@ -378,7 +338,7 @@ const CheckoutFormPage = () => {
 													: setValuePerson(
 															(prev) =>
 																Number(prev) - 1
-													  );
+													 );
 												countPerson === 1
 													? setCountPerson(1)
 													: setCountPerson(
@@ -432,16 +392,11 @@ const CheckoutFormPage = () => {
 								</div>
 							</div>
 							<div className="checkoutForm__form-check">
-
-								<button
-									type="submit"
-									className="checkoutForm__submit"
-									disabled={disabled}
-
-									onSubmit={((e) => { console.log(e) })}
-								>
-
-								<button className="checkoutForm__submit" type="submit">
+									<button
+										className="checkoutForm__submit" type="submit"
+										disabled={disabled}
+										onSubmit={((e) => { console.log(e) })}
+									>
 
 									Оформить заказ
 								</button>
