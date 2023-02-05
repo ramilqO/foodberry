@@ -10,6 +10,11 @@
 	padding-top: 20px;
 	display: flex;
 	justify-content: space-between;
+	padding: 20px 55px 0 30px;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+
 
 	p:last-of-type {
 		font-weight: 400;
@@ -17,12 +22,21 @@
 
 	&__image {
 		width: 154px;
-		height: 154px;
+		height: 130px;
+    height: 154px;
 		margin-left: 20px;
 		margin-right: 20px;
 
 		img {
 			height: 100%;
+		}
+	}
+	&__text {
+		display: grid;
+		align-content: center;
+
+		.checkoutForm__subtitle {
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -168,6 +182,10 @@
 		&:hover {
 			opacity: 0.8;
 			transition: 0.3s;
+		}
+
+		&:disabled {
+			opacity: 0.2;
 		}
 	}
 }
