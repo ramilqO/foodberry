@@ -1,47 +1,56 @@
 import { useState } from "react";
+import InputMask from "react-input-mask";
 
 interface Iinput {
-	placeholder: string;
+	type?: string;
 	name: string;
 	required?: boolean;
 	regex?: any;
+	mask?: any;
+	placeholder?: string;
+	setDisabled?: (arg: boolean)=> void;
+
 }
 
-const Input = (
-	{
-	placeholder,
+const Input = ({
+	type,
 	name,
 	required,
-	regex} : Iinput
-) => {
-
-	const [value, setValue] = useState("");
-	const [classValid, setClassValid] = useState('');
+	regex,
+	mask,
+	placeholder,
+}: Iinput) => {
+	const [values, setValues] = useState("");
+	const [classValid, setClassValid] = useState("");
 
 	const fooValidate = (value: string) => {
 		let isValid = regex.test(value);
-		setValue(value);
-		console.log(value, isValid)
+
+		setValues(value);
+		console.log(value, isValid, regex);
 
 		if (isValid) {
 			setClassValid("valid");
 		} else {
 			setClassValid("invalid");
+			// setDisabled?.(true);
+
 		}
 
-		if (value === '') {
-			setClassValid('')
+		if (value === "") {
+			setClassValid("");
 		}
 	};
 
 	return (
-		<input
-			type="text"
+		<InputMask
+			type={!type ? "text" : type}
 			className={`input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
 			required={required}
-			value={value}
+			mask={mask}
+			value={values}
 			onChange={(e) => {
 				fooValidate(e.target.value);
 			}}

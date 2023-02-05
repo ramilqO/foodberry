@@ -1,7 +1,7 @@
 import "./Promotions.scss";
 import promotion from "./promotionsData";
 
-import PromotionCard from '../../../components/PromotionCard/PromotionCard';
+import PromotionCard from '../../components/PromotionCard/PromotionCard';
 
 const Promotions = () => {
     return (

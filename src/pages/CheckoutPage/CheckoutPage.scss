@@ -1,5 +1,5 @@
-@import "../../../globalStyles/variables";
-@import "../../../globalStyles/mixins.scss";
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins.scss";
 
 .main-checkoutPage {
 	background: $menuNavBarBackground;
@@ -10,6 +10,11 @@
 	padding-top: 20px;
 	display: flex;
 	justify-content: space-between;
+	padding: 20px 55px 0 30px;
+  height: 150px;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+
 
 	p:last-of-type {
 		font-weight: 400;
@@ -17,12 +22,21 @@
 
 	&__image {
 		width: 154px;
-		height: 154px;
+		height: 130px;
+    height: 154px;
 		margin-left: 20px;
 		margin-right: 20px;
 
 		img {
 			height: 100%;
+		}
+	}
+	&__text {
+		display: grid;
+		align-content: center;
+
+		.checkoutForm__subtitle {
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -158,6 +172,20 @@
 			&:hover {
 				opacity: 0.8;
 			}
+		}
+	}
+
+	&__submit {
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			opacity: 0.8;
+			transition: 0.3s;
+		}
+
+		&:disabled {
+			opacity: 0.2;
 		}
 	}
 }
@@ -503,6 +531,11 @@
 		margin-left: 0;
 		font-size: 13px;
 		min-width: 100%;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 
 	&__input {
@@ -513,12 +546,14 @@
 		min-height: 10px;
 
 		&:checked + label {
+
+
 			&::after {
 				@include pseudo;
 				width: 22px;
 				height: 22px;
 				border: 1px solid $primaryText;
-				background: url('../../../images/checkbox.svg');
+				background: url('../../images/checkbox.svg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: contain;
@@ -539,6 +574,11 @@
 				border-radius: 3px;
 				background: $primaryText;
 				background-color: $primaryText;
+				cursor: pointer;
+
+				&:hover {
+					opacity: 0.8;
+				}
 			}
 		}
 		&:disabled + label {
@@ -607,6 +647,8 @@
 	left: 10px;
 
 }
+
+
 
 // media phone-lg
 @media screen and (min-width: $phone-lg) {

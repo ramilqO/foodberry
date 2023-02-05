@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
-import { ClockIcon } from "./../../../icons/ClockIcon";
-import { useRef, useState} from "react";
+import { ClockIcon } from "./../../icons/ClockIcon";
+import { useRef, useState } from "react";
 
-import { validName, validPerson } from "./../../../functions/regex"
+import notWorkImage from "../../images/notWork.png";
+
+import {
+	regexAny,
+	regexName,
+	regexHouseNumber,
+	regexPhone,
+} from "./../../functions/regex";
 
 import Input from "./Input";
+import { validName, validPerson } from "./../../functions/regex"
 
-
+import Input from "./Input";
 
 const CheckoutFormPage = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -19,6 +27,9 @@ const CheckoutFormPage = () => {
 	const [countPerson, setCountPerson] = useState(1);
 	const [valuePerson, setValuePerson] = useState(1);
 
+
+	const [disabled, setDisabled] = useState(false)
+
 	// const [isValidation, setIsValidation] = useState(Boolean);
 	// const [valueInput, setValueInput] = useState(' ');
 
@@ -28,16 +39,21 @@ const CheckoutFormPage = () => {
 	const [isFocus, setIsFocus] = useState(false);
 	const [isBlur, setIsBlur] = useState(false);
 
+
 	const updateValue = (value: string): void => {
 		const val = Number(value);
 		setCountPerson(val);
 	};
 
-	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/gmi)
+
+	let regexAny = new RegExp(/^[а-яА-ЯёЁa-zA-Z0-9]*/i);
+	let regexName = new RegExp(/^[а-яА-ЯёЁa-zA-Z ]*$/i);
+	let regexHouseNumber = new RegExp(/^[0-9]*$/i);
 
 	let regexPhone = new RegExp(
 		/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/gm
 	);
+
 
 	return (
 		<main className="main main-checkoutPage">
@@ -60,12 +76,18 @@ const CheckoutFormPage = () => {
 							</div>
 							<div className="not-work__image">
 								<img
-									src="../images/notWork.png"
+									src={notWorkImage}
 									alt="later working, not deliveries"
 								/>
 							</div>
 						</div>
+
+						<form
+							className="checkoutForm__form"
+						>
+
 						<form className="checkoutForm__form">
+
 							<div className="checkoutForm__form-contacts">
 								<p className="base-text checkoutForm__subtitle">
 									1. Контактная информация
@@ -76,12 +98,21 @@ const CheckoutFormPage = () => {
 										name="userName"
 										regex={regexName}
 										required
+
+										setDisabled={setDisabled}
+
 									/>
 									<Input
+										type="tel"
 										placeholder="Телефон&#42;"
 										name="userPhone"
 										required
 										regex={regexPhone}
+										mask={"+7 (999) 999-99-99"}
+
+										setDisabled={setDisabled}
+
+
 									/>
 								</div>
 							</div>
@@ -145,24 +176,29 @@ const CheckoutFormPage = () => {
 														name="street"
 														placeholder="Укажите улицу&#42;"
 														required
+														regex={regexAny}
 													/>
 													<Input
 														name="numberHouse"
 														placeholder="Номер дома&#42;"
 														required
+														regex={regexHouseNumber}
 													/>
 													<Input
 														name="numberOfficeFlat"
 														placeholder="№ квартиры/офиса"
 														required
+														regex={regexAny}
 													/>
 													<Input
 														name="entrance"
 														placeholder="Подъезд"
+														regex={regexAny}
 													/>
 													<Input
 														name="floor"
 														placeholder="Этаж"
+														regex={regexAny}
 													/>
 													<textarea
 														className="input-adress__input  input"
@@ -300,13 +336,15 @@ const CheckoutFormPage = () => {
 											Ко времени
 										</span>
 									</div>
-{/*
+
+									{/*
 									<input
 										className={`input-enterTime input ${
 											isTimeDate ? "active" : ""
 										} `}
 										placeholder="Укажите время"
 									/> */}
+
 
 									<Input
 										name="edd"
@@ -394,7 +432,19 @@ const CheckoutFormPage = () => {
 								</div>
 							</div>
 							<div className="checkoutForm__form-check">
-								<button>Оформить заказ</button>
+
+								<button
+									type="submit"
+									className="checkoutForm__submit"
+									disabled={disabled}
+
+									onSubmit={((e) => { console.log(e) })}
+								>
+
+								<button className="checkoutForm__submit" type="submit">
+
+									Оформить заказ
+								</button>
 								<div className="policy-check">
 									<input
 										className="policy-check__input "

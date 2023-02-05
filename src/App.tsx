@@ -5,11 +5,12 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./layout/Header/Header";
 import Footer from "./layout/Footer/Footer";
 
-import HomePage from "./pages/Main/HomePage/HomePage";
-import CheckoutPage from "./pages/Main/CheckoutPage/CheckoutPage";
-import Promotions from "./pages/Main/Promotions/Promotions";
-import CartPage from "./pages/Main/CartPage/CartPage";
+import HomePage from "./pages/HomePage/HomePage";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import Promotions from "./pages/Promotions/Promotions";
+import CartPage from "./pages/CartPage/CartPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import PolicyPage from './pages/Policy/Policy';
 
 
 function App() {
@@ -20,11 +21,12 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/checkout" element={<CheckoutPage />} />
 				<Route path="/promotions" element={<Promotions />} />
-				<Route path="/cart" element={<CartPage />} /> 
+				<Route path="/cart" element={<CartPage />} />
+				<Route path="/checkout/policy" element={<PolicyPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
-		</div >
+		</div>
 	);
 }
 

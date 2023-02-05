@@ -1,0 +1,51 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins.scss";
+
+.container.PolicyPage {
+	max-width: 1440px;
+	padding: 0 10px;
+	margin: 0 auto;
+
+	@media screen and (min-width: 1024px) {
+		padding: 0 20px;
+	}
+}
+
+.PolicyPage-section {
+	padding-top: 200px;
+	padding-bottom: 50px;
+
+	@media screen and (min-width: 1024px) {
+		padding-top: 150px;
+		padding-bottom: 100px;
+	}
+
+
+}
+
+.PolicyPage-title {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	margin-bottom: 20px;
+}
+
+
+.PolicyPage-text {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	font-size: 12px;
+	padding-left: 20px;
+
+	@media screen and (min-width: 1024px) {
+		font-size: 16px;
+	}
+
+	ul {
+		list-style-type: none;
+		margin-bottom: 20px;
+
+		li {
+			margin-bottom: 10px;
+		}
+	}
+}
