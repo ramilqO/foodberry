@@ -1,13 +1,16 @@
 import { useState } from "react";
 
+// styles
+import "./DeliverySelf.scss"
+
 const DeliverySelf = () => {
 
 	const [isSelectRestraunt, setIsSelectRestraunt] = useState(false);
 
 	return (
 
-		<div className={"tab-adress "}>
-			<p className="base-text checkoutForm__subtitle">
+		<div className={"tab-adress DeliverySelf"}>
+			<p className="base-text DeliverySelf__subtitle">
 				Выберите ресторан
 			</p>
 			<div

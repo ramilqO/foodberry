@@ -2,18 +2,22 @@
 import {
 	regexName,
 	regexPhone,
-} from "./../../functions/regex";
+} from "../../../../functions/regex";
 
 // components
-import Input from "./Input";
+import Input from "../../components/Input/Input";
+
+// styles
+
+import "./ContactInfo.scss"
 
 const ContactInfo = () => {
 	return (
-		<div className="checkoutForm__form-contacts">
-			<p className="base-text checkoutForm__subtitle">
+		<div className="ContactsInfo">
+			<p className="base-text ContactsInfo__subtitle">
 				1. Контактная информация
 			</p>
-			<div className="input-contacts">
+			<div className="ContactsInfo__inputs">
 				<Input
 					placeholder="Имя&#42;"
 					name="userName"

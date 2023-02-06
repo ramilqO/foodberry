@@ -1,7 +1,10 @@
 import { useState } from "react";
 
 // components
-import Input from "./Input";
+import Input from "../Input/Input";
+
+// styles
+import "./Time.scss"
 
 const Time = () => {
 
@@ -15,8 +18,8 @@ const Time = () => {
 	};
 
 	return (
-		<div className="checkoutForm__form-deliveryTime">
-			<p className="base-text  checkoutForm__subtitle">
+		<div className="Time">
+			<p className="base-text  Time__subtitle">
 				4. Когда доставить
 			</p>
 			<div className="delivery-time">
@@ -94,7 +97,7 @@ const Time = () => {
 					</button>
 				</div>
 			</div>
-			<p className="base-text checkoutForm__subtitle">
+			<p className="base-text Time__subtitle">
 				Хотите мы позвоним?
 			</p>
 			<div className="radio-wrapper">

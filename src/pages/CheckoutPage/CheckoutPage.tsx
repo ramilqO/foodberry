@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
+import "./MediaQueries.scss";
 
-import { useState} from "react";
+import { useState } from "react";
 
 // images
 import notWorkImage from "../../images/notWork.png";
@@ -9,10 +10,10 @@ import notWorkImage from "../../images/notWork.png";
 // functions
 
 // components
-import ContactInfo from "./ContactInfo";
-import Delivery from "./Delivery";
-import Pay from "./Pay";
-import Time from "./Time";
+import ContactInfo from "./components/ContactInfo/ContactInfo";
+import Delivery from "./components/Delivery/Delivery";
+import Pay from "./components/Pay/Pay";
+import Time from "./components/Time/Time";
 
 const CheckoutFormPage = () => {
 
@@ -50,7 +51,7 @@ const CheckoutFormPage = () => {
 							<ContactInfo />
 							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery} />
 							<Pay />
-							<Time/>
+							<Time />
 
 							<div className="checkoutForm__form-check">
 								<button
