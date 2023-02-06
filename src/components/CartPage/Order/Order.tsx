@@ -11,26 +11,30 @@ const Order = () => {
 						alt="something  wrong"
 					/>
 
-					<div className="main-text">
-						<div className="main-text__title">
-							ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ
+					<div className="order-block__container-mobile">
+						<div className="main-text">
+							<div className="main-text__title">
+								ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ
+							</div>
+							<div className="main-text__subtitle">
+								Кальмары, мидии, креветки, сыр маасдам, красный
+								лук, микс оливок, базилик, соус песто
+							</div>
 						</div>
-						<div className="main-text__subtitle">
-							Кальмары, мидии, креветки, сыр маасдам, красный лук,
-							микс оливок, базилик, соус песто
+
+						<div className="order-block__container-adaptive">
+							<div className="order-block__counter-block">
+								<button className="order-block__btn">-</button>
+								<span className="order-block__counter">1</span>
+								<button className="order-block__btn">+</button>
+							</div>
+
+							<div className="order-block__price">1640 ₽</div>
+
+							<button className="order-block__btn">╳</button>
 						</div>
 					</div>
 				</div>
-
-				<div className="order-block__counter-block">
-					<button className="order-block__btn">-</button>
-					<span className="order-block__counter">1</span>
-					<button className="order-block__btn">+</button>
-				</div>
-
-				<div className="order-block__price">1640 ₽</div>
-
-				<button className="order-block__btn">╳</button>
 			</div>
 		</div>
 	);

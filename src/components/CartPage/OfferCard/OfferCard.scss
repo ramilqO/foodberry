@@ -1,60 +1,72 @@
 @import "../../../globalStyles/variables.scss";
 
-.offer-card {
-	width: 274px;
-	height: 100%;
+@media screen and (min-width: $phone-sm) {
+	.offer-card {
+		background: $orderBackground;
+		padding: 20px 10px;
+		border-bottom: 1px solid grey;
 
-	border-right: 1px solid $primaryText;
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-	&__wrapper {
-		padding: 20px 35px 0;
-		text-align: center;
+		&__image {
+			border-radius: 10px;
+			width: 111px;
+			height: 82px;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+
+			color: $primaryText;
+		}
+
+		&__subtitle {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 14px;
+
+			color: #c6ced1;
+		}
+
+		&__main-text {
+			display: block;
+			text-align: left;
+			margin-left: 10px;
+		}
+
+		&__add-block {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 140px;
+		}
 	}
+}
 
-	&__image-block {
-		overflow: hidden;
-		margin-bottom: 10px;
+@media screen and (min-width: $phone-md) {
+	.offer-card {
+		padding: 20px;
 	}
+}
 
-	&__image {
-		border-radius: 10px;
-	}
+@media screen and (min-width: $tablet) {
+	.offer-card {
+		&__wrapper {
+			justify-content: left;
+		}
 
-	&__title {
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 17px;
+		&__title {
+			font-size: 20px;
+		}
 
-		margin-bottom: 10px;
-	}
-
-	&__add-block {
-		margin: 10px 0 10px 0;
-	}
-
-	&__subtitle {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 14px;
-
-		color: $offerCardSubtitleColor;
-
-		margin-right: 10px;
-	}
-
-	&__btn {
-		width: 27px;
-		height: 27px;
-		background: $buttonColor;
-		border: 0;
-		border-radius: 10px;
-		font-size: 20px;
-		color: $primaryText;
-		cursor: pointer;
-		transition: 0.3s;
-
-		&:hover {
-			background: #6f9a75;
+		&__add-block {
+			width: 200px;
 		}
 	}
 }

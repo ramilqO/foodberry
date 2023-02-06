@@ -1,95 +1,163 @@
 @import "../../../globalStyles/variables.scss";
 
-.order-block {
-	width: 100%;
-	height: 125px;
-	background: $orderBackground;
-	border-bottom: 1px solid $primaryText;
-
-	color: $primaryText;
-
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
+@media screen and (min-width: 320px) {
+	.order-block {
 		padding: 20px;
-	}
+		min-width: 100%;
 
-	&__about-wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		border-bottom: 1px solid grey;
 
-		width: 500px;
-	}
+		&__image {
+			width: 111px;
+			height: 82px;
+			border-radius: 10px;
+			margin-right: 10px;
+		}
 
-	&__image {
-		width: 120px;
-		height: 90px;
-	}
+		&__about-wrapper {
+			display: flex;
+			text-align: left;
+			align-items: center;
+		}
 
-	&__counter-block {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		&__container-mobile {
+			display: block;
+		}
 
-		width: 100px;
-	}
+		&__container-adaptive {
+			display: flex;
+			align-items: center;
+		}
 
-	&__btn {
-		width: 27px;
-		height: 27px;
+		&__counter-block,
+		&__price {
+			margin-right: 5px;
+		}
 
-		background: $buttonBackground;
-		color: $primaryText;
+		&__counter-block {
+			width: 70px;
 
-		border: 0;
-		border-radius: 10px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		&__counter,
+		&__price {
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 15px;
 
-		cursor: pointer;
-		transition: 0.3s;
+			color: $primaryText;
+		}
 
-		font-size: 15px;
-		font-weight: bold;
+		&__btn {
+			width: 24px;
+			height: 24px;
 
-		&:hover {
-			background: #729877;
+			border-radius: 50%;
+			border: 0;
+
+			background: $buttonBackground;
+			color: $primaryText;
+			font-weight: bold;
 		}
 	}
 
-	&__counter {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 26px;
+	.orders-counter {
+		color: $buttonBackground;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 14px;
+		text-transform: lowercase;
 	}
 
-	&__price {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 24px;
+	.main-text {
+		margin-bottom: 10px;
+
+		&__subtitle {
+			display: none;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+
+			color: $primaryText;
+
+			min-width: 100%;
+		}
 	}
 }
 
-.main-text {
-	text-align: left;
-	max-width: 350px;
+@media screen and (min-width: $tablet) {
+	.order-block {
+		&__about-wrapper {
+			width: 500px;
 
-	&__title {
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 22px;
+			display: flex;
+			justify-content: left;
+		}
+		&__counter-block {
+			width: 150px;
+		}
+
+		&__counter {
+			font-size: 23px;
+		}
+
+		&__container-adaptive {
+			font-size: 23px;
+		}
+
+		&__btn {
+			width: 36px;
+			height: 36px;
+			font-size: 20px;
+		}
+
+		&__price {
+			font-size: 23px;
+		}
 	}
 
-	&__subtitle {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 14px;
+	.main-text {
+		&__title {
+			font-size: 20px;
+		}
+	}
+}
 
-		color: $orderSubtitleColor;
+@media screen and (min-width: $desktop) {
+	.order-block {
+		&__container-mobile {
+			display: flex;
+		}
+
+		&__about-wrapper {
+			width: 100%;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 14px;
+
+			color: grey;
+		}
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-around;
+		}
+	}
+
+	&__container-adaptive {
+		width: 500px;
+	}
+
+	.main-text {
+		width: 265px;
+		&__subtitle {
+			display: block;
+		}
 	}
 }
