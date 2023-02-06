@@ -1,13 +1,16 @@
 // functions
-import { regexAny, regexHouseNumber } from "./../../functions/regex";
+import { regexAny, regexHouseNumber } from "../../../../functions/regex";
 
-import Input from "./Input";
+import Input from "../Input/Input";
+
+// styles
+import "./DeliveryForms.scss"
 
 const DeliveryForms = () => {
 
 	return (
-		<div className="tab-adress ">
-			<p className="base-text checkoutForm__subtitle">
+		<div className="tab-adress DeliveryForms">
+			<p className="base-text DeliveryForms__subtitle">
 				Адрес доставки
 			</p>
 			<div className="input-adress">

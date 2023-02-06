@@ -1,12 +1,15 @@
 import { useRef, useState } from "react";
 
+// styles
+import "./Pay.scss"
+
 const Pay = () => {
 	const windowSize = useRef([window.innerWidth]);
 	const [activeTabPay, setActiveTabPay] = useState(0);
 
 	return (
-		<div className="checkoutForm__form-pay">
-			<p className="base-text  checkoutForm__subtitle">
+		<div className="Pay">
+			<p className="base-text  Pay__subtitle">
 				3. Оплатить
 			</p>
 			<div className="toggle-pay">

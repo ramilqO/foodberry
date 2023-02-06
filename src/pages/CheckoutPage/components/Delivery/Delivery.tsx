@@ -1,9 +1,12 @@
 
 // components
-import { ClockIcon } from "./../../icons/ClockIcon";
+import { ClockIcon } from "../../../../icons/ClockIcon";
 
-import DeliverySelf from "./DeliverySelf";
-import DeliveryForms from "./DeliveryForms";
+import DeliverySelf from "../../components/DeliverySelf/DeliverySelf";
+import DeliveryForms from "../../components/DeliveryForms/DeliveryForms";
+
+// styles
+import "./Delivery.scss"
 
 interface IDelivery {
 	isDelivery: boolean;
@@ -14,8 +17,8 @@ const Delivery = ({ isDelivery, setIsDelivery }: IDelivery) => {
 
 	return (
 
-		<div className="checkoutForm__form-delivery">
-			<p className="base-text checkoutForm__subtitle">2. Доставка</p>
+		<div className="Delivery">
+			<p className="base-text Delivery__subtitle">2. Доставка</p>
 			<div className="delivery-time">
 				<div className="toggle-delivery">
 					<div className="delivery">
@@ -32,23 +35,22 @@ const Delivery = ({ isDelivery, setIsDelivery }: IDelivery) => {
 									}`}
 								onClick={() => setIsDelivery(false)}
 							>
-							Самовывоз
-						</span>
-						<div className={`time-clock ${!isDelivery ? "none" : ""}`}>
-							<ClockIcon />
-							<span className="base-text">
-								Доставим через 1 час 30 минут
+								Самовывоз
 							</span>
+							<div className={`time-clock ${!isDelivery ? "none" : ""}`}>
+								<ClockIcon />
+								<span className="base-text">
+									Доставим через 1 час 30 минут
+								</span>
+							</div>
 						</div>
+
+						{
+							!isDelivery ? <DeliverySelf /> : <DeliveryForms />
+						}
 					</div>
-
-
-					{
-						!isDelivery ? <DeliverySelf /> : <DeliveryForms />
-					}
 				</div>
 			</div>
-		</div>
 		</div >
 	);
 };
