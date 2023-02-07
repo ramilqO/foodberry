@@ -70,3 +70,39 @@
 		}
 	}
 }
+
+@media screen and (min-width: $desktop) {
+	.offer-card {
+		width: 273px;
+
+		&__wrapper {
+			display: block;
+			padding: 20px 0;
+		}
+
+		&__image {
+			width: 210px;
+			height: 123px;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__add-block {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.order-block__btn {
+		width: 23px;
+		height: 23px;
+
+		font-size: 10px;
+
+		cursor: pointer;
+		transition: 0.3s;
+	}
+}

@@ -156,4 +156,28 @@
 	.cart-page {
 		padding: 100px 200px;
 	}
+
+	.place-order {
+		&__wrapper {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		&__main-text {
+			text-align: left;
+		}
+	}
+
+	.dish-offers {
+		&__wrapper {
+			display: flex;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.cart-page {
+		padding: 100px 80px;
+		width: 100%;
+	}
 }
