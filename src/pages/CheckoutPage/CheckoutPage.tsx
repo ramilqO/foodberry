@@ -16,9 +16,8 @@ import Pay from "./components/Pay/Pay";
 import Time from "./components/Time/Time";
 
 const CheckoutFormPage = () => {
-
 	const [isDelivery, setIsDelivery] = useState<boolean>(false);
-	const [disabled, setDisabled] = useState(true)
+	const [disabled, setDisabled] = useState(true);
 
 	return (
 		<main className="main main-checkoutPage">
@@ -48,8 +47,8 @@ const CheckoutFormPage = () => {
 						</div>
 
 						<form className="checkoutForm__form">
-							<ContactInfo />
-							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery} />
+							<ContactInfo disabled={disabled} />
+							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery}  />
 							<Pay />
 							<Time />
 
