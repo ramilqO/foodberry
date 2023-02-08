@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
 import "./MediaQueries.scss";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // images
 import notWorkImage from "../../images/notWork.png";
@@ -19,6 +19,27 @@ const CheckoutFormPage = () => {
 	const [isDelivery, setIsDelivery] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState(true);
 
+	let time;
+
+	const timeToClose = () => {
+		let currentTime = new Date();
+		let hours = currentTime.getHours();
+		let minutes = currentTime.getMinutes();
+		let seconds = currentTime.getSeconds();
+
+		let timeClose = new Date('')
+
+		console.log(currentTime)
+		console.log(hours)
+		console.log(minutes)
+		console.log(seconds)
+	}
+
+
+	useEffect(() => {
+		timeToClose();
+	}, []);
+
 	return (
 		<main className="main main-checkoutPage">
 			<section className="checkoutForm">
@@ -28,8 +49,9 @@ const CheckoutFormPage = () => {
 					</Link>
 					<h2 className="checkoutForm__title">Оформление заказа</h2>
 					<div className="checkoutForm__wrapper">
-						<div className="not-work">
-							<div className="not-work__text">
+						{ time  ?
+							<div className="not-work">
+								<div className="not-work__text">
 								<p className="checkoutForm__subtitle">
 									Сегодня мы уже не доставляем.
 								</p>
@@ -43,11 +65,18 @@ const CheckoutFormPage = () => {
 									src={notWorkImage}
 									alt="later working, not deliveries"
 								/>
+								</div>
 							</div>
-						</div>
+							: <div></div>
+						}
 
-						<form className="checkoutForm__form">
-							<ContactInfo disabled={disabled} />
+						<form className="checkoutForm__form" onChange={(e: any) => {
+							if (e.target.checkValidity()) {
+								console.log();
+							}
+						}}>
+
+							<ContactInfo />
 							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery}  />
 							<Pay />
 							<Time />

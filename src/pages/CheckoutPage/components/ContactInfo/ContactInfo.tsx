@@ -11,7 +11,7 @@ import Input from "../../components/Input/Input";
 
 import "./ContactInfo.scss"
 
-const ContactInfo = (disabled: any) => {
+const ContactInfo = () => {
 	return (
 		<div className="ContactsInfo">
 			<p className="base-text ContactsInfo__subtitle">
@@ -21,16 +21,15 @@ const ContactInfo = (disabled: any) => {
 				<Input
 					placeholder="Имя&#42;"
 					name="userName"
-					regex={regexName}
+					pattern={regexName}
 					required
-					disabled={disabled}
 				/>
 				<Input
 					type="tel"
 					placeholder="Телефон&#42;"
 					name="userPhone"
 					required
-					regex={regexPhone}
+					pattern={regexPhone}
 					mask={"+7 (999) 999-99-99"}
 				/>
 			</div>

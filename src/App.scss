@@ -36,17 +36,16 @@ a {
 	}
 }
 
-input.valid,
-input.input.valid  {
-	border: 1px solid green;
-}
-
-input.invalid,
-input.input.invalid{
+input:focus:invalid{
 	border: 1px solid red;
 }
 
-input.input {
+input:focus:valid  {
+	border: 1px solid green;
+}
+
+
+input {
 	&:focus {
 		outline: 1px solid transparent;
 	}
