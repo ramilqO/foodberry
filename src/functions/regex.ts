@@ -1,5 +1,7 @@
-export const regexAny = '^[а-яА-ЯёЁa-zA-Z0-9]*';
+export const regexAny = '^[а-яА-ЯёЁa-zA-Z0-9]*'
 export const regexName = '^[а-яА-ЯёЁa-zA-Z ]*$'
 export const regexHouseNumber = '^[0-9]*$'
 
-export const regexPhone = '^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$'
+export const regexPhone = '^[а-яА-ЯёЁa-zA-Z0-9]*'
+export const regexTime = '^([01]?[0-9]|2[0-3]):[0-5][0-9]'
+export const regexPerson = '^[0-9]*$'

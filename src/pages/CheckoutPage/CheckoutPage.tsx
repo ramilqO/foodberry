@@ -14,31 +14,66 @@ import ContactInfo from "./components/ContactInfo/ContactInfo";
 import Delivery from "./components/Delivery/Delivery";
 import Pay from "./components/Pay/Pay";
 import Time from "./components/Time/Time";
+import Input from './components/Input/Input';
 
 const CheckoutFormPage = () => {
 	const [isDelivery, setIsDelivery] = useState<boolean>(false);
 	const [disabled, setDisabled] = useState(true);
+	const [isChecked, setIsChecked] = useState(false);
 
 	let time;
 
 	const timeToClose = () => {
-		let currentTime = new Date();
+		let currentTime: Date = new Date();
+		let year = currentTime.getFullYear().toString();
+		let month = currentTime.getMonth().toString();
+		let day = currentTime.getDay().toString();
 		let hours = currentTime.getHours();
 		let minutes = currentTime.getMinutes();
 		let seconds = currentTime.getSeconds();
 
-		let timeClose = new Date('')
+		let hoursClose = '20';
+		let minutesClose = '50';
+		let secondsClose = '00';
 
-		console.log(currentTime)
-		console.log(hours)
-		console.log(minutes)
-		console.log(seconds)
+		// let timeClose: Date = new Date(`${year}-0${month}-0${day}T${hoursClose}:${minutesClose}:${secondsClose }`);
+
+		let timeClose: Date = new Date(`${year}-0${month}-0${day}T${hoursClose}:${minutesClose}:${secondsClose }`);
+
+		let mili = currentTime.getTime();
+		let mili2 = timeClose.getTime();
+
+		let differentTime = Math.round((mili - mili2) / 1000 / 60 / 60 / 24 / 12);
+
+		// console.log(mili, 'milliseconds')
+		// console.log(mili2, 'milliseconds2')
+
+		// console.log(differentTime, 'differentTime')
+
+		// console.log(currentTime, 'currentTime')
+		// console.log(timeClose, 'timeClose')
+
+		// console.log(year, 'year')
+		// console.log(month, 'month')
+		// console.log(day, 'day')
+
+		// console.log(hours, 'hours')
+		// console.log(minutes, 'minutes')
+		// console.log(seconds, 'seconds')
+
+		// console.log(hoursClose, 'hoursClose')
+		// console.log(minutesClose, 'minutesClose')
+		// console.log(secondsClose, 'secondsClose')
 	}
-
 
 	useEffect(() => {
 		timeToClose();
 	}, []);
+
+
+	const handleChange = (event: any) => {
+		setIsChecked(event.target.checked);
+	}
 
 	return (
 		<main className="main main-checkoutPage">
@@ -71,13 +106,24 @@ const CheckoutFormPage = () => {
 						}
 
 						<form className="checkoutForm__form" onChange={(e: any) => {
-							if (e.target.checkValidity()) {
-								console.log();
+							console.log(e.currentTarget.checkValidity(), 'checkValidity')
+
+							if (e.currentTarget.checkValidity() === false && isChecked) {
+								e.preventDefault()
+								// console.log(false)
+								setDisabled(true)
+							} else {
+								setDisabled(false)
+								console.log(true)
+								// const formData = new FormData(e.target);
+								// const name = formData.get('userName');
+								// console.log(name)
+								console.log(e.currentTarget)
 							}
 						}}>
 
-							<ContactInfo />
-							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery}  />
+							<ContactInfo  />
+							<Delivery isDelivery={isDelivery} setIsDelivery={setIsDelivery} />
 							<Pay />
 							<Time />
 
@@ -98,6 +144,8 @@ const CheckoutFormPage = () => {
 										type="checkbox"
 										name="policy"
 										id="policy"
+										checked={isChecked}
+										onChange={()=> setIsChecked(!isChecked)}
 									/>
 									<label htmlFor="policy">
 										Я согласен на обработку моих перс.

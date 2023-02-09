@@ -29,8 +29,8 @@ const ContactInfo = () => {
 					placeholder="Телефон&#42;"
 					name="userPhone"
 					required
-					pattern={regexPhone}
-					mask={"+7 (999) 999-99-99"}
+					// mask={"+7 (999) 999-99-99"}
+					// pattern={regexPhone}
 				/>
 			</div>
 		</div>

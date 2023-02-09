@@ -6,6 +6,12 @@ import Input from "../Input/Input";
 // styles
 import "./Time.scss"
 
+// functions
+import {
+	regexTime,
+	regexPerson
+} from "../../../../functions/regex";
+
 const Time = () => {
 
 	const [isTimeDate, setIsTimeDate] = useState(false);
@@ -24,6 +30,7 @@ const Time = () => {
 			</p>
 			<div className="delivery-time">
 				<div className="toggle-checkTime">
+
 					<span
 						className={`toggle-checkTime__span ${!isTimeDate ? "active" : ""
 							}`}
@@ -39,11 +46,18 @@ const Time = () => {
 						Ко времени
 					</span>
 				</div>
+				{
+					isTimeDate ?
+						<Input
+							name="edd"
+							placeholder="Укажите время"
+							// mask="99:99"
+							// pattern={regexTime}
+						/>
+						:
+						<div></div>
+				}
 
-				<Input
-					name="edd"
-					placeholder="Укажите время"
-				/>
 			</div>
 
 			<div className="count-person">
@@ -58,6 +72,7 @@ const Time = () => {
 					placeholder="Кол-во персон"
 					id="personTitle"
 					value={valuePerson}
+					// pattern={regexTime}
 					onChange={(e) =>
 						updateValue(e.currentTarget.value)
 					}
@@ -107,6 +122,7 @@ const Time = () => {
 						type="radio"
 						name="callbackUs"
 						id="notCall"
+						defaultChecked={true}
 					/>
 					<label htmlFor="notCall">
 						Не перезванивать

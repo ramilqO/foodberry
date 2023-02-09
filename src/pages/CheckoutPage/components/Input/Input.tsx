@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputMask from "react-input-mask";
 
+
 interface Iinput {
 	type?: string;
 	name: string;
@@ -16,17 +17,14 @@ const Input = ({
 	required,
 	pattern,
 	mask,
-	placeholder,
+	placeholder
 }: Iinput) => {
 	const [values, setValues] = useState("");
 	const [classValid, setClassValid] = useState("");
 
-
 	// let isValid: any;
-
 	// const fooValidate = (value: string) => {
 	// 	isValid = regex.test(value);
-
 	// 	setValues(value);
 	// 	console.log(value, isValid, regex);
 
@@ -46,14 +44,15 @@ const Input = ({
 
 	return (
 		<InputMask
-			type={!type ? "text" : type}
+			// type={!type ? "text" : type}
+			type="text"
 			className={`input ${classValid}`}
 			placeholder={placeholder}
 			name={name}
 			required={required}
 			mask={mask}
 			value={values}
-			pattern={pattern}
+			pattern='^[0-9]*$'
 			onChange={(e) => {
 				setValues(e.target.value)
 			}}
