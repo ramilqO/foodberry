@@ -6,12 +6,6 @@ import Input from "../Input/Input";
 // styles
 import "./Time.scss"
 
-// functions
-import {
-	regexTime,
-	regexPerson
-} from "../../../../functions/regex";
-
 const Time = () => {
 
 	const [isTimeDate, setIsTimeDate] = useState(false);
@@ -19,11 +13,6 @@ const Time = () => {
 	const [valuePerson, setValuePerson] = useState(1);
 
 	const [isChecked, setIsChecked] = useState(true);
-
-	const updateValue = (value: string): void => {
-		const val = Number(value);
-		setCountPerson(val);
-	};
 
 	return (
 		<div className="Time">

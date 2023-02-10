@@ -20,16 +20,11 @@ const CheckoutFormPage = () => {
 	const [disabled, setDisabled] = useState(true);
 	const [isChecked, setIsChecked] = useState(false);
 
-	let time;
-
 
 		let currentTime: Date = new Date();
 		let year = currentTime.getFullYear();
 		let month = currentTime.getMonth();
 		let day = currentTime.getDate();
-		let hours = currentTime.getHours();
-		let minutes = currentTime.getMinutes();
-		let seconds = currentTime.getSeconds();
 
 		let hoursClose = 20;
 		let minutesClose = 50;
@@ -48,27 +43,8 @@ const CheckoutFormPage = () => {
 		let timeToClose1Milliseconds = timeClose1.getTime();
 
 		let differentTime = Math.round(currentTimeMilliseconds - timeToCloseMilliseconds);
+	
 		let differentTime1 = Math.round(currentTimeMilliseconds - timeToClose1Milliseconds);
-
-		console.log(currentTimeMilliseconds, 'currentTimeMilliseconds')
-		console.log(timeToCloseMilliseconds, 'timeToCloseMilliseconds')
-
-		console.log(differentTime, 'differentTime')
-
-		// console.log(currentTime, 'currentTime')
-		// console.log(timeClose, 'timeClose')
-
-		// console.log(year, 'year')
-		// console.log(month, 'month')
-		// console.log(day, 'day')
-
-		// console.log(hours, 'hours')
-		// console.log(minutes, 'minutes')
-		// console.log(seconds, 'seconds')
-
-		// console.log(hoursClose, 'hoursClose')
-		// console.log(minutesClose, 'minutesClose')
-		// console.log(secondsClose, 'secondsClose')
 
 	return (
 		<main className="main main-checkoutPage">
