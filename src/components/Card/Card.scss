@@ -100,6 +100,20 @@
 			background: linear-gradient(114.93deg, #597e5f 5.11%, #5d8863 94%);
 		}
 	}
+
+	&__cart-add-btn {
+		width: 62px;
+		height: 44px;
+		font-size: 20px;
+
+		color: $primaryText;
+		font-weight: bold;
+		transition: 0.3s;
+
+		&:hover {
+			background: linear-gradient(114.93deg, #83b68a 5.11%, #72a479 94%);
+		}
+	}
 }
 
 @media screen and (max-width: $phone-md) {

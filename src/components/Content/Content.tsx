@@ -24,7 +24,7 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 							className="main-content__content"
 							as="div"
 							threshold={1}
-							onChange={(inView, entry) =>
+							onChange={inView =>
 								inView && setActiveSection(item.id)
 							}
 						>
