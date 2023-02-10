@@ -22,32 +22,38 @@ const CheckoutFormPage = () => {
 
 	let time;
 
-	const timeToClose = () => {
+
 		let currentTime: Date = new Date();
-		let year = currentTime.getFullYear().toString();
-		let month = currentTime.getMonth().toString();
-		let day = currentTime.getDay().toString();
+		let year = currentTime.getFullYear();
+		let month = currentTime.getMonth();
+		let day = currentTime.getDate();
 		let hours = currentTime.getHours();
 		let minutes = currentTime.getMinutes();
 		let seconds = currentTime.getSeconds();
 
-		let hoursClose = '20';
-		let minutesClose = '50';
-		let secondsClose = '00';
+		let hoursClose = 20;
+		let minutesClose = 50;
+		let secondsClose = 0;
 
-		// let timeClose: Date = new Date(`${year}-0${month}-0${day}T${hoursClose}:${minutesClose}:${secondsClose }`);
+		let hoursClose1 = 8;
+		let minutesClose1 = 30;
+		let secondsClose1 = 0;
 
-		let timeClose: Date = new Date(`${year}-0${month}-0${day}T${hoursClose}:${minutesClose}:${secondsClose }`);
+		let timeClose: Date = new Date(year, month, day, hoursClose, minutesClose, secondsClose);
 
-		let mili = currentTime.getTime();
-		let mili2 = timeClose.getTime();
+		let timeClose1: Date = new Date(year, month, day, hoursClose1, minutesClose1, secondsClose1);
 
-		let differentTime = Math.round((mili - mili2) / 1000 / 60 / 60 / 24 / 12);
+		let currentTimeMilliseconds = currentTime.getTime();
+		let timeToCloseMilliseconds = timeClose.getTime();
+		let timeToClose1Milliseconds = timeClose1.getTime();
 
-		// console.log(mili, 'milliseconds')
-		// console.log(mili2, 'milliseconds2')
+		let differentTime = Math.round(currentTimeMilliseconds - timeToCloseMilliseconds);
+		let differentTime1 = Math.round(currentTimeMilliseconds - timeToClose1Milliseconds);
 
-		// console.log(differentTime, 'differentTime')
+		console.log(currentTimeMilliseconds, 'currentTimeMilliseconds')
+		console.log(timeToCloseMilliseconds, 'timeToCloseMilliseconds')
+
+		console.log(differentTime, 'differentTime')
 
 		// console.log(currentTime, 'currentTime')
 		// console.log(timeClose, 'timeClose')
@@ -63,11 +69,6 @@ const CheckoutFormPage = () => {
 		// console.log(hoursClose, 'hoursClose')
 		// console.log(minutesClose, 'minutesClose')
 		// console.log(secondsClose, 'secondsClose')
-	}
-
-	useEffect(() => {
-		timeToClose();
-	}, []);
 
 	return (
 		<main className="main main-checkoutPage">
@@ -78,7 +79,7 @@ const CheckoutFormPage = () => {
 					</Link>
 					<h2 className="checkoutForm__title">Оформление заказа</h2>
 					<div className="checkoutForm__wrapper">
-						{ time  ?
+						{differentTime > 0 || differentTime1 < 0  ?
 							<div className="not-work">
 								<div className="not-work__text">
 								<p className="checkoutForm__subtitle">

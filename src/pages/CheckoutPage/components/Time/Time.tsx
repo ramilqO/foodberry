@@ -18,6 +18,8 @@ const Time = () => {
 	const [countPerson, setCountPerson] = useState(1);
 	const [valuePerson, setValuePerson] = useState(1);
 
+	const [isChecked, setIsChecked] = useState(true);
+
 	const updateValue = (value: string): void => {
 		const val = Number(value);
 		setCountPerson(val);
@@ -116,7 +118,10 @@ const Time = () => {
 						type="radio"
 						name="callbackUs"
 						id="notCall"
-						checked={true}
+						checked={isChecked}
+						onChange={() =>
+							setIsChecked(!isChecked)
+						}
 					/>
 					<label htmlFor="notCall">
 						Не перезванивать
