@@ -14,7 +14,6 @@ import ContactInfo from "./components/ContactInfo/ContactInfo";
 import Delivery from "./components/Delivery/Delivery";
 import Pay from "./components/Pay/Pay";
 import Time from "./components/Time/Time";
-import Input from './components/Input/Input';
 
 const CheckoutFormPage = () => {
 	const [isDelivery, setIsDelivery] = useState<boolean>(false);
@@ -70,11 +69,6 @@ const CheckoutFormPage = () => {
 		timeToClose();
 	}, []);
 
-
-	const handleChange = (event: any) => {
-		setIsChecked(event.target.checked);
-	}
-
 	return (
 		<main className="main main-checkoutPage">
 			<section className="checkoutForm">
@@ -106,19 +100,15 @@ const CheckoutFormPage = () => {
 						}
 
 						<form className="checkoutForm__form" onChange={(e: any) => {
-							console.log(e.currentTarget.checkValidity(), 'checkValidity')
 
-							if (e.currentTarget.checkValidity() === false && isChecked) {
+
+							if (e.currentTarget.checkValidity() === false && isChecked === false) {
 								e.preventDefault()
-								// console.log(false)
 								setDisabled(true)
+								console.log(e.currentTarget.checkValidity(), 'checkValidity = false')
 							} else {
 								setDisabled(false)
-								console.log(true)
-								// const formData = new FormData(e.target);
-								// const name = formData.get('userName');
-								// console.log(name)
-								console.log(e.currentTarget)
+								console.log(e.currentTarget.checkValidity(), 'checkValidity = true')
 							}
 						}}>
 
@@ -145,7 +135,10 @@ const CheckoutFormPage = () => {
 										name="policy"
 										id="policy"
 										checked={isChecked}
-										onChange={()=> setIsChecked(!isChecked)}
+										onChange={() =>
+											setIsChecked(!isChecked)
+										}
+										required
 									/>
 									<label htmlFor="policy">
 										Я согласен на обработку моих перс.

@@ -1,7 +1,6 @@
 // functions
 import {
-	regexName,
-	regexPhone,
+	regexName
 } from "../../../../functions/regex";
 
 // components
@@ -23,14 +22,15 @@ const ContactInfo = () => {
 					name="userName"
 					pattern={regexName}
 					required
+					minLength={3}
 				/>
 				<Input
 					type="tel"
 					placeholder="Телефон&#42;"
 					name="userPhone"
 					required
-					// mask={"+7 (999) 999-99-99"}
-					// pattern={regexPhone}
+					mask={"+7 (999) 999-99-99"}
+					minLength={18}
 				/>
 			</div>
 		</div>

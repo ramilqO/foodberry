@@ -19,27 +19,29 @@ const DeliveryForms = () => {
 					placeholder="Укажите улицу&#42;"
 					required
 					pattern={regexAny}
+					minLength={3}
 				/>
 				<Input
 					name="numberHouse"
 					placeholder="Номер дома&#42;"
 					required
 					pattern={regexHouseNumber}
+					maxLength={3}
 				/>
 				<Input
 					name="numberOfficeFlat"
 					placeholder="№ квартиры/офиса"
-					pattern={regexAny}
+					pattern={regexHouseNumber}
 				/>
 				<Input
 					name="entrance"
 					placeholder="Подъезд"
-					pattern={regexAny}
+					pattern={regexHouseNumber}
 				/>
 				<Input
 					name="floor"
 					placeholder="Этаж"
-					pattern={regexAny}
+					pattern={regexHouseNumber}
 				/>
 				<textarea
 					className="input-adress__input  input"

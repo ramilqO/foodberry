@@ -48,12 +48,17 @@ const Time = () => {
 				</div>
 				{
 					isTimeDate ?
-						<Input
-							name="edd"
-							placeholder="Укажите время"
-							// mask="99:99"
-							// pattern={regexTime}
-						/>
+						<div className="inputTime">
+							<span>
+								Укажите время
+							</span>
+							<Input
+								name="edd"
+								type="time"
+								placeholder="Укажите время"
+							/>
+						</div>
+
 						:
 						<div></div>
 				}
@@ -62,21 +67,10 @@ const Time = () => {
 
 			<div className="count-person">
 				<label
-					className="personTitle"
 					htmlFor="personTitle"
 				>
 					Кол-во персон
 				</label>
-				<input
-					className="input"
-					placeholder="Кол-во персон"
-					id="personTitle"
-					value={valuePerson}
-					// pattern={regexTime}
-					onChange={(e) =>
-						updateValue(e.currentTarget.value)
-					}
-				/>
 				<div className="count-wrap">
 					<button
 						type="button"
@@ -122,7 +116,7 @@ const Time = () => {
 						type="radio"
 						name="callbackUs"
 						id="notCall"
-						defaultChecked={true}
+						checked={true}
 					/>
 					<label htmlFor="notCall">
 						Не перезванивать
