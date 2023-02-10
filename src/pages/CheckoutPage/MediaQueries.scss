@@ -103,6 +103,31 @@
 	.delivery-tabs {
 		min-width: 363px;
 	}
+	.policy-check {
+		display: flex;
+		align-items: center;
+		position: relative;
+		font-size: 13px;
+
+		input {
+
+			&:checked + label {
+				&::after {
+					top: -5px;
+				}
+			}
+			&:not(:checked) + label {
+				&::after {
+					top: -5px;
+				}
+			}
+		}
+	}
+	.Time {
+		.toggle-checkTime__span {
+			min-width: 160px;
+		}
+	}
 }
 
 @media screen and (min-width: $tablet) {
@@ -120,7 +145,7 @@
 	}
 
 	.count-person {
-		max-width: 80%;
+		max-width: 40%;
 	}
 
 	.checkoutForm__form-check {
@@ -148,5 +173,11 @@
 
 	.toggle-delivery {
 		margin-bottom: 0;
+	}
+
+	.Time {
+		.toggle-checkTime__span {
+			min-width: 160px;
+		}
 	}
 }

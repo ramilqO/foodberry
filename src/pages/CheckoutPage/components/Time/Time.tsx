@@ -12,10 +12,7 @@ const Time = () => {
 	const [countPerson, setCountPerson] = useState(1);
 	const [valuePerson, setValuePerson] = useState(1);
 
-	const updateValue = (value: string): void => {
-		const val = Number(value);
-		setCountPerson(val);
-	};
+	const [isChecked, setIsChecked] = useState(true);
 
 	return (
 		<div className="Time">
@@ -24,6 +21,7 @@ const Time = () => {
 			</p>
 			<div className="delivery-time">
 				<div className="toggle-checkTime">
+
 					<span
 						className={`toggle-checkTime__span ${!isTimeDate ? "active" : ""
 							}`}
@@ -39,29 +37,31 @@ const Time = () => {
 						Ко времени
 					</span>
 				</div>
+				{
+					isTimeDate ?
+						<div className="inputTime">
+							<span>
+								Укажите время
+							</span>
+							<Input
+								name="edd"
+								type="time"
+								placeholder="Укажите время"
+							/>
+						</div>
 
-				<Input
-					name="edd"
-					placeholder="Укажите время"
-				/>
+						:
+						<div></div>
+				}
+
 			</div>
 
 			<div className="count-person">
 				<label
-					className="personTitle"
 					htmlFor="personTitle"
 				>
 					Кол-во персон
 				</label>
-				<input
-					className="input"
-					placeholder="Кол-во персон"
-					id="personTitle"
-					value={valuePerson}
-					onChange={(e) =>
-						updateValue(e.currentTarget.value)
-					}
-				/>
 				<div className="count-wrap">
 					<button
 						type="button"
@@ -107,6 +107,10 @@ const Time = () => {
 						type="radio"
 						name="callbackUs"
 						id="notCall"
+						checked={isChecked}
+						onChange={() =>
+							setIsChecked(!isChecked)
+						}
 					/>
 					<label htmlFor="notCall">
 						Не перезванивать
