@@ -1,191 +1,183 @@
 @import "../../globalStyles/variables.scss";
 
-.cart-page {
-	padding: 100px 0 90px 0;
-	min-width: 100%;
-	background: $cartPageBackground;
+@media screen and (min-width: $phone-sm) {
+	.cart-page {
+		min-width: 100%;
+		background: $cartPageBackground;
+		padding: 200px 20px 50px;
 
-	&__wrapper {
-		display: block;
-		max-width: 1096px;
-
-		margin: 0 auto;
+		&__wrapper {
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
-}
 
-.orders-amount {
-	margin: 0 auto;
-	margin-bottom: 70px;
-	margin-top: 34px;
-	margin-left: 100px;
-
-	&__path {
+	.go-back {
+		text-decoration: none;
 		font-weight: 700;
-		font-size: 32px;
-		line-height: 39px;
-		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 19px;
+
 		color: $primaryText;
 	}
 
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		width: 350px;
-	}
-}
-
-.go-back {
-	display: block;
-
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 19px;
-	text-decoration: none;
-
-	margin-bottom: 20px;
-
-	color: $primaryText;
-}
-
-.line {
-	width: 4px;
-	height: 33px;
-	background: $scrollNavBar;
-}
-
-.orders {
-	height: auto;
-	width: 100%;
-	border: 0;
-	border-radius: 10px;
-
-	overflow: hidden;
-	// overflow-y: scroll;
-
-	margin-bottom: 40px;
-}
-
-.orders-counter {
-	font-weight: 500;
-	font-size: 15px;
-	line-height: 18px;
-	text-transform: lowercase;
-	color: #72a479;
-}
-
-.dish-offers {
-	&__wrapper {
-		height: 234px;
-		width: 1096px;
-		margin: 0 auto;
-
-		background: $offerCardBackground;
-		color: $primaryText;
-
+	.orders {
+		background: $orderBackground;
 		border-radius: 10px;
+
+		margin-bottom: 36px;
 		overflow: hidden;
-
-		display: flex;
 	}
 
-	&__title {
-		font-weight: 700;
-		font-size: 25px;
-		line-height: 30px;
+	.orders-amount {
+		margin: 0 auto;
+		text-align: left;
 
-		color: $primaryText;
+		&__path {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 30px;
+			text-transform: uppercase;
+			color: $primaryText;
+		}
+
+		&__wrapper {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			width: 250px;
+
+			overflow: hidden;
+		}
 	}
 
-	&__divider {
-		border: 0;
+	.dish-offers {
+		margin-bottom: 20px;
 
-		height: 1px;
-		width: 100%;
+		&__title {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 24px;
+			text-transform: uppercase;
 
-		background: rgba(255, 255, 255, 0.1);
+			color: $primaryText;
+			text-align: left;
+
+			display: flex;
+			justify-content: space-between;
+			width: 230px;
+		}
+
+		&__wrapper {
+			background: $offerCardBackground;
+			border-radius: 10px;
+
+			overflow: hidden;
+			margin-top: 35px;
+		}
+
+		&__divider {
+			display: none;
+		}
 	}
 
-	margin-bottom: 30px;
-}
-
-.place-order {
-	display: flex;
-	justify-content: center;
-
-	width: 763px;
-	height: 105px;
-
-	border-radius: 10px;
-
-	margin: 0 auto;
-	margin-top: 50px;
-
-	color: $primaryText;
-	background: $offerCardBackground;
-
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-
-		padding: 20px 30px 10px 40px;
+	.title-line {
+		width: 4px;
+		height: 30px;
+		background: $scrollNavBar;
 	}
 
-	&__price-total {
-		font-weight: 400;
-		font-size: 18px;
-		line-height: 14px;
-
-		color: #c6ced1;
+	.orders-amount {
+		&__wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 23px 0 32px;
+		}
 	}
 
-	&__price {
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 21px;
-
-		color: $primaryText;
-	}
-
-	&__subtitle {
-		font-weight: 500;
-		font-size: 12px;
-		line-height: 14px;
-		text-align: center;
-
-		color: $primaryText;
-	}
-
-	&__subtitle-sm {
-		font-weight: 400;
-		font-size: 12px;
-		line-height: 14px;
-	}
-
-	&__place-btn {
-		width: 209px;
-		height: 50px;
-
-		color: $primaryText;
-		font-weight: 600;
-		background: $buttonColor;
-
-		border: 0;
+	.place-order {
+		background: $orderBackground;
 		border-radius: 10px;
+		color: $primaryText;
 
-		cursor: pointer;
+		&__wrapper {
+			padding: 20px 20px 20px;
+		}
 
-		&:hover {
-			background: #618c67;
+		&__price-total {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 21px;
+		}
+
+		&__price {
+			font-weight: bold;
+			font-size: 22px;
+		}
+
+		&__subtitle {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 14px;
+			text-align: center;
+		}
+
+		&__subtitle-sm {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 14px;
+		}
+
+		&__place-btn {
+			width: 209px;
+			height: 51px;
+
+			border-radius: 10px;
+			border: 0;
+
+			color: $primaryText;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 17px;
+
+			background: $buttonBackground;
 		}
 	}
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: $phone) {
 	.cart-page {
-		overflow: hidden;
+		padding: 100px 80px;
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.cart-page {
+		padding: 100px 200px;
+	}
+
+	.place-order {
+		&__wrapper {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		&__main-text {
+			text-align: left;
+		}
+	}
+
+	.dish-offers {
+		&__wrapper {
+			display: flex;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.cart-page {
+		padding: 100px 80px;
+		width: 100%;
 	}
 }

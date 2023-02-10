@@ -13,8 +13,9 @@ const CartPage = () => {
 					<Link to="/" className="go-back">
 						&lt; к выбору блюда
 					</Link>
+					<br />
 					<div className="orders-amount__wrapper">
-						<div className="line"></div>
+						<span className="title-line"></span>
 						<span className="orders-amount__path">Корзина</span>
 						<span className="orders-counter">
 							(в корзине n товаров)
@@ -26,33 +27,30 @@ const CartPage = () => {
 					<div className="orders__wrapper">
 						<Order />
 						<Order />
+						<Order />
 					</div>
 				</div>
 
 				<div className="dish-offers">
-					<span className="dish-offers__title">
-						Добавить к заказу
-					</span>
+					<div className="dish-offers__title">
+						<div className="title-line"></div> Добавить к заказу
+					</div>
 
 					<div className="dish-offers__wrapper">
 						<OfferCard
 							name="Пицца пеперонни с колбасой"
-							about="lorem ipsum dolor sit amet consectutur"
 							price={1240}
 						/>
 						<OfferCard
 							name="Пицца пеперонни с колбасой"
-							about="lorem ipsum dolor sit amet consectutur"
 							price={1240}
 						/>
 						<OfferCard
 							name="Пицца пеперонни с колбасой"
-							about="lorem ipsum dolor sit amet consectutur"
 							price={1240}
 						/>
 						<OfferCard
 							name="Пицца пеперонни с колбасой"
-							about="lorem ipsum dolor sit amet consectutur"
 							price={1240}
 						/>
 					</div>
@@ -76,7 +74,6 @@ const CartPage = () => {
 								Минимальная сумма заказа 1500 ₽
 							</p>
 						</div>
-
 						<button className="place-order__place-btn">
 							Оформить заказ
 						</button>
