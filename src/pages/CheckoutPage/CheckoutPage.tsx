@@ -12,7 +12,7 @@ import {
 	regexPhone,
 } from "./../../functions/regex";
 
-import Input from "./Input";
+import Iяnput from "./Input";
 import { validName, validPerson } from "./../../functions/regex"
 
 import Input from "./Input";
