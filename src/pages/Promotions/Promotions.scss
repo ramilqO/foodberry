@@ -5,6 +5,9 @@
     background: $navBackground;
 
     &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         padding: 0 40px;
         padding-top: 40px;
         padding-bottom: 80px;
@@ -61,7 +64,7 @@
 
         &__promotion-cards {
             grid-template-rows: repeat(5, auto);
-            grid-template-columns: repeat(2, 50%);
+            grid-template-columns: repeat(2, auto);
         }
     }
 }
@@ -78,7 +81,7 @@
 
         &__promotion-cards {
             grid-template-rows: repeat(3, 440px);
-            grid-template-columns: repeat(3, 33%);
+            grid-template-columns: repeat(3, auto);
         }
     }
 }
