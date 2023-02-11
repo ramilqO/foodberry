@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import Promotions from "./pages/Promotions/Promotions";
 import CartPage from "./pages/CartPage/CartPage";
-import NotFoundPage from "./pages/Notfoundpage";
+import NotFoundPage from "./pages/NotFoundPage";
 import PolicyPage from './pages/Policy/Policy';
 
 
