@@ -11,7 +11,7 @@ const Cart = () => {
 			</span>
 			<span className="cart__text ">Корзина</span>
 			<span className="cart__counter-block">
-				<span className="cart__counter">4</span>
+				<span className="cart__counter">{JSON.parse(localStorage.getItem("cart") || '').length}</span>
 			</span>
 		</Link>
 	);

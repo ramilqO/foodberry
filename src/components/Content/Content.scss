@@ -43,8 +43,20 @@
 	}
 }
 
+.swiper-slide,  .swiper-slide-next {
+	width: 320px !important;
+	margin-right: 20px !important;
+	height: 400px !important
+}
+
 @media screen and (max-width: $tablet) {
 	.main-content {
 		padding: 0;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	.swiper-slide {
+		margin-right: 40px !important;
 	}
 }
