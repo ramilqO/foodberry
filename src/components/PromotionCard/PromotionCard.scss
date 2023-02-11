@@ -26,15 +26,15 @@
 		flex-wrap: wrap;
 		justify-content: center;
 
-		height: 227px;
-		width: 100%;
+		height: 115px;
+		width: auto;
 
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
 	}
 
 	&__image {
-		width: 100%;
+		height: 100%;
 	}
 
 	&__main-text {
@@ -90,6 +90,10 @@
 	.promotion-card {
 		&__card-description {
 			height: 5.3em;
+		}
+
+		&__image-wrapper {
+			height: 180px;
 		}
 	}
 }

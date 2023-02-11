@@ -8,7 +8,6 @@
     min-height: 375px;
     justify-content: center;
 
-
     &__container {
         display: flex;
         flex-direction: column-reverse;
@@ -22,7 +21,6 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom;
-        bottom: -100px;
         min-height: auto;
     }
 
@@ -208,6 +206,7 @@
             padding: 0 20px;
             background-size: contain;
             background-position: right;
+            bottom: -100px;
         }
 
         .descriptions {
@@ -266,6 +265,7 @@
             min-width: 320px;
             height: 610px;
             padding: 0 20px;
+            bottom: -100px;
         }
 
         .wrapper {

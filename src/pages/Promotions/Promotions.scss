@@ -8,8 +8,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 40px;
-        padding-top: 40px;
+        padding: 0 20px;
+        padding-top: 225px;
         padding-bottom: 80px;
         background: $navBackground;
     }
@@ -17,7 +17,6 @@
     &__title-wrapper {
         &::before {
             @include pseudo;
-            margin-top: 219px;
             margin-left: 10px;
             width: 4px;
             height: 33px;
@@ -27,8 +26,6 @@
 
     &__title {
         padding-left: 33px;
-        padding-bottom: 40px;
-        padding-top: 215px;
         font-style: normal;
         font-weight: 700;
         font-size: 32px;
@@ -38,6 +35,8 @@
     }
 
     &__promotion-cards {
+        margin-top: 40px;
+        padding-top: 30px;
         border-top: 0.1px solid $primaryText;
         display: grid;
         gap: 25px;
@@ -52,14 +51,8 @@
 
 @media screen and (min-width: $tablet) {
     .promotions {
-        &__title-wrapper {
-            &::before {
-                margin-top: 150px;
-            }
-        }
-
-        &__title {
-            padding-top: 146px;
+        &__container {
+            padding-top: 130px;
         }
 
         &__promotion-cards {
@@ -77,6 +70,7 @@
         &__container {
             margin: 0 auto;
             max-width: $full-hd;
+            padding-top: 130px;
         }
 
         &__promotion-cards {
