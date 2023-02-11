@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputMask from "react-input-mask";
 
-
 interface Iinput {
 	type?: string;
 	name: string;

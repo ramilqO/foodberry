@@ -262,3 +262,12 @@
 		}
 	}
 }
+
+input[type=time] {
+  font-size: 14px;
+  font-family: "Ubuntu-Light";
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+   filter: invert(2.6) sepia(1) saturate(5) hue-rotate(175deg);
+}

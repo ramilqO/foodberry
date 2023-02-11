@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
 
+import CreditCard from "../CreditCard/CreditCard";
+
 // styles
-import "./Pay.scss"
+import "./Pay.scss";
+
+import {regexPerson } from "./../../../../functions/regex";
 
 const Pay = () => {
 	const windowSize = useRef([window.innerWidth]);
@@ -9,9 +13,7 @@ const Pay = () => {
 
 	return (
 		<div className="Pay">
-			<p className="base-text  Pay__subtitle">
-				3. Оплатить
-			</p>
+			<p className="base-text  Pay__subtitle">3. Оплатить</p>
 			<div className="toggle-pay">
 				<span
 					className={`toggle-pay__span ${activeTabPay === 1 ? "active" : ""
@@ -47,15 +49,22 @@ const Pay = () => {
 					Наличными
 				</span>
 			</div>
-			<span
-				className={`form-pay-result ${activeTabPay === 3 ? "block" : ""
+			<input
+				type="text"
+				name="SurrenderOfMoney"
+				className={`input form-pay-result ${activeTabPay === 3 ? "block" : ""
 					} `}
-			>
-				Сдача с
-			</span>
+				placeholder="Сдача с"
+				pattern={regexPerson}
+				minLength={3}
+				maxLength={5}
+			/>
+
+			{
+				activeTabPay === 1 ? <CreditCard /> : <div></div>
+			}
 		</div>
 	);
 };
 
 export default Pay;
-

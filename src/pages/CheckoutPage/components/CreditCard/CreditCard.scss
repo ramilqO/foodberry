@@ -1,0 +1,30 @@
+.credit-card {
+	max-width: 390px;
+	margin: 0 auto;
+
+	&__name {
+		display: flex;
+		justify-content: space-between;
+
+		&+_input {
+			flex-grow: 1;
+		}
+	}
+
+	&__input {
+		display: grid;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__dates {
+		display: flex;
+		justify-content: space-between;
+
+		.credit-card__input {
+			input {
+				max-width: 100px;
+			}
+		}
+	}
+}
