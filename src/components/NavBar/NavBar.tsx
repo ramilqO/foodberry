@@ -8,6 +8,7 @@ interface IactiveSection {
 
 const NavBar = ({activeSection}: IactiveSection) => {
 	const NavBarRef = useRef<HTMLUListElement>(null);
+	const windowWidth = document.body.clientWidth;
 
 	useEffect(() => {
 		const el = NavBarRef.current;
@@ -21,6 +22,9 @@ const NavBar = ({activeSection}: IactiveSection) => {
 					behavior: "smooth",
 				});
 			};
+			if (windowWidth >= 1440) {
+				el.removeEventListener("wheel", onWheel);
+			}
 			el.addEventListener("wheel", onWheel);
 			return () => el.removeEventListener("wheel", onWheel);
 		}

@@ -21,9 +21,16 @@
 		display: none;
 		align-items: center;
 		max-width: 173px;
+		position: relative;
 
 		&.block {
 			display: flex;
+		}
+
+		&::after {
+			@include pseudo;
+			content: 'P';
+			right: 10px;
 		}
 	}
 
