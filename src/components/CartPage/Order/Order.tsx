@@ -1,6 +1,14 @@
 import "./Order.scss";
 
-const Order = () => {
+export interface IOrder {
+	img: string;
+	name: string;
+	weight: string;
+	about: string;
+	price: number;
+}
+
+const Order = ({ img, name, weight, about, price }: IOrder) => {
 	return (
 		<div className="order-block">
 			<div className="order-block__wrapper">
@@ -14,11 +22,10 @@ const Order = () => {
 					<div className="order-block__container-mobile">
 						<div className="main-text">
 							<div className="main-text__title">
-								ПИЦЦА ДВОЙНАЯ ПЕППЕРОНИ
+								{name}
 							</div>
 							<div className="main-text__subtitle">
-								Кальмары, мидии, креветки, сыр маасдам, красный
-								лук, микс оливок, базилик, соус песто
+								{about}
 							</div>
 						</div>
 
@@ -29,7 +36,7 @@ const Order = () => {
 								<button className="order-block__btn">+</button>
 							</div>
 
-							<div className="order-block__price">1640 ₽</div>
+							<div className="order-block__price">{price}</div>
 
 							<button className="order-block__btn">╳</button>
 						</div>

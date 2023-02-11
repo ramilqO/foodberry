@@ -1,18 +1,21 @@
-import { food } from "../../dataBase";
 import "./Content.scss";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { food } from "../../dataBase";
+
 import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { InView } from "react-intersection-observer";
+
 
 import Card from "../Card/Card";
 import Benefits from "../Benefits/Benefits";
-import { InView } from "react-intersection-observer";
 
-interface IactiveSection {
+interface IActiveSection {
 	setActiveSection: (item: string) => void;
 }
 
-const Content = ({ setActiveSection }: IactiveSection) => {
+const Content = ({ setActiveSection }: IActiveSection) => {
 	return (
 		<section className="main-content">
 			<div className="main-content__container">
@@ -62,6 +65,7 @@ const Content = ({ setActiveSection }: IactiveSection) => {
 									return (
 										<SwiperSlide
 											key={index}
+											className='swiper-slide'
 										>
 											<Card
 												img={dish.img}

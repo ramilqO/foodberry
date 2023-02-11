@@ -11,11 +11,10 @@
 	transition: 0.3s;
 	cursor: pointer;
 	
-	margin-top: 20px;
-	margin: 0 auto;
+	margin: 0;
 
 	&:hover {
-		box-shadow: 0px 30px 45px rgba(43, 40, 40, 0.6);
+		box-shadow: 0px 20px 20px rgba(43, 40, 40, 0.6);
 	}
 
 	&__image-wrapper {
@@ -84,7 +83,7 @@
 	}
 
 	&__cart-button {
-		width: 140px;
+		width: 120px;
 
 		display: flex;
 		justify-content: space-between;
@@ -95,6 +94,8 @@
 		font-size: 14px;
 		line-height: 17px;
 		color: $primaryText;
+
+		transition: 0.3s;
 
 		&:hover {
 			background: linear-gradient(114.93deg, #597e5f 5.11%, #5d8863 94%);
@@ -119,5 +120,10 @@
 @media screen and (max-width: $phone-md) {
 	.card {
 		width: 300px;
+		margin: 0 auto;
+	}
+
+	.swiper-slide {
+		margin: 0 !important;
 	}
 }

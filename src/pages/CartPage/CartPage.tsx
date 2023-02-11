@@ -6,6 +6,9 @@ import Order from "../../components/CartPage/Order/Order";
 import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 
 const CartPage = () => {
+
+	// let orders = JSON.parse(localStorage.getItem("cart") || '');
+
 	return (
 		<div className="cart-page">
 			<div className="cart-page__wrapper">
@@ -25,9 +28,14 @@ const CartPage = () => {
 
 				<div className="orders">
 					<div className="orders__wrapper">
-						<Order />
-						<Order />
-						<Order />
+						{/* orders.map(order => {}) */}
+						<Order
+						img=''
+						name='Зилибобки с куирцей'
+						weight='250'
+						about='lorem ipsum dolor sit amet'
+						price={870}
+						/>
 					</div>
 				</div>
 
