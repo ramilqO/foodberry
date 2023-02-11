@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
 import Promotions from "./pages/Promotions/Promotions";
 import CartPage from "./pages/CartPage/CartPage";
-import NotFoundPage from "./pages/NotFoundPage";
+// import NotFoundPage from "./pages/NotFoundPage";
 import PolicyPage from './pages/Policy/Policy';
 
 
@@ -23,7 +23,7 @@ function App() {
 				<Route path="/promotions" element={<Promotions />} />
 				<Route path="/cart" element={<CartPage />} />
 				<Route path="/checkout/policy" element={<PolicyPage />} />
-				<Route path="*" element={<NotFoundPage />} />
+				{/* <Route path="*" element={<NotFoundPage />} /> */}
 			</Routes>
 			<Footer />
 		</div>
