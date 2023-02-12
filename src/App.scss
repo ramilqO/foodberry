@@ -36,12 +36,14 @@ a {
 	}
 }
 
-input:focus:invalid{
-	border: 1px solid red;
+input[type=text]:focus:invalid,
+input[type=tel]:focus:invalid {
+	border: 1px solid #e80202;
 }
 
-input:focus:valid  {
-	border: 1px solid green;
+input[type=text]:focus:valid,
+input[type=tel]:focus:valid  {
+	border: 1px solid #72A479;
 }
 
 

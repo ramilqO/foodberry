@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./CheckoutPage.scss";
 import "./MediaQueries.scss";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // images
 import notWorkImage from "../../images/notWork.png";
@@ -43,14 +43,14 @@ const CheckoutFormPage = () => {
 		let timeToClose1Milliseconds = timeClose1.getTime();
 
 		let differentTime = Math.round(currentTimeMilliseconds - timeToCloseMilliseconds);
-	
+
 		let differentTime1 = Math.round(currentTimeMilliseconds - timeToClose1Milliseconds);
 
 	return (
 		<main className="main main-checkoutPage">
 			<section className="checkoutForm">
 				<div className="checkoutForm__container">
-					<Link className="checkoutForm__link" to={"cart"}>
+					<Link className="checkoutForm__link" to="../cart">
 						в корзину
 					</Link>
 					<h2 className="checkoutForm__title">Оформление заказа</h2>

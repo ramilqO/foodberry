@@ -82,9 +82,9 @@ const CartPage = () => {
 								Минимальная сумма заказа 1500 ₽
 							</p>
 						</div>
-						<button className="place-order__place-btn">
+						<Link to='/checkout' className="place-order__place-btn">
 							Оформить заказ
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>

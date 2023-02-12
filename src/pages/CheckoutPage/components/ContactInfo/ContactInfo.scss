@@ -16,7 +16,7 @@
 		display: grid;
 		gap: 17px;
 
-		@media screen and (min-width: $desktop) {
+		@media screen and (min-width: $phone-lg) {
 			grid-template-columns: 1fr 1fr;
 		}
 	}

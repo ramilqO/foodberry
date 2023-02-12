@@ -141,7 +141,17 @@
 			font-size: 14px;
 			line-height: 17px;
 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
 			background: $buttonBackground;
+			transition: 0.3s;
+
+			&:hover {
+				opacity: 0.8;
+				transition: 0.3s;
+			}
 		}
 	}
 }

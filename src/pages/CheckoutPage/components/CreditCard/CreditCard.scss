@@ -1,13 +1,15 @@
+@import "./../../../../globalStyles/variables";
+@import "./../../../../globalStyles/mixins";
+
 .credit-card {
 	max-width: 390px;
 	margin: 0 auto;
 
 	&__name {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
 
-		&+_input {
-			flex-grow: 1;
+		input {
+			min-width: 100%;
 		}
 	}
 
@@ -20,11 +22,48 @@
 	&__dates {
 		display: flex;
 		justify-content: space-between;
+		gap: 5px;
 
 		.credit-card__input {
 			input {
-				max-width: 100px;
+				min-width: 80px;
 			}
 		}
 	}
+}
+
+@media screen and (min-width: $phone-lg) {
+	.credit-card {
+		max-width: 390px;
+		margin: 0 auto;
+
+		&__name {
+			display: flex;
+			justify-content: space-between;
+
+			input {
+				min-width: 100%;
+			}
+		}
+
+		&__dates {
+			display: flex;
+			justify-content: space-between;
+			gap: 5px;
+
+			.credit-card__input {
+				input {
+					min-width: 100px;
+					max-width: max-content;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+
+}
+@media screen and (min-width: $desktop) {
+
 }
