@@ -37,26 +37,22 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 							</span>
 
 							<Swiper
-								spaceBetween={10}
+								centeredSlides
+								centeredSlidesBounds
+								// spaceBetween={10}
+
 								className="main-content__slider"
 								breakpoints={{
-									// when window width is >= 640px
-									640: {
-										width: 640,
+									320: {
 										slidesPerView: 1,
-										centeredSlides: true
 									},
-									// when window width is >= 768px
 									768: {
-										width: 768,
 										slidesPerView: 2,
 									},
 									1024: {
-										width: 1024,
 										slidesPerView: 3,
 									},
 									1440: {
-										width: 1440,
 										slidesPerView: 4,
 									},
 								}}
