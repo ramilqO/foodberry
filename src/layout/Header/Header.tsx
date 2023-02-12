@@ -73,7 +73,7 @@ const Header = () => {
 					</ul>
 				</nav>
 				<div className="header__logo">
-					<Link to="/checkout" className="logo">
+					<Link to="/rulesofdelivery" className="logo">
 						L O G O S
 					</Link>
 				</div>
