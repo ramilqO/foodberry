@@ -20,6 +20,7 @@
 
 	&__slider {
 		height: 100%;
+		width: auto;
 		margin: -20px;
 	}
 }
@@ -43,10 +44,14 @@
 	}
 }
 
-.swiper-slide,  .swiper-slide-next {
-	width: 320px !important;
-	margin-right: 20px !important;
-	height: 400px !important
+// .swiper-slide {
+// 	width: 320px !important;
+// 	margin-right: 20px !important;
+// 	height: 400px !important;
+// }
+
+.swiper-slide {
+	margin: 0 auto;
 }
 
 @media screen and (max-width: $tablet) {
