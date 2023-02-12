@@ -50,7 +50,7 @@ const CheckoutFormPage = () => {
 		<main className="main main-checkoutPage">
 			<section className="checkoutForm">
 				<div className="checkoutForm__container">
-					<Link className="checkoutForm__link" to={"cart"}>
+					<Link className="checkoutForm__link" to="../cart">
 						в корзину
 					</Link>
 					<h2 className="checkoutForm__title">Оформление заказа</h2>
