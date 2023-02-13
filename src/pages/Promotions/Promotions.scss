@@ -36,12 +36,13 @@
 
     &__promotion-cards {
         margin-top: 40px;
+        justify-content: center;
         padding-top: 30px;
         border-top: 0.1px solid $primaryText;
         display: grid;
         gap: 25px;
         grid-template-rows: repeat(9, auto);
-        grid-template-columns: repeat(1, 100%);
+        grid-template-columns: repeat(1, 300px);
 
         &>* {
             max-width: 100%;
@@ -57,7 +58,7 @@
 
         &__promotion-cards {
             grid-template-rows: repeat(5, auto);
-            grid-template-columns: repeat(2, auto);
+            grid-template-columns: repeat(2, 340px);
         }
     }
 }
@@ -74,7 +75,7 @@
         }
 
         &__promotion-cards {
-            grid-template-rows: repeat(3, 440px);
+            grid-template-rows: repeat(3, auto);
             grid-template-columns: repeat(3, auto);
         }
     }

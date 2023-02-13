@@ -15,6 +15,7 @@ const Promotions = () => {
                         {promotion.map((item, index) => {
                             return (
                                 <PromotionCard
+                                    key={index.toString()}
                                     img={item.img}
                                     title={item.title}
                                     description={item.description}
