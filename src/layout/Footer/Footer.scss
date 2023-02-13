@@ -6,12 +6,26 @@
 
 	// position: absolute;
 	// bottom: 0;
+	display: grid;
+
+	&__nav {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+		order: 1;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	&__main-text {
+		order: 2;
+	}
 }
 
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+
+
 }
 
 .nav-item {
@@ -38,9 +52,6 @@
 
 @media screen and (min-width: $phone-sm) {
 	.footer {
-		&__nav {
-			display: none;
-		}
 
 		&__main-text {
 			text-align: center;
@@ -52,17 +63,29 @@
 	}
 }
 
-@media screen and (min-width: $tablet-lg) {
+@media screen and (min-width: $tablet) {
 	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		&__nav {
 			display: flex;
 			width: 50vw;
 			justify-content: space-around;
+			order: 1;
 		}
 
 		&__main-text {
 			text-align: left;
 			padding-right: 80px;
+			order: 0;
 		}
+
 	}
 }

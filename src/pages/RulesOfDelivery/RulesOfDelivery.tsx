@@ -50,6 +50,26 @@ const RulesOfDelivery = () => {
 						<Map />
 					</div>
 
+					<div className="RulesOfDelivery__timesWork">
+						<div className="RulesOfDelivery__timesWork-text">
+							<p className="RulesOfDelivery__subtitle">График работы доставки:</p>
+							<span className="RulesOfDelivery__timesDate"> с 10:00-21:00</span>
+						</div>
+						<div className="RulesOfDelivery__timesWork-text">
+							<p className="RulesOfDelivery__subtitle">График работы кафе:</p>
+							<span className="RulesOfDelivery__timesDate">с 08:00-21:00</span>
+						</div>
+
+
+
+					</div>
+					<div className="RulesOfDelivery__freeDelivery">
+						<p className="RulesOfDelivery__subtitle">Минимальный заказ:</p>
+						<p className="RulesOfDelivery__description">Бесплатная доставка пешим курьером при сумме заказа от 400 ₽
+							Доставка оператором такси от любой суммы заказа - по тарифам
+							перевозчика.</p>
+					</div>
+
 
 				</div>
 
