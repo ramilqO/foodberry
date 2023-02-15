@@ -1,7 +1,7 @@
 import "./Card.scss";
 
 import { BuyIcon } from "../../icons/BuyIcon";
-import skeleton from "./../../skeleton.png";
+// import skeleton from "./../../skeleton.png";
 import { useState } from "react";
 
 interface ICard {
@@ -19,25 +19,25 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 
 	const addOrderToStorage = () => {
 		orders.push({img, name, weight, about, price});
-		return localStorage.setItem('cart', JSON.stringify(orders));
+		localStorage.setItem('cart', JSON.stringify(orders));
 	}
 
 	const deleteOrderFromStorage = () => {
 		orders.pop();
-		return localStorage.setItem('cart', JSON.stringify(orders));
+		localStorage.setItem('cart', JSON.stringify(orders));
 	}
 
 	return (
 		<div className="card">
 			<div className="card__image-wrapper">
 				<img
-					src={img || skeleton}
+					// src={img || skeleton}
 					alt={name}
 					className="card__image"
 					onError={(
 						event: React.SyntheticEvent<HTMLImageElement, Event>
 					) => {
-						event.currentTarget.src = skeleton;
+						// event.currentTarget.src = skeleton;
 					}}
 				/>
 			</div>
