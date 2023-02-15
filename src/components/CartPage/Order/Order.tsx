@@ -9,6 +9,13 @@ export interface IOrder {
 }
 
 const Order = ({ img, name, weight, about, price }: IOrder) => {
+
+	const deleteOrderFromCart = () => {
+		let orders = JSON.parse(localStorage.getItem('cart') || '');
+		console.log(orders);
+		localStorage.setItem('cart', JSON.stringify(orders));
+	}
+
 	return (
 		<div className="order-block">
 			<div className="order-block__wrapper">
@@ -38,7 +45,7 @@ const Order = ({ img, name, weight, about, price }: IOrder) => {
 
 							<div className="order-block__price">{price}</div>
 
-							<button className="order-block__btn">╳</button>
+							<button className="order-block__btn" onClick={deleteOrderFromCart}>╳</button>
 						</div>
 					</div>
 				</div>

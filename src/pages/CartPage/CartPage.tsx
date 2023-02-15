@@ -5,9 +5,29 @@ import { Link } from "react-router-dom";
 import Order from "../../components/CartPage/Order/Order";
 import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 
-const CartPage = () => {
+const CartPage = () => {	
 
-	// let orders = JSON.parse(localStorage.getItem("cart") || '');
+	const renderOrders = () => {
+		let orders: {
+			img: string;
+			name: string;
+			weight: string;
+			about: string;
+			price: number;
+		}[] = JSON.parse(localStorage.getItem("cart") || '');
+
+		return orders.length >= 1 ? (
+					orders.map((item, index) =>
+						 <Order
+						  img={item.name}
+						  name={item.name}
+						  weight={item.weight}
+						  about={item.about}
+						  price={item.price}
+						  key={index} 
+						  />)
+				) : <h1>Вы не добавляли товаров в корзину</h1>
+	}
 
 	return (
 		<div className="cart-page">
@@ -28,14 +48,7 @@ const CartPage = () => {
 
 				<div className="orders">
 					<div className="orders__wrapper">
-						{/* orders.map(order => {}) */}
-						<Order
-						img=''
-						name='Зилибобки с куирцей'
-						weight='250'
-						about='lorem ipsum dolor sit amet'
-						price={870}
-						/>
+						{renderOrders()}
 					</div>
 				</div>
 
