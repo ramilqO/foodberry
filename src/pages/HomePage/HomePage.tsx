@@ -19,7 +19,7 @@ const HomePage = () => {
 			<Content
 				setActiveSection={setActiveSection}
 			/>
-			<Map />
+			<Map classNames="map"/>
 		</main>
 	);
 };

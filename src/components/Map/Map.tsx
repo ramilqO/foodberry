@@ -1,12 +1,16 @@
 import "./Map.scss";
 
-const Map = () => {
+interface IClass {
+	classNames?: string;
+}
 
-    return (
-        <section className="map">
+const Map = ({ classNames}: IClass) => {
+
+	return (
+		<div className={classNames}>
 			<div className="container">
             </div>
-        </section>
+        </div>
     )
 }
 

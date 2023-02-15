@@ -23,15 +23,15 @@ const Footer = () => {
 			</div>
 
 			<nav className="footer__nav">
-				<a href="/#" className="nav-item">
+				<Link to="/#" className="nav-item">
 					О ресторане
-				</a>
-				<a href="/#" className="nav-item">
+				</Link>
+				<Link to="/RulesOfDelivery" className="nav-item">
 					Условия доставки
-				</a>
-				<a href="/#" className="nav-item">
+				</Link>
+				<Link to="/#" className="nav-item">
 					Возврат товара
-				</a>
+				</Link>
 				<Link to="/promotions" className="nav-item">
 					Акции
 				</Link>

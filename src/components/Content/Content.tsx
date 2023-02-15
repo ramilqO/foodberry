@@ -37,8 +37,8 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 							</span>
 
 							<Swiper
-								centeredSlides
-								centeredSlidesBounds
+								// centeredSlides
+								// centeredSlidesBounds
 								// spaceBetween={10}
 
 								className="main-content__slider"
