@@ -1,7 +1,7 @@
 import "./Card.scss";
 
 import { BuyIcon } from "../../icons/BuyIcon";
-// import skeleton from "./../../skeleton.png";
+import skeleton from "./../../skeleton.png";
 import { useState } from "react";
 
 interface ICard {
@@ -15,29 +15,29 @@ interface ICard {
 const Card = ({ img, name, weight, about, price }: ICard) => {
 	const [buttonsShow, setButtonsShow] = useState(false);
 
-	let orders = JSON.parse(localStorage.getItem("cart") || '');
+	let orders = JSON.parse(localStorage.getItem("cart") || "");
 
 	const addOrderToStorage = () => {
-		orders.push({img, name, weight, about, price});
-		localStorage.setItem('cart', JSON.stringify(orders));
-	}
+		orders.push({ img, name, weight, about, price });
+		localStorage.setItem("cart", JSON.stringify(orders));
+	};
 
 	const deleteOrderFromStorage = () => {
 		orders.pop();
-		localStorage.setItem('cart', JSON.stringify(orders));
-	}
+		localStorage.setItem("cart", JSON.stringify(orders));
+	};
 
 	return (
 		<div className="card">
 			<div className="card__image-wrapper">
 				<img
-					// src={img || skeleton}
+					src={img}
 					alt={name}
 					className="card__image"
 					onError={(
 						event: React.SyntheticEvent<HTMLImageElement, Event>
 					) => {
-						// event.currentTarget.src = skeleton;
+						event.currentTarget.src = skeleton;
 					}}
 				/>
 			</div>
@@ -46,10 +46,20 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 				<p className="card__card-about">{about}</p>
 				{buttonsShow ? (
 					<div className="card__price-container">
-						<button className="card__cart-add-btn cart" onClick={deleteOrderFromStorage}>-</button>
+						<button
+							className="card__cart-add-btn cart"
+							onClick={deleteOrderFromStorage}
+						>
+							-
+						</button>
 						<span className="card__card-price">{price} ₽</span>
 						<span className="card__card-weight">{weight} г</span>
-						<button className="card__cart-add-btn cart" onClick={addOrderToStorage}>+</button>
+						<button
+							className="card__cart-add-btn cart"
+							onClick={addOrderToStorage}
+						>
+							+
+						</button>
 					</div>
 				) : (
 					<div className="card__price-container">
@@ -73,3 +83,4 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 };
 
 export default Card;
+
