@@ -5,7 +5,23 @@ import { Link } from "react-router-dom";
 import Order from "../../components/CartPage/Order/Order";
 import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 
-const CartPage = () => {	
+import { food } from "../../dataBase";
+
+const CartPage = () => {
+
+	const dishItem = (max: number) => {
+		return Math.floor(Math.random() * max);
+	}
+
+	const dishRandom = food.slice(0, dishItem(6));
+	console.log(typeof dishRandom)
+	console.log(typeof food)
+	console.log(dishItem(6))
+
+	const dish1: Array<object> = [];
+	dish1.push(dishRandom)
+
+	console.log(dish1)
 
 	const renderOrders = () => {
 		let orders: {
@@ -17,16 +33,33 @@ const CartPage = () => {
 		}[] = JSON.parse(localStorage.getItem("cart") || '');
 
 		return orders.length >= 1 ? (
-					orders.map((item, index) =>
-						 <Order
-						  img={item.name}
-						  name={item.name}
-						  weight={item.weight}
-						  about={item.about}
-						  price={item.price}
-						  key={index} 
-						  />)
-				) : <h1>Вы не добавляли товаров в корзину</h1>
+			orders.map((item, index) =>
+				<Order
+					img={item.name}
+					name={item.name}
+					weight={item.weight}
+					about={item.about}
+					price={item.price}
+					key={index}
+				/>)
+		) : <h1>Вы не добавляли товаров в корзину</h1>
+	}
+
+	const renderDishes = () => {
+
+		dish1.map((item: any, index: number) => {
+			item.foods.map((dish: any, index: number)=>{
+				return (
+					<OfferCard
+						name={dish.name}
+						price={dish.price}
+						img={dish.img}
+						key={index}
+					/>
+				)
+			})
+
+		})
 	}
 
 	return (
@@ -57,24 +90,7 @@ const CartPage = () => {
 						<div className="title-line"></div> Добавить к заказу
 					</div>
 
-					<div className="dish-offers__wrapper">
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-					</div>
+					<div className="dish-offers__wrapper">{renderDishes()}</div>
 				</div>
 
 				<hr className="dish-offers__divider" />

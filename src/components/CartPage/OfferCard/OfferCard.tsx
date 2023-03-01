@@ -3,15 +3,16 @@ import "./OfferCard.scss";
 interface IOfferCard {
 	name: string;
 	price: number;
+	img: string;
 }
 
-const OfferCard = ({ name, price }: IOfferCard) => {
+const OfferCard = ({ name, price, img }: IOfferCard) => {
 	return (
 		<div className="offer-card">
 			<div className="offer-card__wrapper">
 				<div className="offer-card__image-block">
 					<img
-						src="https://i.pinimg.com/originals/7a/f2/51/7af251ac9560076fdc65b662452b5374.jpg"
+						src={img}
 						alt="img"
 						className="offer-card__image"
 						width="200px"
@@ -34,3 +35,5 @@ const OfferCard = ({ name, price }: IOfferCard) => {
 };
 
 export default OfferCard;
+
+// https://i.pinimg.com/originals/7a/f2/51/7af251ac9560076fdc65b662452b5374.jpg
