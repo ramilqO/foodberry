@@ -5,7 +5,7 @@ import { useState } from "react";
 import Arrow from "./Arrow";
 
 const RulesOfDelivery = () => {
-	const [isAnswer, setIsAnswer] = useState("");
+	const [isAnswer, setIsAnswer] = useState('RulesOfDelivery__question-main RulesOfDelivery__question--open');
 	const [isArrow, setIsArrow] = useState(false);
 
 	const dataBaseQuestions: {
@@ -20,6 +20,36 @@ const RulesOfDelivery = () => {
 				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
 			}
 		},
+		{
+			question: {
+				title: "Вам что-то не довезли?",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
+		{
+			question: {
+				title: "Не понравился продукт?",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
+		{
+			question: {
+				title: "Если появились замечания",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие- либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
+		{
+			question: {
+				title: "Оплата Visa, MasterCard и МИР",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
+		{
+			question: {
+				title: "Реквизиты",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
 	]
 
 	return (
@@ -29,26 +59,25 @@ const RulesOfDelivery = () => {
 					<h1 className="RulesOfDelivery__title">Условия доставки</h1>
 					<div className="RulesOfDelivery__faqMap">
 						<div className="RulesOfDelivery__questions">
-
 							{
 								dataBaseQuestions.map((question, index) => {
 									return (
-
-
-										<div
-											className="RulesOfDelivery__question"
-											key={index}
-										>
-											<p className="RulesOfDelivery__answer">
-												{question.question.title}
-											</p>
-											<p className="RulesOfDelivery__answer">
-												{question.question.subtitle}
-											</p>
-										</div>
-
-
-
+										<>
+											<div
+												className="RulesOfDelivery__question"
+												key={index}
+											>
+												<div className="RulesOfDelivery__question-main" onClick={(e) => { e.currentTarget.className = isAnswer }} onDoubleClick={(e) => { e.currentTarget.className = 'RulesOfDelivery__question-main' }}>
+													<p className="RulesOfDelivery__question-first">
+														{question.question.title}
+													</p>
+													<Arrow isArrow={isArrow} />
+												</div>
+												<p className={`RulesOfDelivery__answer`}>
+													{question.question.subtitle}
+												</p>
+											</div>
+										</>
 									)
 								})
 							}

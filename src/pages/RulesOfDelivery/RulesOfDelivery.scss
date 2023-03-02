@@ -77,6 +77,23 @@
 		}
 	}
 
+	&__question-main {
+		display: flex;
+		position: relative;
+		min-width: 100%;
+
+		p {
+			min-width: 100%;
+		}
+
+		div {
+			position: absolute;
+			top: 22px;
+			right: 10px;
+			z-index: 2;
+		}
+	}
+
 	&__question {
 
 		border-radius: 10px;
@@ -84,7 +101,7 @@
 		position: relative;
 
 		p:first-child {
-			padding-bottom: 20px;
+			padding: 25px;
 		}
 
 		&:hover {
@@ -114,16 +131,20 @@
 		right: 10px;
 		top: 20px;
 		z-index: 2;
-
-		&.open {
-			svg {
-				transform: rotate(180deg);
-				transition: 0.3s;
-			}
-		}
 	}
 
 	&__answer {
+		background: transparent;
+		background-color: $tileBackground;
+		border-radius: 0px 0 10px 10px;
+		margin-top: -15px;
+		z-index: 0;
+		padding: 40px 20px;
+		color: white;
+		display: none;
+	}
+
+	&__question-first {
 		color: $primaryText;
 		background: $buttonColor;
 		padding: 15px 15px;
@@ -131,14 +152,13 @@
 		border-radius: 10px;
 		position: relative;
 		z-index: 1;
+	}
 
-		&:not(:first-of-type) {
-			background: transparent;
-			background-color: $tileBackground;
-			border-radius: 0px 0 10px 10px;
-			margin-top: -5px;
-			z-index: 0;
-			padding: 40px 20px;
-		}
+	&__question--open + .RulesOfDelivery__answer{
+		display: block;
+	}
+	&__question--open  .RulesOfDelivery__arrow svg{
+		transform: rotate(180deg);
+		transition: 0.3s;
 	}
 }
