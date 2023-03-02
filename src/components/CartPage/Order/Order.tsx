@@ -1,4 +1,5 @@
 import "./Order.scss";
+import { useState } from 'react';
 
 export interface IOrder {
 	img: string;
@@ -9,6 +10,8 @@ export interface IOrder {
 }
 
 const Order = ({ img, name, weight, about, price }: IOrder) => {
+
+	const [count, setCount] = useState(1);
 
 	const deleteOrderFromCart = () => {
 		let orders = JSON.parse(localStorage.getItem('cart') || '');
@@ -38,12 +41,12 @@ const Order = ({ img, name, weight, about, price }: IOrder) => {
 
 						<div className="order-block__container-adaptive">
 							<div className="order-block__counter-block">
-								<button className="order-block__btn">-</button>
-								<span className="order-block__counter">1</span>
-								<button className="order-block__btn">+</button>
+								<button className="order-block__btn" onClick={() => setCount(count - 1)}  disabled={count <= 1 ? true : false}>-</button>
+								<span className="order-block__counter">{count}</span>
+								<button className="order-block__btn" onClick={() => setCount(count + 1)} disabled={count < 19 ? false : true}>+</button>
 							</div>
 
-							<div className="order-block__price">{price}</div>
+							<div className="order-block__price">{count >= 1 && price * count}</div>
 
 							<button className="order-block__btn" onClick={deleteOrderFromCart}>╳</button>
 						</div>

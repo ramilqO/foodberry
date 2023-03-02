@@ -181,8 +181,10 @@
 	.dish-offers {
 		&__wrapper {
 			display: flex;
-			justify-content: space-around;
+			justify-content:flex-start;
 			flex-wrap: wrap;
+			flex-wrap: nowrap;
+			overflow-x: scroll;
 		}
 	}
 }

@@ -5,28 +5,67 @@ import { Link } from "react-router-dom";
 import Order from "../../components/CartPage/Order/Order";
 import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 
-const CartPage = () => {	
+import { food } from "../../dataBase";
 
-	const renderOrders = () => {
-		let orders: {
-			img: string;
-			name: string;
-			weight: string;
-			about: string;
-			price: number;
-		}[] = JSON.parse(localStorage.getItem("cart") || '');
+const CartPage = () => {
 
-		return orders.length >= 1 ? (
-					orders.map((item, index) =>
-						 <Order
-						  img={item.name}
-						  name={item.name}
-						  weight={item.weight}
-						  about={item.about}
-						  price={item.price}
-						  key={index} 
-						  />)
-				) : <h1>Вы не добавляли товаров в корзину</h1>
+		const renderOrders = () => {
+			let orders: {
+				img: string;
+				name: string;
+				weight: string;
+				about: string;
+				price: number;
+			}[] = JSON.parse(localStorage.getItem("cart") || '');
+
+			return orders.length >= 1 ? (
+				orders.map((item, index) =>
+					<Order
+						img={item.name}
+						name={item.name}
+						weight={item.weight}
+						about={item.about}
+						price={item.price}
+						key={index}
+					/>)
+			) : <h1>Вы не добавляли товаров в корзину</h1>
+		}
+
+	const getRandomInt = (max: number) => {
+		return Math.floor(Math.random() * max);
+	}
+
+	let dishArray: any[] = [];
+
+	while (dishArray.length != 10) {
+		let index = getRandomInt(food.length);
+		dishArray.push(food[index]);
+		dishArray = dishArray.filter((v, i, arr) => arr.indexOf(v) == i);
+
+		break
+	}
+
+	const renderDishes = () => {
+
+		return dishArray.map((item, index) => {
+			return (
+				<div className="dish-offers__wrapper" key={index}>
+					{
+						item.foods.map((dish: any, index: number) => {
+							return (
+								<OfferCard
+									name={dish.name}
+									price={dish.price}
+									img={dish.img}
+									key={index}
+								/>
+							)
+						})
+					}
+				</div>
+			)
+
+		})
 	}
 
 	return (
@@ -56,25 +95,7 @@ const CartPage = () => {
 					<div className="dish-offers__title">
 						<div className="title-line"></div> Добавить к заказу
 					</div>
-
-					<div className="dish-offers__wrapper">
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-						<OfferCard
-							name="Пицца пеперонни с колбасой"
-							price={1240}
-						/>
-					</div>
+					{renderDishes()}
 				</div>
 
 				<hr className="dish-offers__divider" />
