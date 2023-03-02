@@ -9,19 +9,19 @@ import { food } from "../../dataBase";
 
 const CartPage = () => {
 
-	const dishItem = (max: number) => {
+	const getRandomInt = (max: number) => {
 		return Math.floor(Math.random() * max);
 	}
 
-	const dishRandom = food.slice(0, dishItem(6));
-	console.log(typeof dishRandom)
-	console.log(typeof food)
-	console.log(dishItem(6))
+	let dishArray: object[] = [];
 
-	const dish1: Array<object> = [];
-	dish1.push(dishRandom)
+	while (dishArray.length != 10) {
+		let index = getRandomInt(food.length);
+		dishArray.push(food[index]);
+		dishArray = dishArray.filter((v, i, arr) => arr.indexOf(v) == i);
 
-	console.log(dish1)
+		break
+	}
 
 	const renderOrders = () => {
 		let orders: {
@@ -47,17 +47,23 @@ const CartPage = () => {
 
 	const renderDishes = () => {
 
-		dish1.map((item: any, index: number) => {
-			item.foods.map((dish: any, index: number)=>{
-				return (
-					<OfferCard
-						name={dish.name}
-						price={dish.price}
-						img={dish.img}
-						key={index}
-					/>
-				)
-			})
+		return dishArray.map((item, index) => {
+			return (
+				<div className="dish-offers__wrapper" key={index}>
+					{
+						item.foods.map((dish: any, index: number) => {
+							return (
+								<OfferCard
+									name={dish.name}
+									price={dish.price}
+									img={dish.img}
+									key={index}
+								/>
+							)
+						})
+					}
+				</div>
+			)
 
 		})
 	}
@@ -89,8 +95,7 @@ const CartPage = () => {
 					<div className="dish-offers__title">
 						<div className="title-line"></div> Добавить к заказу
 					</div>
-
-					<div className="dish-offers__wrapper">{renderDishes()}</div>
+					{renderDishes()}
 				</div>
 
 				<hr className="dish-offers__divider" />
