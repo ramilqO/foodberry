@@ -9,11 +9,33 @@ import { food } from "../../dataBase";
 
 const CartPage = () => {
 
+		const renderOrders = () => {
+			let orders: {
+				img: string;
+				name: string;
+				weight: string;
+				about: string;
+				price: number;
+			}[] = JSON.parse(localStorage.getItem("cart") || '');
+
+			return orders.length >= 1 ? (
+				orders.map((item, index) =>
+					<Order
+						img={item.name}
+						name={item.name}
+						weight={item.weight}
+						about={item.about}
+						price={item.price}
+						key={index}
+					/>)
+			) : <h1>Вы не добавляли товаров в корзину</h1>
+		}
+
 	const getRandomInt = (max: number) => {
 		return Math.floor(Math.random() * max);
 	}
 
-	let dishArray: object[] = [];
+	let dishArray: any[] = [];
 
 	while (dishArray.length != 10) {
 		let index = getRandomInt(food.length);
@@ -21,28 +43,6 @@ const CartPage = () => {
 		dishArray = dishArray.filter((v, i, arr) => arr.indexOf(v) == i);
 
 		break
-	}
-
-	const renderOrders = () => {
-		let orders: {
-			img: string;
-			name: string;
-			weight: string;
-			about: string;
-			price: number;
-		}[] = JSON.parse(localStorage.getItem("cart") || '');
-
-		return orders.length >= 1 ? (
-			orders.map((item, index) =>
-				<Order
-					img={item.name}
-					name={item.name}
-					weight={item.weight}
-					about={item.about}
-					price={item.price}
-					key={index}
-				/>)
-		) : <h1>Вы не добавляли товаров в корзину</h1>
 	}
 
 	const renderDishes = () => {

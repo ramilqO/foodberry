@@ -8,6 +8,20 @@ const RulesOfDelivery = () => {
 	const [isAnswer, setIsAnswer] = useState("");
 	const [isArrow, setIsArrow] = useState(false);
 
+	const dataBaseQuestions: {
+		question: {
+			title: string;
+			subtitle: string;
+	}}[] = [
+
+		{
+			question: {
+				title: "У наших курьеров всегда должна быть сдача!",
+				subtitle: "Мы очень внимательно следим за качеством нашей работы, поэтому, если у вас будут какие-либо замечания или предложения, то обязательно сообщайте их нам",
+			}
+		},
+	]
+
 	return (
 		<main className="main">
 			<section className="RulesOfDelivery">
@@ -15,138 +29,31 @@ const RulesOfDelivery = () => {
 					<h1 className="RulesOfDelivery__title">Условия доставки</h1>
 					<div className="RulesOfDelivery__faqMap">
 						<div className="RulesOfDelivery__questions">
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_1"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									У наших курьеров всегда должна быть сдача!
-								</p>
-								{isAnswer === "answer_1" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_2"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									Вам что-то не довезли?
-								</p>
-								{isAnswer === "answer_2" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_3"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									Не понравился продукт?
-								</p>
-								{isAnswer === "answer_3" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_4"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									Если появились замечания
-								</p>
-								{isAnswer === "answer_4" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_5"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									Оплата Visa, MasterCard и МИР
-								</p>
-								{isAnswer === "answer_5" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
-							<div
-								className="RulesOfDelivery__question"
-								onClick={() => { setIsAnswer("answer_6"); setIsArrow(!isArrow) }}
-							>
-								<p className="RulesOfDelivery__answer">
-									Реквизиты
-								</p>
-								{isAnswer === "answer_6" ? (
-									<p className="RulesOfDelivery__answer">
-										Мы очень внимательно следим за качеством
-										нашей работы, поэтому, если у вас будут
-										какие-либо замечания или предложения, то
-										обязательно сообщайте их нам
-									</p>
-								) : (
-									<p></p>
-								)}
-								<Arrow
-									classNames={"RulesOfDelivery__arrow"}
-									isArrow={isArrow}
-								/>
-							</div>
+
+							{
+								dataBaseQuestions.map((question, index) => {
+									return (
+
+
+										<div
+											className="RulesOfDelivery__question"
+											key={index}
+										>
+											<p className="RulesOfDelivery__answer">
+												{question.question.title}
+											</p>
+											<p className="RulesOfDelivery__answer">
+												{question.question.subtitle}
+											</p>
+										</div>
+
+
+
+									)
+								})
+							}
+
+
 
 						</div>
 						<Map classNames="map RulesOfDelivery__map" />
