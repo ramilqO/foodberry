@@ -133,7 +133,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -143,7 +143,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,
@@ -194,7 +194,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -204,7 +204,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,
@@ -225,7 +225,7 @@ const restaurants: {
 	{
 		restaurant: {
 			name: "Ресторан Белый Кролик",
-			coordinats: [55.647485, 37.581307],
+			coordinats: [55.747485, 37.671307],
 			adress: "Смоленская пл., 3, Москва, 121099",
 			time: "пн-ср, вс 11.00–0.00, чт-сб 11.00–2.00",
 			images: [
@@ -255,7 +255,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -265,7 +265,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,
@@ -286,7 +286,7 @@ const restaurants: {
 	{
 		restaurant: {
 			name: "Ресторан Белый Кролик",
-			coordinats: [55.247485, 37.581307],
+			coordinats: [55.647485, 37.591307],
 			adress: "Смоленская пл., 3, Москва, 121099",
 			time: "пн-ср, вс 11.00–0.00, чт-сб 11.00–2.00",
 			images: [
@@ -316,7 +316,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -326,7 +326,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,
@@ -347,7 +347,7 @@ const restaurants: {
 	{
 		restaurant: {
 			name: "Ресторан Белый Кролик",
-			coordinats: [55.847485, 37.581307],
+			coordinats: [55.847485, 37.481307],
 			adress: "Смоленская пл., 3, Москва, 121099",
 			time: "пн-ср, вс 11.00–0.00, чт-сб 11.00–2.00",
 			images: [
@@ -377,7 +377,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -387,7 +387,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,
@@ -408,7 +408,7 @@ const restaurants: {
 	{
 		restaurant: {
 			name: "Ресторан Белый Кролик",
-			coordinats: [55.347485, 37.581307],
+			coordinats: [55.847485, 37.681307],
 			adress: "Смоленская пл., 3, Москва, 121099",
 			time: "пн-ср, вс 11.00–0.00, чт-сб 11.00–2.00",
 			images: [
@@ -438,7 +438,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: man2,
 						name: "Alexander Podkopaev",
 						status: "местный эксперт",
 						rating: 4,
@@ -448,7 +448,7 @@ const restaurants: {
 				},
 				{
 					user: {
-						avatar: man1,
+						avatar: woman1,
 						name: "Maxim GetOut",
 						status: null,
 						rating: 5,

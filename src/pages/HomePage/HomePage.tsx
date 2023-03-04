@@ -16,9 +16,9 @@ const HomePage = () => {
 			<NavBar
 				activeSection={activeSection}
 			/>
-			<Content
+			{/* <Content
 				setActiveSection={setActiveSection}
-			/>
+			/> */}
 			<Map classNames="map"/>
 		</main>
 	);
