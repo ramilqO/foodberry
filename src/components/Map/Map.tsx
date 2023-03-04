@@ -8,46 +8,37 @@ import database from './dataBase'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import SvgRating  from './SvgRating';
+
 import 'swiper/css';
 
 import { renderToStaticMarkup } from "react-dom/server";
 import { LocationMarker } from './LocationMarker';
 
-import { Link } from 'react-router-dom'
-
 import L from 'leaflet';
 
-import marker from '../../images/restaurant.svg'
-import food1 from '../../images/map/food1.gif';
-import food2 from '../../images/map/food2.gif';
-import food3 from '../../images/map/food3.gif';
-import food4 from '../../images/map/food4.gif';
-import food5 from '../../images/map/food5.gif';
-import food6 from '../../images/map/food6.gif';
-import food7 from '../../images/map/food7.gif';
-import food8 from '../../images/map/food8.gif';
-import food9 from '../../images/map/food9.gif';
-import food10 from '../../images/map/food10.gif';
-import food11 from '../../images/map/food11.gif';
-import food12 from '../../images/map/food12.gif';
-import food13 from '../../images/map/food13.gif';
+import marker1 from '../../images/map/marker1.svg';
+import marker2 from '../../images/map/marker2.svg';
+import marker3 from '../../images/map/marker3.svg';
+import marker4 from '../../images/map/marker4.svg';
+import marker5 from '../../images/map/marker5.svg';
+import marker6 from '../../images/map/marker6.svg';
+import marker7 from '../../images/map/marker7.svg';
+import marker8 from '../../images/map/marker8.svg';
+
+
+
 
 
 let arrFoods = [
-	food1,
-	food2,
-	food3,
-	food4,
-	food5,
-	food6,
-	food7,
-	food8,
-	food9,
-	food10,
-	food11,
-	food12,
-	food13,
-	marker
+	marker1,
+	marker2,
+	marker3,
+	marker4,
+	marker5,
+	marker6,
+	marker7,
+	marker8,
 ]
 
 function randomFood(items: string[]) {
@@ -55,6 +46,7 @@ function randomFood(items: string[]) {
 	return items[Math.floor(Math.random() * items.length)];
 
 }
+
 
 interface IClass {
 	classNames?: string;
@@ -112,22 +104,22 @@ const Map = ({ classNames }: IClass) => {
 																	<div className="avatar">
 																		<div className="avatar-image">
 																			<img src={feedBack.user?.avatar} alt="avatar feedback" />
+
 																		</div>
-
 																		<h4>{feedBack.user.name}</h4>
-																		<span>{feedBack.user.status}</span>
+																		{feedBack.user.status ?
+																			<span style={{ marginRight: '10px' }}>{feedBack.user.status}</span> :
+																			''
+																		}
+																		<span style={{ marginRight: '10px', color: 'lightgray' }}>{feedBack.user.date}</span>
 																	</div>
-
-
-																	<span>Оценка: {feedBack.user.rating}</span><br/>
-
+																	<div><SvgRating num={feedBack.user.rating} /></div><br />
+																	{console.log(feedBack.user.rating)}
 																	<p className="avatar-message">
 																		{feedBack.user.message}
-																		<span>{feedBack.user.date}</span>
 																	</p>
 																</>
 															}
-
 															</div>
 														})
 													}
