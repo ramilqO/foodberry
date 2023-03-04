@@ -24,6 +24,13 @@ body {
 
 .main {
   flex: 1 0 auto;
+  padding-top: 174px;
+
+
+  @media screen and (min-width: 768px) {
+	padding-top: 96px;
+  }
+
 }
 .footer {
   flex: 0 0 auto;

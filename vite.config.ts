@@ -7,6 +7,7 @@ export default defineConfig({
 	base: "/foodberry/",
 	server: {
 		port: 3000,
+		open: 'http://127.0.0.1:3000/foodberry/'
 	},
 	build: {
 		outDir: "./build",

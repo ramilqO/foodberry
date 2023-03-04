@@ -13,6 +13,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import PolicyPage from './pages/Policy/Policy';
 import RulesOfDelivery from "./pages/RulesOfDelivery/RulesOfDelivery";
 
+
+
 function App() {
 
 	localStorage.setItem('cart', '[]');
