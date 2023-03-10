@@ -2,6 +2,8 @@ import "./Promotions.scss";
 import promotion from "./promotionsData";
 
 import PromotionCard from '../../components/PromotionCard/PromotionCard';
+import ContactsMap from '../../components/ContactsMap/ContactsMap';
+import Map from "components/Map/Map";
 
 const Promotions = () => {
     return (
@@ -25,7 +27,12 @@ const Promotions = () => {
                         })}
                     </div>
                 </div>
-            </section>
+			</section>
+			<div className="wrapper-contactsMap">
+				<ContactsMap />
+				<Map classNames="map" />
+
+			</div>
         </main>
     );
 }

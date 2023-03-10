@@ -3,20 +3,37 @@
 
 .wrapper-contactsMap {
 	position: relative;
+
+	.map {
+		height: 1000px;
+
+		@media screen and ( min-width: $tablet){
+			height: 650px;
+		}
+	}
+
 }
 
 .contactsMap {
 	background-color: $contactsBlockBackground;
 	max-width: 526px;
-	height: 550px;
-	padding: 25px 43px;
+	min-height: 460px;
+	padding: 25px 15px;
 	color: $primaryText;
 	border-radius: 15px;
 	position: absolute;
 	z-index: 4;
-	top: 100px;
-	left: 70px;
+	top: 0;
+	left: 0;
 	font-family: "Ubuntu-Light", "Arial", sans-serif;
+	margin: 0 auto;
+
+	@media screen and ( min-width: $tablet){
+		padding: 25px 43px;
+		left: 70px;
+		top: 100px;
+		min-height: 560px;
+	}
 
 	&__title {
 		color: $primaryText;
@@ -43,9 +60,16 @@
 
 	&__description {
 		padding-bottom: 26px;
-		position: relative;
 		margin-bottom: 20px;
 		border-bottom: 1px solid $primaryText;
+		height: 150px;
+		overflow: hidden;
+		position: relative;
+
+		@media screen and ( min-width: $tablet){
+			height: 280px;
+	}
+
 	}
 
 	&__adress {
@@ -74,8 +98,14 @@
 	&__contacts {
 		display: flex;
 		gap: 10px;
+		flex-direction: column;
 		justify-content: space-between;
 		font-family: "Ubuntu-Light", "Arial", sans-serif;
+
+		@media screen and ( min-width: $phone){
+			flex-direction: row;
+		}
+
 
 		button {
 			background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);

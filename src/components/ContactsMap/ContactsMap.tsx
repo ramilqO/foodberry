@@ -5,27 +5,31 @@ const ContactsMap = () => {
 		<>
 			<div className="contactsMap">
 				<h2 className="contactsMap__title">контакты</h2>
-				<div className="contactsMap__description">
+				<div className="contactsMap__description" onClick={(e: React.MouseEvent<HTMLHeadingElement>) => e.currentTarget.style.height = 'max-content'} onDoubleClick={(e: React.MouseEvent<HTMLHeadingElement>) => e.currentTarget.style.height = '150px'}>
 					<div className="contactsMap__adress">
 						<span>Наш адрес:</span>
 						<p> МО, городской округ Красногорск, село Ильинкое, Экспериментальная улица, 10</p>
 					</div>
+					<div className="contactsMap__emails">
 					<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
 						<span>Максим (frontend-developer):</span>
 						<p>chernigovsky108@gmail.com</p>
 					</a>
-					<a href='mailto:chernigovsky108@gmail.com'  className="contactsMap__email">
-						<span>Андрей (frontend-developer):</span>
-						<p>chernigovsky108@gmail.com</p>
-					</a>
-					<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
-						<span>Рамиль (frontend-developer):</span>
-						<p>chernigovsky108@gmail.com</p>
-					</a>
-					<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
-						<span>Семён (frontend-developer && team leader):</span>
-						<p>chernigovsky108@gmail.com</p>
-					</a>
+
+						<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
+							<span>Андрей (frontend-developer):</span>
+							<p>chernigovsky108@gmail.com</p>
+						</a>
+						<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
+							<span>Рамиль (frontend-developer):</span>
+							<p>chernigovsky108@gmail.com</p>
+						</a>
+						<a href='mailto:chernigovsky108@gmail.com' className="contactsMap__email">
+							<span>Семён (frontend-developer && team leader):</span>
+							<p>chernigovsky108@gmail.com</p>
+						</a>
+					</div>
+
 				</div>
 
 				<div className="contactsMap__contacts">
