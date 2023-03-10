@@ -1,0 +1,143 @@
+@import "../../globalStyles/variables.scss";
+@import "../../globalStyles/mixins.scss";
+
+.wrapper-contactsMap {
+	position: relative;
+}
+
+.contactsMap {
+	background-color: $contactsBlockBackground;
+	max-width: 526px;
+	height: 550px;
+	padding: 25px 43px;
+	color: $primaryText;
+	border-radius: 15px;
+	position: absolute;
+	z-index: 4;
+	top: 100px;
+	left: 70px;
+	font-family: "Ubuntu-Light", "Arial", sans-serif;
+
+	&__title {
+		color: $primaryText;
+		text-transform: uppercase;
+		font-size: 30px;
+		font-weight: 600;
+		padding-bottom: 26px;
+		position: relative;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $primaryText;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+
+		// &::after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	display: block;
+		// 	height: 1px;
+		// 	width: 100%;
+		// 	top: 60px;
+		// 	left: 0;
+		// 	background-color: $primaryText;
+		// }
+	}
+
+	&__description {
+		padding-bottom: 26px;
+		position: relative;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $primaryText;
+	}
+
+	&__adress {
+		background-image: url('../../images/location.svg');
+		background-repeat: no-repeat;
+		padding-left: 40px;
+		margin-bottom: 20px;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+	}
+
+	&__email {
+		background-image: url('../../images/email.svg');
+		background-repeat: no-repeat;
+		padding-left: 40px;
+		margin-bottom: 10px;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+		display: block;
+		color: $primaryText;
+		text-decoration: none;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		gap: 10px;
+		justify-content: space-between;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+
+		button {
+			background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+			border: 0;
+			border-radius: 10px;
+			cursor: pointer;
+			text-decoration: none;
+			color: $primaryText;
+			font-weight: 600;
+			text-transform: uppercase;
+			padding: 10px 5px;
+			font-family: "Ubuntu-Light", "Arial", sans-serif;
+			flex-grow: 1;
+			cursor: auto;
+
+			&:disabled {
+				opacity: 0.9;
+			}
+		}
+
+	}
+
+	&__telephone {
+		display: grid;
+		gap: 10px;
+
+		a {
+			color: $primaryText;
+			font-weight: 600;
+			text-decoration: none;
+			font-size: 25px;
+			transition: 0.3s;
+
+			&:hover {
+				opacity: 0.5;
+
+			}
+		}
+	}
+
+	&__githubs {
+		display: flex;
+		gap: 5px;
+		justify-content: flex-start;
+		margin-top: 20px;
+
+		a {
+			background-image: url('../../images/github.svg');
+			background-repeat: no-repeat;
+			width: 50px;
+			height: 150px;
+			background-position: 0px 20px;
+			transition: 0.3s;
+			text-decoration: none;
+			text-align: center;
+			color: $primaryText;
+			font-weight: 600;
+
+			&:hover {
+				opacity: 0.5;
+
+			}
+		}
+	}
+}

@@ -101,3 +101,13 @@
 		text-align: right;
 	}
 }
+
+.leaflet-top {
+	top: auto !important;
+	bottom: 10px !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+	z-index: 2 !important;
+}
