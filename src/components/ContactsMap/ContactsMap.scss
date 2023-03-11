@@ -5,19 +5,17 @@
 	position: relative;
 
 	.map {
-		height: 1000px;
+		height: 800px;
 
-		@media screen and ( min-width: $tablet){
-			height: 650px;
+		@media screen and (min-width: $tablet) {
+			height: 665px;
 		}
 	}
-
 }
 
 .contactsMap {
 	background-color: $contactsBlockBackground;
 	max-width: 526px;
-	min-height: 460px;
 	padding: 25px 15px;
 	color: $primaryText;
 	border-radius: 15px;
@@ -28,11 +26,16 @@
 	font-family: "Ubuntu-Light", "Arial", sans-serif;
 	margin: 0 auto;
 
-	@media screen and ( min-width: $tablet){
+	@media screen and (min-width: $phone) {
+		left: 10px;
+		top: 10px;
+		max-width: 326px;
+	}
+	@media screen and (min-width: $desktop) {
 		padding: 25px 43px;
 		left: 70px;
 		top: 100px;
-		min-height: 560px;
+		max-width: 526px;
 	}
 
 	&__title {
@@ -45,35 +48,32 @@
 		margin-bottom: 20px;
 		border-bottom: 1px solid $primaryText;
 		font-family: "Ubuntu-Light", "Arial", sans-serif;
+		text-align: center;
 
-		// &::after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	display: block;
-		// 	height: 1px;
-		// 	width: 100%;
-		// 	top: 60px;
-		// 	left: 0;
-		// 	background-color: $primaryText;
-		// }
+		@media screen and (min-width: $phone) {
+			text-align: left;
+		}
 	}
 
 	&__description {
 		padding-bottom: 26px;
 		margin-bottom: 20px;
 		border-bottom: 1px solid $primaryText;
-		height: 150px;
 		overflow: hidden;
 		position: relative;
+		font-size: 12px;
 
-		@media screen and ( min-width: $tablet){
-			height: 280px;
-	}
+		p {
+			font-weight: 600;
+		}
 
+		@media screen and (min-width: $phone) {
+			font-size: 14px;
+		}
 	}
 
 	&__adress {
-		background-image: url('../../images/location.svg');
+		background-image: url("../../images/location.svg");
 		background-repeat: no-repeat;
 		padding-left: 40px;
 		margin-bottom: 20px;
@@ -81,7 +81,7 @@
 	}
 
 	&__email {
-		background-image: url('../../images/email.svg');
+		background-image: url("../../images/email.svg");
 		background-repeat: no-repeat;
 		padding-left: 40px;
 		margin-bottom: 10px;
@@ -101,11 +101,14 @@
 		flex-direction: column;
 		justify-content: space-between;
 		font-family: "Ubuntu-Light", "Arial", sans-serif;
+		margin-bottom: 20px;
 
-		@media screen and ( min-width: $phone){
+		@media screen and (min-width: $phone) {
+			// flex-direction: row;
+		}
+		@media screen and (min-width: $desktop) {
 			flex-direction: row;
 		}
-
 
 		button {
 			background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
@@ -116,21 +119,43 @@
 			color: $primaryText;
 			font-weight: 600;
 			text-transform: uppercase;
-			padding: 10px 5px;
+			padding: 20px 30px;
 			font-family: "Ubuntu-Light", "Arial", sans-serif;
 			flex-grow: 1;
-			cursor: auto;
+			height: 59px;
+			max-width: min-content;
+			white-space: nowrap;
+			margin: 0 auto;
+			margin-bottom: 20px;
+
+			@media screen and (min-width: $phone) {
+				margin-bottom: 0;
+				max-width: 100%;
+			}
+
+			&:hover {
+				opacity: 0.7;
+			}
 
 			&:disabled {
-				opacity: 0.9;
+				opacity: 0.1;
 			}
 		}
-
 	}
 
 	&__telephone {
 		display: grid;
 		gap: 10px;
+		justify-content: center;
+		text-align: center;
+
+		@media screen and (min-width: $desktop) {
+			text-align: left;
+		}
+
+		span {
+			font-size: 14px;
+		}
 
 		a {
 			color: $primaryText;
@@ -141,32 +166,47 @@
 
 			&:hover {
 				opacity: 0.5;
-
 			}
 		}
 	}
 
-	&__githubs {
+	&__social-media {
 		display: flex;
-		gap: 5px;
-		justify-content: flex-start;
-		margin-top: 20px;
+		justify-content: center;
 
-		a {
-			background-image: url('../../images/github.svg');
-			background-repeat: no-repeat;
-			width: 50px;
-			height: 150px;
-			background-position: 0px 20px;
-			transition: 0.3s;
-			text-decoration: none;
-			text-align: center;
-			color: $primaryText;
-			font-weight: 600;
+		.social-media {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
 
-			&:hover {
-				opacity: 0.5;
+			p {
+				margin-right: 20px;
+			}
 
+			div a {
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 25px;
+				height: 25px;
+				display: inline-block;
+				transition: 0.3s;
+
+				&:first-of-type {
+					background-image: url("../../icons/socialMedia/facebook.svg");
+				}
+				&:nth-of-type(2) {
+					background-image: url("../../icons/socialMedia/vkontakte.svg");
+				}
+				&:nth-of-type(3) {
+					background-image: url("../../icons/socialMedia/youtube.svg");
+				}
+				&:last-of-type {
+					background-image: url("../../icons/socialMedia/instagram.svg");
+				}
+
+				&:hover {
+					opacity: 0.7;
+				}
 			}
 		}
 	}
