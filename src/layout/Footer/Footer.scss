@@ -1,11 +1,8 @@
 @import "../../globalStyles/variables.scss";
 
 .footer {
-	height: 300px;
+	height: 600px;
 	background: $footerBackground;
-
-	// position: absolute;
-	// bottom: 0;
 	display: grid;
 
 	&__nav {
@@ -19,6 +16,63 @@
 
 	&__main-text {
 		order: 2;
+	}
+
+	&__social {
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 400;
+		text-align: center;
+
+		a {
+			text-align: left;
+		}
+	}
+
+	&__emails {
+		margin:  0 auto;
+		display: grid;
+		justify-content: center;
+	}
+
+	&__email {
+		background-image: url('../../images/email.svg');
+		background-repeat: no-repeat;
+		padding-left: 40px;
+		margin-bottom: 10px;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+		display: block;
+		color: $primaryText;
+		text-decoration: none;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__githubs {
+		display: flex;
+		gap: 5px;
+		justify-content: center;
+		margin-top: 20px;
+
+		a {
+			background-image: url('../../images/github.svg');
+			background-repeat: no-repeat;
+			width: 50px;
+			height: 65px;
+			background-position: 0px 20px;
+			transition: 0.3s;
+			text-decoration: none;
+			text-align: center;
+			color: $primaryText;
+			font-weight: 400;
+
+			&:hover {
+				opacity: 0.5;
+
+			}
+		}
 	}
 }
 
@@ -38,6 +92,10 @@
 	font-size: 12px;
 	line-height: 14px;
 	color: $secondaryText;
+
+	&__policy {
+		margin-bottom: 20px;
+	}
 
 	&__policy a {
 		font-weight: 500;
@@ -66,10 +124,13 @@
 @media screen and (min-width: $tablet) {
 	.footer {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
+		height: 525px;
+		padding-top: 50px;
 
 		.container {
+
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -79,6 +140,7 @@
 			width: 50vw;
 			justify-content: space-around;
 			order: 1;
+			margin-top: 0;
 		}
 
 		&__main-text {

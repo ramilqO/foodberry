@@ -19,6 +19,36 @@ const Footer = () => {
 						<p><Link to="/#">Карта сайта</Link></p>
 						<p><Link to="/#">Политика конфиденциальности</Link></p>
 					</div>
+
+					<div className="footer__social">
+						<div className="footer__emails">
+							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
+								<span>Максим frontend-developer:</span>
+								<p>chernigovsky108@gmail.com</p>
+							</a>
+
+							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
+								<span>Андрей frontend-developer:</span>
+								<p>chernigovsky108@gmail.com</p>
+							</a>
+							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
+								<span>Рамиль frontend-developer:</span>
+								<p>chernigovsky108@gmail.com</p>
+							</a>
+							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
+								<span>Семён team leader:</span>
+								<p>chernigovsky108@gmail.com</p>
+							</a>
+
+						</div>
+
+						<div className="footer__githubs">
+							<a href="https://github.com/MaximProsin">Максим</a>
+							<a href="https://github.com/AndrewChernigovsky">Андрей</a>
+							<a href="https://github.com/ramilqO">Рамиль</a>
+							<a href="https://github.com/GitStudentSem">Семён</a>
+						</div>
+					</div>
 				</div>
 			</div>
 

@@ -2,7 +2,6 @@
 @import "../../globalStyles/mixins.scss";
 
 .map {
-    min-height: 665px;
 	height: 665px;
     min-width: 100%;
     background-color: $inputSearchColor;
@@ -100,4 +99,14 @@
 	span {
 		text-align: right;
 	}
+}
+
+.leaflet-top {
+	top: auto !important;
+	bottom: 10px !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+	z-index: 2 !important;
 }

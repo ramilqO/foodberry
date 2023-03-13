@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Intro from "../../components/Intro/Intro";
 import Content from "../../components/Content/Content";
 import Map from "../../components/Map/Map";
+import ContactsMap from "components/ContactsMap/ContactsMap";
 
 import { useState } from "react";
 
@@ -19,7 +20,12 @@ const HomePage = () => {
 			{/* <Content
 				setActiveSection={setActiveSection}
 			/> */}
-			<Map classNames="map"/>
+			<div className="wrapper-contactsMap">
+				<ContactsMap />
+				<Map classNames="map" />
+
+			</div>
+
 		</main>
 	);
 };

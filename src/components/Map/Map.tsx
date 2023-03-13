@@ -25,6 +25,7 @@ import marker5 from '../../images/map/marker5.svg';
 import marker6 from '../../images/map/marker6.svg';
 import marker7 from '../../images/map/marker7.svg';
 import marker8 from '../../images/map/marker8.svg';
+import markerMain from '../../images/map/markerMain.svg';
 
 
 
@@ -53,11 +54,11 @@ interface IClass {
 }
 
 const Map = ({ classNames }: IClass) => {
-	const position = [55.752220, 37.615560];
+	const position: number[] = [55.752220, 37.615560];
 
 	const iconPerson: any = new L.Icon({
-		iconUrl: randomFood(arrFoods),
-		iconRetinaUrl: randomFood(arrFoods),
+		iconUrl: markerMain,
+		iconRetinaUrl: markerMain,
 		iconSize: [64, 64],
 	});
 
@@ -65,15 +66,19 @@ const Map = ({ classNames }: IClass) => {
 	return (
 		<div className={classNames}>
 			<div className="map-wrapper">
-				<MapContainer center={position} zoom={13} scrollWheelZoom={true} className='map-container' >
+				<MapContainer center={[55.748706, 37.580544]} zoom={20} scrollWheelZoom={true} className='map-container' >
 
 					{
 						database.map((obj) => {
 							return (
 								<div>
-									<TileLayer
-										attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+									{/* <TileLayer
 										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+										attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+									/> */}
+									<TileLayer
+										url="https://maps.geoapify.com/v1/tile/dark-matter/{z}/{x}/{y}.png?apiKey=816d9af48505427a93d64e888a9c4a8d"
+										attribution='Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a> contributors'
 									/>
 									<Marker position={obj.restaurant.coordinats} icon={iconPerson}>
 										<div className="popup">
