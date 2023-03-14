@@ -1,6 +1,5 @@
 
-import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents, VideoOverlay } from 'react-leaflet';
-import { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet-css';
 import "./Map.scss";
 
@@ -8,53 +7,22 @@ import database from './dataBase'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import SvgRating  from './SvgRating';
+import SvgRating from './SvgRating';
 
 import 'swiper/css';
 
-import { renderToStaticMarkup } from "react-dom/server";
 import { LocationMarker } from './LocationMarker';
 
 import L from 'leaflet';
 
-import marker1 from '../../images/map/marker1.svg';
-import marker2 from '../../images/map/marker2.svg';
-import marker3 from '../../images/map/marker3.svg';
-import marker4 from '../../images/map/marker4.svg';
-import marker5 from '../../images/map/marker5.svg';
-import marker6 from '../../images/map/marker6.svg';
-import marker7 from '../../images/map/marker7.svg';
-import marker8 from '../../images/map/marker8.svg';
 import markerMain from '../../images/map/markerMain.svg';
-
-import { GeoJSON } from 'react-leaflet';
-
-let arrFoods = [
-	marker1,
-	marker2,
-	marker3,
-	marker4,
-	marker5,
-	marker6,
-	marker7,
-	marker8,
-]
-
-function randomFood(items: string[]) {
-
-	return items[Math.floor(Math.random() * items.length)];
-
-}
-
 
 interface IClass {
 	classNames?: string;
 }
 
 const Map = ({ classNames }: IClass) => {
-	const position: number[] = [55.752220, 37.615560];
-
-
+	const position: any = [55.752220, 37.615560];
 
 	const iconPerson: any = new L.Icon({
 		iconUrl: markerMain,
@@ -66,44 +34,42 @@ const Map = ({ classNames }: IClass) => {
 	return (
 		<div className={classNames}>
 			<div className="map-wrapper">
-				<MapContainer center={[55.748706, 37.580544]} zoom={20} scrollWheelZoom={true} className='map-container' >
+				<MapContainer center={position} zoom={20} scrollWheelZoom={true} className='map-container' >
 					{
 						database.map((obj, index) => {
+							const { restaurant } = obj;
 							return (
 								<div key={index + 'adasd'}>
-									{/* <TileLayer
-										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-										attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-									/> */}
+
 									<TileLayer
 										url="https://maps.geoapify.com/v1/tile/dark-matter/{z}/{x}/{y}.png?apiKey=816d9af48505427a93d64e888a9c4a8d"
 										attribution='Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a> contributors'
 									/>
 
-									<Marker position={obj.restaurant.coordinats} icon={iconPerson}>
+									<Marker position={restaurant.coordinats} icon={iconPerson}>
 										<div className="popup">
 											<Popup>
-												<h3>{obj.restaurant.name}</h3>
+												<h3>{restaurant.name}</h3>
 												<Swiper spaceBetween={50} scrollbar={{ draggable: true }}
 													slidesPerView={1} className="gallery-images">{
-														obj.restaurant.images?.map((images, index) => {
+														restaurant.images?.map((images, index) => {
 															return (
-																<SwiperSlide key={index+images} className="map-galleryPopup-wrapper">
+																<SwiperSlide key={index + images} className="map-galleryPopup-wrapper">
 																	<img src={images} alt="gallery" />
 																</SwiperSlide>
 															)
 														})
 													}</Swiper>
-												<p>Часы работы: {obj.restaurant.time}</p>
-												<p>Cтанция <strong>{obj.restaurant.subway}</strong></p>
-												<a href={`https://${obj.restaurant.website}`}>{obj.restaurant.website}</a>
-												<p>{obj.restaurant.parking}</p>
-												<p>{obj.restaurant.check}</p>
-												<a href={`tel:${obj.restaurant.phoneNumber}`}>{obj.restaurant.phoneNumber}</a>
-												<p>{obj.restaurant.rating}</p>
+												<p>Часы работы: {restaurant.time}</p>
+												<p>Cтанция <strong>{restaurant.subway}</strong></p>
+												<a href={`https://${restaurant.website}`}>{restaurant.website}</a>
+												<p>{restaurant.parking}</p>
+												<p>{restaurant.check}</p>
+												<a href={`tel:${restaurant.phoneNumber}`}>{restaurant.phoneNumber}</a>
+												<p>{restaurant.rating}</p>
 												<div>
 													{
-														obj.restaurant.feedBack.map((feedBack, index) => {
+														restaurant.feedBack.map((feedBack, index) => {
 															return <div key={index + 'adnd'}>{
 																<>
 																	<div className="avatar">

@@ -10,7 +10,7 @@ import room3 from "./../../images/map/restaurant/restaurant1/room3.jpg";
 const restaurants: {
 	restaurant: {
 		name: string | null;
-		coordinats: number[];
+		coordinats: number[] | any;
 		adress: string | null;
 		time: string | null;
 		images?: string[] | null;
